@@ -1,0 +1,69 @@
+/******************************************************************
+Stylesheet: Login Stylesheet
+
+For more info, check out the codex:
+http://codex.wordpress.org/Creating_Admin_Themes
+
+******************************************************************/
+/* the form box */
+/*
+This is the Wordpress logo in the admin area.
+You'll have to load your own images and mess
+with the width and height.
+*/
+@font-face {
+    font-family: 'OpenSansRegular';
+    src: url('../fonts/OpenSans-Regular-webfont.eot');
+    src: url('../fonts/OpenSans-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/OpenSans-Regular-webfont.woff') format('woff'),
+         url('../fonts/OpenSans-Regular-webfont.ttf') format('truetype'),
+         url('../fonts/OpenSans-Regular-webfont.svg#OpenSansRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'OpenSansBold';
+    src: url('../fonts/OpenSans-Bold-webfont.eot');
+    src: url('../fonts/OpenSans-Bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/OpenSans-Bold-webfont.woff') format('woff'),
+         url('../fonts/OpenSans-Bold-webfont.ttf') format('truetype'),
+         url('../fonts/OpenSans-Bold-webfont.svg#OpenSansBold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+body.login {
+	background: #559448 url('../images/body_bg.jpg') top center repeat fixed;
+	background-size:cover;font-family: 'OpenSansRegular', Arial, Helvetica Neue, Helvetica, Verdana, sans-serif;
+}
+
+body.login form {
+	background: #fff;border-radius: 0; border: 0;box-shadow: 5px 5px 10px rgba(0,0,0,0.2);
+}
+body.login form label {color: #5dae59; font-family: 'OpenSansBold','OpenSansRegular', Helvetica Neue, Helvetica, Verdana, Arial, sans-serif;font-weight: normal;}
+
+body.login p#nav a, body.login p#backtoblog a {color:#ffe000!important;text-shadow: 0 0 0;}
+body.login p#nav a:hover, body.login p#backtoblog a:hover {color:#fff!important;text-shadow: 0 0 0;}
+
+body.login .button-primary {display: inline-block;padding: 0.5em 1em; border: 1px solid #035b26;text-shadow:1px 1px 2px #012b12;color: #fff;box-shadow: 0 1px 0 #54b845 inset;border-radius:7px;font-weight: normal;font-family: 'OpenSansBold','OpenSansRegular', Helvetica Neue, Helvetica, Verdana, Arial, sans-serif;width: auto;}
+	body.login .button-primary  {background: #63a14f;background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzYzYTE0ZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMyYzhiNDIiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);background: -moz-linear-gradient(top,  #63a14f 0%, #2c8b42 100%);background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#63a14f), color-stop(100%,#2c8b42));background: -webkit-linear-gradient(top,  #63a14f 0%,#2c8b42 100%);background: -o-linear-gradient(top,  #63a14f 0%,#2c8b42 100%);background: -ms-linear-gradient(top,  #63a14f 0%,#2c8b42 100%);background: linear-gradient(to bottom,  #63a14f 0%,#2c8b42 100%);filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#63a14f', endColorstr='#2c8b42',GradientType=0 );}
+
+body.login .button-primary:hover {background: #5ebd4c;border-color: #166608;box-shadow: 0 1px 0 0 #7dd66c inset;color: #0a321e;text-shadow: 1px 1px 0 #63c251;			}
+ body.login .button-primary:hover {filter: progid: DXImageTransform.Microsoft.gradient(startColorstr = '#429f31', endColorstr = '#5ebd4c');/*INNER ELEMENTS MUST NOT BREAK THIS ELEMENTS BOUNDARIES*//*Element must have a height (not auto)*//*All filters must be placed together*/-ms-filter: "progid: DXImageTransform.Microsoft.gradient(startColorstr = '#429f31', endColorstr = '#5ebd4c')";/*Element must have a height (not auto)*//*All filters must be placed together*/background-image: -moz-linear-gradient(top, #429f31, #5ebd4c);background-image: -ms-linear-gradient(top, #429f31, #5ebd4c);background-image: -o-linear-gradient(top, #429f31, #5ebd4c);background-image: -webkit-gradient(linear, center top, center bottom, from(#429f31), to(#5ebd4c));background-image: -webkit-linear-gradient(top, #429f31, #5ebd4c);background-image: linear-gradient(top, #429f31, #5ebd4c);					/*--IE9 DOES NOT SUPPORT GRADIENT BACKGROUNDS--*/}
+
+.login h1 a {
+  background: url(../images/login-logo.png) no-repeat top center;
+  /* make sure to replace this! */
+  width: 326px;
+  height: 67px;
+  text-indent: -9999px;
+  overflow: hidden;
+  padding-bottom: 15px;
+  display: block; }
+
+
+body.login form .input { }
+

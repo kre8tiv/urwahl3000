@@ -1,0 +1,797 @@
+/**********************************************************************/
+/* 1. CSS Reset by Eric Meyer                                         */
+/*    (slightly adapted to HTML5)                                     */
+/**********************************************************************/
+
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, address, cite, code, del, dfn, em,
+img, ins, kbd, q, samp, small, strong,
+sub, sup, var, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, footer, header, nav, time, section  {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-weight: inherit;
+    font-style: inherit;
+    font-size: 100%;
+    font-family: inherit;
+    vertical-align: baseline;
+}
+
+/* remember to define focus styles! */
+:focus { outline: 0; }
+
+/* tables still need 'cellspacing="0"' in the markup */
+table {border-collapse: separate;border-spacing: 0;}
+
+caption, th, td {text-align: left;font-weight: normal;}
+
+
+/**********************************************************************/
+/* 2. Needed for rendering HTML5 properly in current browsers         */
+/**********************************************************************/
+
+article, aside, footer,header, nav, section { display: block; } 
+
+
+/**********************************************************************/
+/* 3. Some basic helper styles                                        */
+/**********************************************************************/
+
+.invisible, legend {position: absolute;left: -9999em;}
+.clear {display: block; width: 100%; clear: both;}
+
+.unsichtbar {position:absolute;top:-9999px;left:-9999px;height:1px;width:1px;display:block;}
+
+
+/**********************************************************************/
+/* 4. Basic styles against the reset                                  */
+/**********************************************************************/
+
+code, kbd, var, tt { font-family: Consolas, "Courier New", Courier, sans-serif; }
+p code, p kbd, p var, p tt { line-height: 1; }
+strong, dt { font-weight: bold; }
+em, cite { font-style: italic; }
+abbr[title] {border-bottom: 1px dotted #888;cursor: help;}
+a abbr { cursor: pointer; }
+del {text-decoration: line-through;}
+ins {border-bottom: 1px dashed #888;text-decoration: none;}
+sub { vertical-align: text-bottom; }
+sup { vertical-align: text-top; }
+sub, sup { font-size: 75%;line-height: 1;}
+ol { list-style-type: decimal; }
+ul { list-style-type: disc; }
+
+input, textarea, select { font-size: 1em;margin: 0;border: 0;padding: 0; }
+label { font-weight: normal; }
+label, button,input[type=button],input[type=submit] { cursor: pointer; }
+fieldset {display: block;margin: 0;}
+
+/* This positions an unstyled legend element */
+/* correctly in IE6 + IE7                    */
+* html legend,
+*:first-child+html legend {position: relative;left: -10px;}
+
+/*Wordpress align*/
+img.alignright {float:right; margin:0 0 1em 1em}
+img.alignleft {float:left; margin:0 1em 1em 0}
+.aligncenter {display: block; margin-left: auto; margin-right: auto}
+a img.alignright {float:right; margin:0 0 1em 1em}
+a img.alignleft {float:left; margin:0 1em 1em 0}
+a img.aligncenter {display: block; margin-left: auto; margin-right: auto}
+.hidden {display:block;position:absolute;top:-10000px;}
+
+.clearfix {zoom: 1; }
+  .clearfix:before, .clearfix:after {content: "";display: table; }
+  .clearfix:after {clear: both; }
+
+
+/**********************************************************************/
+/* 5. Font Faces                                                      */
+/**********************************************************************/
+
+
+@font-face {
+    font-family: 'OpenSansLight';
+    src: url('../fonts/OpenSans-Light-webfont.eot');
+    src: url('../fonts/OpenSans-Light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/OpenSans-Light-webfont.woff') format('woff'),
+         url('../fonts/OpenSans-Light-webfont.ttf') format('truetype'),
+         url('../fonts/OpenSans-Light-webfont.svg#OpenSansLight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'OpenSansRegular';
+    src: url('../fonts/OpenSans-Regular-webfont.eot');
+    src: url('../fonts/OpenSans-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/OpenSans-Regular-webfont.woff') format('woff'),
+         url('../fonts/OpenSans-Regular-webfont.ttf') format('truetype'),
+         url('../fonts/OpenSans-Regular-webfont.svg#OpenSansRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+@font-face {
+    font-family: 'OpenSansSemibold';
+    src: url('../fonts/OpenSans-Semibold-webfont.eot');
+    src: url('../fonts/OpenSans-Semibold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/OpenSans-Semibold-webfont.woff') format('woff'),
+         url('../fonts/OpenSans-Semibold-webfont.ttf') format('truetype'),
+         url('../fonts/OpenSans-Semibold-webfont.svg#OpenSansSemibold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+@font-face {
+    font-family: 'OpenSansBold';
+    src: url('../fonts/OpenSans-Bold-webfont.eot');
+    src: url('../fonts/OpenSans-Bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/OpenSans-Bold-webfont.woff') format('woff'),
+         url('../fonts/OpenSans-Bold-webfont.ttf') format('truetype'),
+         url('../fonts/OpenSans-Bold-webfont.svg#OpenSansBold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+/**********************************************************************/
+/* 6. Screen styles for all (primary mobile)                          */
+/**********************************************************************/
+
+@media screen {
+
+
+/*********************
+01. GENERAL STYLES
+*********************/
+body {font-family: 'OpenSansRegular', Arial, Helvetica Neue, Helvetica, Verdana, sans-serif;font-size: 100%;line-height: 1.5;color: #333;}
+
+#wrap {}
+.pos {}
+
+img {max-width:100%;height:auto;}
+
+
+blockquote {padding: 2em 2em 0.5em 2em;text-indent: -.3em;width: 100%; background: #e6e6e6;margin-left:-2em;color: #0a321e;margin-bottom: 1em;font-family: 'OpenSansLight','OpenSansRegular', Arial, Helvetica Neue, Helvetica, Verdana, sans-serif;}
+
+/********************
+02. WORDPRESS BODY CLASSES
+********************/
+
+
+
+
+
+/*********************
+03. LAYOUT & GRID STYLES
+*********************/
+
+
+
+
+/*********************
+04. LINK STYLES
+*********************/
+
+a {color:#61ae4d;text-decoration: none;}
+a:hover {color:#023b19;text-decoration: underline;}
+a:visited {color:#023b19;}
+
+
+/******************************************************************
+05. H1, H2, H3, H4, H5 STYLES
+******************************************************************/
+
+h1,h2,h3,h4,h5,h6 {font-family: 'OpenSansBold','OpenSansRegular', Helvetica Neue, Helvetica, Verdana, Arial, sans-serif;font-weight: normal;color: #0a350a;}
+h1 {font-size:2.4em;}
+h1.page-title {margin-bottom: 0.7em;}
+h2 {font-size:1.6em;}
+h3 {font-size:1.5em;margin-bottom: 0.7em;color: #5dae59;}
+h4 {font-size:1.3em;}
+h5 {font-size:1.1em;}
+h6 {font-size:1em;}
+
+
+/*********************
+06. HEADER SYTLES
+*********************/
+
+	#header {margin-bottom: 2em;}
+	
+	#header h1 {display: none;}
+	#header h2 {font-size: 1em;color: #0a321e;text-align: center;margin: 0.5em 0 1em 0;}
+	#header #logo {display: none;}
+	
+	#header .searchform {display: none;}
+		#header .searchform label {display: none;}
+		#header .searchform input#search {border: 1px solid #1e770d;padding: 0.5em;background: transparent;color: #1e770d;font-size: 1em;width: 80%;margin: 0 10%; }
+		#header .searchform input[type=submit] {display: none;}
+		
+	#portal, #breadcrumb, #header .searchform {display: none;}
+	
+	#header .headerimg {display: none;}
+
+
+/*********************
+07. NAVIGATION STYLES
+*********************/
+	.navigation li {list-style-type: none;}
+	#nav-main {background:#fff;text-align: center;display: none;margin:0;}
+		#nav-main.show {display: block;}
+		#nav-main li {margin-bottom:1px;}
+		#nav-main a {display:block;background:#0a321e; color:#fff; padding: 1em;}
+			#nav-main .current-menu-item a {color: #ffe000;}
+			#nav-main .current-menu-item li a {color: #fff;}
+			#nav-main li li {margin:0;font-size:0.9em;}
+			#nav-main ul ul a {background:#5dae59;color:#fff;}
+			
+			
+			
+	.mobile-switch {text-align: center;background: #0a321e;color: #fff;max-width: 100%;height: 58px;}
+		.mobile-switch li {list-style-type: none;display: block;padding: 1em 1.5em;}
+			.mobile-switch li.first {float: left;border-right: 1px solid #fff;}
+			.mobile-switch li.middle {display: inline-block;font-family: 'OpenSansBold','OpenSansRegular', Arial, Helvetica Neue, Helvetica, Verdana, sans-serif;font-weight: normal;overflow: hidden;}
+			.mobile-switch li.last {float: right;border-left: 1px solid #fff;}
+		.mobile-switch a {color: #fff;}
+		
+			a#switch-menu {display: block;text-indent: -9999px;background: transparent url('../images/nav_resp_menu.png') no-repeat center center; width: 25px; height: 25px;}
+			a#switch-search {display: block;text-indent: -9999px;background: transparent url('../images/nav_resp_search.png') no-repeat center center; width: 25px; height: 25px;}
+
+		nav li {list-style-type: none;}
+		
+	.page-navigation {background: #e6e6e6;padding: 2em;text-align: center;font-size: 0.8em;}
+		.page-navigation li {display: inline;color: #0a321e;		}
+		.page-navigation li a {display: inline-block;background: #fff; padding: 0.5em 1em;color: #0a321e;border-right: 2px solid #c9c9c9;}
+			.page-navigation li.kr8pn-next-link a {}
+		.page-navigation ol {border: 2px solid #c9c9c9;display: inline-block;border-right: 0;}
+		.page-navigation li.kr8pn-current {display: inline-block;background: #ffdc0a; padding: 0.5em 1em;border-right: 2px solid #c9c9c9;}
+		.page-navigation {}
+
+.nav-footer {margin-top:2em;clear: both;}
+	#footer .nav-footer li a{color: #fff;}
+
+
+/*********************
+08. POSTS & CONTENT STYLES
+*********************/
+	
+	div.wp-caption {max-width: 100%;}
+	
+	#content {padding: 0 1em;}
+	#content p {line-height: 1.5em;margin: 0 0 1.2em 0;}
+	#main article footer p, p.byline {font-size: 0.8em; color: #8c8c8c;margin: 0 0 0.5em;}
+		article footer p a, p.byline a {color: #8c8c8c;}
+	article.post {text-align:justify;margin-bottom: 2em;}
+	a.liinternal {display: none;}
+	
+	.hentry ul, .hentry ol {margin: 0 2em;}
+
+	.single img.attachment-large.wp-post-image {width: 100%;height: auto;}
+	
+
+	p.wp-caption-text {font-size: 0.8em;font-family: 'OpenSansLight','OpenSansRegular', Arial, Helvetica Neue, Helvetica, Verdana, sans-serif;color: #0a321e;}
+
+		.home article.sticky {border: 1px solid #333;padding: 1em 1.5em;border: 1px solid #e2e2e2;background: #f7f7f7;background: -moz-linear-gradient(top,#f7f7f7 0%,#f1f1f1);background: -webkit-gradient(linear, left top, left bottom,from(#f7f7f7),to(#f1f1f1));}
+			.home #content .sticky p.byline {text-align: right;margin: 0;color: #888;}
+			.home #content .sticky img.wp-post-image {display: none;}
+			.home #content .sticky h1 {}		
+		
+		.headerlist article {margin: 0;border-bottom: 1px solid #035b26;padding: 1em 0;}
+			.headerlist article h2, .headerlist article p {display: inline-block;}
+			.headerlist article h2 {font-size: 1em;}
+				.headerlist article h2 a span {color: #ed228d;}
+			.headerlist article p {font-size: 0.8em;color: #888;margin: 0!important;float: right;}
+			.headerlist article {}
+			
+		.archive #main article { border-bottom: 2px solid #e6e6e6;padding: 0 0 2em;}
+			.archive article img.wp-post-image {width: 100%;height: auto;}
+			.article-header h1 a {color:#0a321e;}
+	
+
+	
+		
+	article ul li {list-style-type: none;counter-increment: list;position: relative;margin: 0 0 1em 0;}
+		article ul li:before {content: "✲";position: absolute;left: -2.5em;width: 2em;text-align: right;color: #5dae59;}	
+	article ol {counter-reset:li;}
+		article ol > li {list-style-type: none;counter-increment: list;position: relative;margin: 0 0 1em 0;}
+			article ol > li:before {content:counter(li)'.'; counter-increment:li; position: absolute;left: -2.5em;width: 2em;text-align: right;color: #5dae59;font-family: 'OpenSansLight','OpenSansRegular', Arial, Helvetica Neue, Helvetica, Verdana, sans-serif;}	
+	article ul li li, article ol li li {margin: 1em 0 1em 0;}
+	
+	ul.sitemap {margin: 0;}
+		ul.sitemap li {list-style-type: none;clear: both;}
+		ul.sitemap li:before{content: "";}
+		ul.sitemap li img {float: left;margin: 0 0.5em 2em 0;}
+		ul.sitemap li a {font-size: 1.1em;font-family: 'OpenSansBold','OpenSansRegular', Arial, Helvetica Neue, Helvetica, Verdana, sans-serif;font-weight: normal;}
+		ul.sitemap li span {display: block;font-size: 0.9em;font-family: 'OpenSansLight','OpenSansRegular', Arial, Helvetica Neue, Helvetica, Verdana, sans-serif;}
+
+
+	article .searchform {background: #e6e6e6; padding:  2em; width: 100%;margin: 0 0 -2em -2em;}
+		article .searchform label {margin-bottom: 1em; display: block;}
+		
+	.sharewrap {margin: 0 2em 2em;border-top: 3px solid #e6e6e6;clear: both;}
+		#main .sharewrap p.calltoshare {font-size: 1em;float: left; padding: 1em 2em 0 0;margin: 0;font-family: 'OpenSansBold','OpenSansRegular', Arial, Helvetica Neue, Helvetica, Verdana, sans-serif;}
+		.sharewrap #socialshareprivacy{display: inline-block;}
+
+/******************************************************************
+09. PAGE NAVI STYLES
+******************************************************************/
+
+	ul.tabs {padding-left: 2em;}
+		ul.tabs li {list-style-type: none;display: inline-block;font-family: 'OpenSansBold','OpenSansRegular', Arial, Helvetica Neue, Helvetica, Verdana, sans-serif;margin: 0;}
+		ul.tabs li:before{content: "";}
+		ul.tabs a {color:#0a321e;display: block;padding: 0.7em 1em;}
+		ul.tabs a.active {background: #e6e6e6;}
+			ul.tabs a span {display: inline-block;background: #5dae59; font-size: 0.7em;padding: 0.1em 1em;border-radius: 2em;color: #fff;font-family: 'OpenSansLight','OpenSansRegular', Arial, Helvetica Neue, Helvetica, Verdana, sans-serif;}
+
+
+/******************************************************************
+10. COMMENT STYLES
+******************************************************************/
+	.commentlist {background: #e6e6e6; padding: 2em;}
+		.commentlist li {list-style-type: none;}
+		.commentlist  li:before{content: "";}
+		.commentlist article {background: #fff;padding: 0.5em;margin: 0 0 1em 50px;}
+			.commentlist article img.avatar {margin: 0 0.5em 0 0;}
+			.commentlist article .vcard {padding: 0 0 0 0;font-size: 0.8em;margin-bottom: 0.7em;font-family: 'OpenSansBold','OpenSansRegular', Arial, Helvetica Neue, Helvetica, Verdana, sans-serif;color:#0a321e;}
+				.commentlist article .vcard a {color: #5dae59;}
+		.commentlist .comment-reply-link {font-size: 0.6em;padding: 0.2em 0.8em;border-radius: 1em;display: inline-block;text-align: right;color: #fff;background: #5dae59;float: right;
+		}
+		.commentlist article:hover .comment-reply-link {visibility: visible;}
+		
+		
+
+
+
+/******************************************************************
+11. COMMENT FORM STYLES
+******************************************************************/
+	
+	
+	#respond {background: #e6e6e6;padding: 2em;}
+		#comment-form-title {color: #0a321e;}
+		#commentform ul {margin: 0;}
+		#commentform li {list-style-type: none;}
+		#commentform  li:before{content: "";}
+		#main form input, #main form textarea, #main form select {border: 1px solid #cecece;background: #f8f8f8;padding: 0.5em;display: block;margin-bottom: 1em;width: 92%;}
+		#main form textarea {
+			width: 97.3%;height: 6em;}
+		#main form input:hover, #main form textarea:hover {border: 1px solid #999;background: #fff;box-shadow: 0 0 5px #eee inset;}
+		#main form input:focus, #main form textarea:focus {border: 1px solid #5dae59;background: #fff;box-shadow: 0 0 5px #eee inset;}
+		#main form label {font-size: 0.8em;font-family: 'OpenSansBold','OpenSansRegular', Arial, Helvetica Neue, Helvetica, Verdana, sans-serif;color: #888;}
+		#main form input[type=submit]  {display: inline-block;padding: 0.5em 1em; border: 1px solid #035b26;text-shadow:1px 1px 2px #012b12;color: #fff;box-shadow: 0 1px 0 #54b845 inset;border-radius:7px;font-weight: normal;font-family: 'OpenSansBold','OpenSansRegular', Helvetica Neue, Helvetica, Verdana, Arial, sans-serif;width: auto;}
+			#main form input[type=submit] {background: #63a14f;background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzYzYTE0ZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMyYzhiNDIiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);background: -moz-linear-gradient(top,  #63a14f 0%, #2c8b42 100%);background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#63a14f), color-stop(100%,#2c8b42));background: -webkit-linear-gradient(top,  #63a14f 0%,#2c8b42 100%);background: -o-linear-gradient(top,  #63a14f 0%,#2c8b42 100%);background: -ms-linear-gradient(top,  #63a14f 0%,#2c8b42 100%);background: linear-gradient(to bottom,  #63a14f 0%,#2c8b42 100%);filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#63a14f', endColorstr='#2c8b42',GradientType=0 );}
+		#main form input[type=submit]:hover {background: #5ebd4c;border-color: #166608;box-shadow: 0 1px 0 0 #7dd66c inset;color: #0a321e;text-shadow: 1px 1px 0 #63c251;			}
+		 #main form input[type=submit]:hover {filter: progid: DXImageTransform.Microsoft.gradient(startColorstr = '#429f31', endColorstr = '#5ebd4c');/*INNER ELEMENTS MUST NOT BREAK THIS ELEMENTS BOUNDARIES*//*Element must have a height (not auto)*//*All filters must be placed together*/-ms-filter: "progid: DXImageTransform.Microsoft.gradient(startColorstr = '#429f31', endColorstr = '#5ebd4c')";/*Element must have a height (not auto)*//*All filters must be placed together*/background-image: -moz-linear-gradient(top, #429f31, #5ebd4c);background-image: -ms-linear-gradient(top, #429f31, #5ebd4c);background-image: -o-linear-gradient(top, #429f31, #5ebd4c);background-image: -webkit-gradient(linear, center top, center bottom, from(#429f31), to(#5ebd4c));background-image: -webkit-linear-gradient(top, #429f31, #5ebd4c);background-image: linear-gradient(top, #429f31, #5ebd4c);					/*--IE9 DOES NOT SUPPORT GRADIENT BACKGROUNDS--*/}
+		#recaptcha_area {margin-bottom: 1em;}
+			#main form .req {color: #5dae59;}
+			#main form label small {font-size: 0.8em;color: #aaa;font-family: 'OpenSansRegular', Arial, Helvetica Neue, Helvetica, Verdana, sans-serif;}
+			form .required-info {font-size: 0.8em;color: #888;	}
+
+
+/*********************
+12. SIDEBARS & ASIDES
+*********************/
+.sidebar li {list-style-type: none;}
+.sidebar {margin-top: 2em;}
+  h3.widgettitle {margin-bottom: 0.5em;color: #0a321e;}
+.widget {margin: 0 0 2em 0;padding: 1em;background: #e6e6e6;}
+	/*Twitter */
+		.widget.widget_twitter-tracker {padding: 1em;border: 1px solid #0f6994;box-shadow:5px 5px 10px rgba(0,0,0,0.2),0 1px 0 #91d8f9 inset;color: #fff;font-size: 0.9em;		}
+		.widget.widget_twitter-tracker h3 {color: #0f6994;}
+			.widget.widget_twitter-tracker {background: #45bef7;filter: progid: DXImageTransform.Microsoft.gradient(startColorstr = '#45bef7', endColorstr = '#24a8e7'); -ms-filter: "progid: DXImageTransform.Microsoft.gradient(startColorstr = '#45bef7', endColorstr = '#24a8e7')";background-image: -moz-linear-gradient(top, #45bef7, #24a8e7);background-image: -ms-linear-gradient(top, #45bef7, #24a8e7);background-image: -o-linear-gradient(top, #45bef7, #24a8e7);background-image: -webkit-gradient(linear, center top, center bottom, from(#45bef7), to(#24a8e7));background-image: -webkit-linear-gradient(top, #45bef7, #24a8e7);background-image: linear-gradient(top, #45bef7, #24a8e7); }
+			.widget.widget_twitter-tracker a {color: #0f6994;}
+			.widget.widget_twitter-tracker a.tweet-link {font-size: 0.6em;margin: 0 0 0 40px;background: #0f6994;color: #36b4ef;padding: 0.3em 0.5em;border-radius: 1em;}
+			.widget.widget_twitter-tracker img {float: left; margin: 5px 0 0.5em 0;width: 30px; height: auto;
+			}
+			.widget.widget_twitter-tracker .msg {margin: 0 0 0 40px;}
+
+
+/*********************
+13. FOOTER STYLES
+*********************/
+#footer {clear: both;background:#0a321e; padding: 2em;color: #fff; text-align: center;margin-bottom: 0.5em;}
+	#footer .widget {background: transparent; box-shadow: 0 0 0 0 #000;padding: 0;}
+	#footer .widgettitle {color: #fff;}
+	p.copyright {text-align: center; font-size: 0.8em;margin-bottom: 3em;}
+
+
+}
+
+
+/**********************************************************************/
+/* 7. MOBILE STYLES                                                   */
+/**********************************************************************/
+
+
+/*SMALLER LAPTOPS */
+@media only screen and (min-width: 770px) {
+
+  .onecol {width: 5.801104972%;}
+  /* 4.85%;  } /* grid_1  */
+  .twocol {width: 14.364640883%;}
+  /* 13.45%; } /* grid_2  */
+  .threecol {width: 22.928176794%;}
+  /* 22.05%; } /* grid_3  */
+  .fourcol {width: 31.491712705%;}
+  /* 30.75%; } /* grid_4  */
+  .fivecol {width: 40.055248616%;}
+  /* 39.45%; } /* grid_5  */
+  .sixcol {width: 48.618784527%;}
+  /* 48%;    } /* grid_6  */
+  .sevencol {width: 57.182320438000005%;}
+  /* 56.75%; } /* grid_7  */
+  .eightcol {width: 65.74585634900001%;}
+  /* 65.4%;  } /* grid_8  */
+  .ninecol {width: 74.30939226%;}
+  /* 74.05%; } /* grid_9  */
+  .tencol {width: 82.87292817100001%;}
+  /* 82.7%;  } /* grid_10 */
+  .elevencol {width: 91.436464082%;}
+  /* 91.35%; } /* grid_11 */
+  .twelvecol {width: 99.999999993%;}
+  /* 100%;   } /* grid_12 */
+  .onecol,.twocol,.threecol,.fourcol,.fivecol,.sixcol,.sevencol,.eightcol,.ninecol,.tencol,.elevencol,twelvecol {
+    position: relative;float: left;margin-left: 2.762430939%;}
+  .first {margin-left: 0;}
+  .last {float: right;}
+  
+  
+  /******************************************************************
+  Stylesheet: Tablet & Small Desktop Stylesheet
+  
+  Here's where you can start getting into the good stuff.
+  This size will work on iPads, other tablets, and desktops.
+  So you can start working with more styles, background images,
+  and other resources. You'll also notice the grid starts to
+  come into play. Have fun!
+  
+  ******************************************************************/
+  /*********************
+  GENERAL STYLES
+  *********************/
+  
+  a {text-decoration: none;}
+  
+  /*********************
+  LAYOUT & GRID STYLES
+  *********************/
+  html {}
+  body {background: #559448; }
+  
+  #wrap, #portal .inner {max-width: 1140px; margin: 0 auto;}
+  
+  	#content {padding: 0;  }
+  		#main  {background: #fff;box-shadow: 5px 5px 10px rgba(0,0,0,0.2); }
+  
+  /*********************
+  HEADER SYTLES
+  *********************/
+  #header{ padding: 1.5em 0 0 0;position: relative;margin-bottom: 2em;  }
+	  #header hgroup {display: inline-block;text-align: right;width: 79%;z-index: 2;position: relative;  }
+	  	#header #logo {display: inline-block;width: 20%;z-index: 2;position: relative;margin-top: 0.5em; }
+	  	#header a {color: #fff;text-shadow: 1px 1px 5px rgba(0,0,0,0.3);}
+	  	#header h1, #header h2 {padding: 0 0 0 5px;margin: 0;line-height:1em;display: block;}
+	  	#header h2 {font-size: 1em;color: #ffe000; margin: 5px 0 0 0;font-family: 'OpenSansLight','OpenSansRegular', Arial, Helvetica Neue, Helvetica, Verdana, sans-serif;text-align: right; }
+	  	
+	  	
+	  	
+	  	#portal .searchform {background: #fff; border: 0;padding: 0.2em;border-radius: 1em;font-size: 0.9em; }
+	  				#portal .suche {display: inline-block;}
+	  				#portal .searchform label {	position: absolute;top: -9999999px;   				}
+	  				#portal .searchform:hover {box-shadow:0 0 6px #1e5b13,0 0 10px #aaa inset;color: #555;}
+	  				#portal .searchform input#search {border: 0;padding: 0.5em;background: transparent;	color: #777;font-size: 0.8em;width: 200px;margin: 0; }
+	  				#portal .searchform:hover input, #header .searchform input#search:focus {outline:0;color: #333;	}
+	  				#portal .searchform input[type=submit] {border: 0;opacity: 0.5; background: url(../images/search-icon.png) center left no-repeat transparent;color: #035825;text-indent: -9999px;display:inline-block;width:35px;height: 30px;		   }
+	  					#portal .searchform input[type=submit]:hover {opacity: 1; }
+  
+  
+  	#portal {display: block; background: #0a321e;text-align: right;padding: 0.5em 0;box-shadow: 5px 5px 10px rgba(0,0,0,0.2);z-index: 2;position: relative; }
+  	
+  	
+  	/*Image */
+  		#header.widthimg{ padding: 0;margin: 2em 0; }
+  			#header.widthimg hgroup { position: absolute;top: 40%; right: 1em;}
+  			#header.widthimg #logo{position: absolute;left: 1em;top: 40%;  }
+	  		#header.widthimg .headerimg {display: block;z-index: 1;top: 0;box-shadow: 5px 5px 10px rgba(0,0,0,0.2);  }
+
+
+  
+  /*********************
+  NAVIGATION STYLES
+  *********************/
+	#nav-main {display:block;width:100%;text-align: left;font-size:1.3em;background:transparent;font-family: 'OpenSansLight','OpenSansRegular', Arial, Helvetica Neue, Helvetica, Verdana, sans-serif;z-index: 3;position: relative; }
+		#nav-main .navigation {display:block;width:100%; background: #0a321e;}
+			
+			#nav-main li {display: block;float: left;position: relative;padding:0;margin:0;}
+				#nav-main li a {padding:1em;display:block;background: transparent;color:#fff;}
+				#nav-main li a:hover {color: #96DC3C;text-decoration: underline;}
+				/*2te Ebene */
+				#nav-main li ul {display:none;padding: 15px 0 0;font-size:0.9em;margin-top: -15px;margin-left: 20px;}	
+				#nav-main li:hover ul {display:block;}
+				#nav-main li ul {position:absolute;width:250px;background: url(../images/nav_ul2.png) 15px 0 no-repeat transparent;z-index:9;box-shadow: 0 10px 10px rgba(0,0,0,0.2);	}
+					#nav-main li ul li {display:block;float: none;font-size:0.9em;border: 0;margin: 0;padding: 0;}
+						#nav-main li ul li a,  #nav-main li.current-menu-parent li a,  #nav-main li.current-menu-item li a {background: #fff;color:#0a321e;border: 0;padding: 0.5em 1.2em;font-family: 'OpenSansBold','OpenSansRegular', Arial, Helvetica Neue, Helvetica, Verdana, sans-serif;	}
+						 #nav-main li.current-menu-parent li a:hover,#nav-main li.current-menu-item li a:hover,#nav-main li ul li a:hover,#nav-main li.current-menu-parent li.current-menu-item a {color:#fff; background: #0a321e; }
+						 #nav-main li ul li a:before {}
+				/*Aktives Element */
+				#nav-main li.current-menu-item a, #nav-main li.current-menu-parent a {color: #ffe000;font-family: 'OpenSansBold','OpenSansRegular', Arial, Helvetica Neue, Helvetica, Verdana, sans-serif;}
+					#nav-main li.current-menu-item li a, #nav-main li.current-menu-parent li a {background: #fff;color:#0a321e;	}
+					
+  
+  
+  		
+  		#nav-portal {font-family: 'OpenSansLight','OpenSansRegular', Arial, Helvetica Neue, Helvetica, Verdana, sans-serif; font-size: 0.9em;display: inline-block;}
+  			#nav-portal li {display: inline-block;margin: 0 2em 0 0;}
+  			#nav-portal a {color: #fff; }
+  			#nav-portal li ul {display: none;}
+  			#nav-portal {}
+  		
+  
+  
+  .mobile-switch {display: none;}
+  
+  	#breadcrumb {display: block; z-index: 2;position: relative; background: #ffdc0a;color:#0a321e;padding: 0.3em 1em;font-size: 0.9em;font-family: 'OpenSansLight','OpenSansRegular', Arial, Helvetica Neue, Helvetica, Verdana, sans-serif; }
+  		#breadcrumb a {color:#0a321e;}
+  	
+  	.navwrap {margin-bottom: 2em;box-shadow: 5px 5px 10px rgba(0,0,0,0.2); }
+
+	.nav-footer {font-size: 0.8em;margin-top:2em}
+		.nav-footer li {display: inline-block;margin: 0 1em 0 0;}  
+  
+	/*********************
+	POSTS & CONTENT STYLES
+	*********************/
+  		#main article {padding: 2em;}
+  		
+  		div.archive-title {background: #e6e6e6;padding: 2em; }
+  		h1.archive-title {background: #e6e6e6;padding: 1em 0.7em; }
+  			.archive-title p {margin: 0!important;}
+  			h1.archive-title span {font-size: 0.5em;color: #5acb21;}
+  	
+  	a.liinternal {display: block; text-transform: lowercase;margin-top: 1em;font-size: 1em;font-family: 'OpenSansBold','OpenSansRegular', Helvetica Neue, Helvetica, Verdana, Arial, sans-serif;font-weight: normal;}
+  	
+  	
+  	#commentform li {width: 30%;float: left;margin: 0 5% 0 0; }
+  		#commentform li:last-of-type {margin: 0; }
+  		
+
+
+			.home article.sticky {margin: 2em 0 1em 2em;}
+				.home #content .sticky img.wp-post-image {display: block;position:absolute;border-radius: 50%;margin: -2.7em 0 0 -3.7em;box-shadow: 0px 3px 1em rgba(0,0,0,0.1);}
+				.home #content .sticky h1 {margin-top: 2.4em;}
+  		
+  		
+  	.archive #main article, .search-results #main article, .blog #main article { border-bottom: 2px solid #e6e6e6;padding: 0 0 2em;margin: 2em;}
+  		.archive article img.wp-post-image, .search-results article img.wp-post-image {float: left;margin: 10px 0.7em 0 0;width: 33%;height: auto; }
+  		.archive article h1.h2, .search-results article h1.h2{font-size: 1.6em;}
+  		.archive article h1 a, .search-results article h1.h2 a{color:#0a321e;}
+  		.blog .wp-post-image {margin-bottom: -1.5em;margin-top: 1em; }
+  		
+
+  
+  /*********************
+  SIDEBARS & ASIDES
+  *********************/
+  .sidebar {margin: 0;}
+
+  .widget {margin: 0 0 2em 0;padding: 1.5em;background: #e6e6e6;box-shadow: 5px 5px 10px rgba(0,0,0,0.2);}
+  	.widget ul li {margin-bottom: 0.5em;/* deep nesting */}
+  	.widget ul li ul {margin-top: 0.75em;padding-left: 1em;}
+  	.widget.widget_sp_image {padding: 0;}
+
+  /* recent-posts widget */
+  /* archives widget */
+  /* tag-cloud widget */
+  /* calendar widget */
+  /* category widget */
+  /* recent-comments widget */
+  /* search widget */
+  /* text widget */
+  
+  
+  
+  /*********************
+  FOOTER STYLES
+  *********************/
+	#footer {background:#0a321e;color:#fff;margin: 2em 0 0.5em;box-shadow: 5px 5px 10px rgba(0,0,0,0.2);padding: 0;text-align: left;}
+			#footer .inner {padding:3em;}
+			#footer .inner section {}
+			#footer a {color: #afdca7;	}
+			#footer .widget {width: 25%;float: left;}
+		
+		#footer .adresse {font-size: 0.8em;padding-top: 1em;}
+		#footer .adresse p {margin-bottom: 0.5em;}		
+			#footer .adresse strong {font-weight: normal;color: #fee500;font-family: 'OpenSansBold','OpenSansRegular', Helvetica Neue, Helvetica, Verdana, Arial, sans-serif;font-size: 1.2em;		}	
+
+	p.copyright {color: #fff;}
+		p.copyright a {color:#ffe000;}
+
+}
+
+
+
+/* DESKTOP */
+@media only screen and (min-width: 1140px) {
+ 
+ html {}
+
+
+}
+
+
+/* LARGE VIEWING SIZE */
+@media only screen and (min-width: 1240px) {
+
+
+}
+
+
+
+@media only screen and (max-width: 770px) {
+body {background: #fff!important;background-image: none!important;}
+
+}
+
+
+@media only screen and (max-width: 480px) {
+.mobile-switch li.middle {max-width:25%;padding: 0.5em;}
+}
+/*LARGER MOBILE DEVICES*/
+@media only screen and (min-width: 481px) {
+  /******************************************************************
+  Site Name: 
+  Author: 
+  
+  Stylesheet: 481px and Up Stylesheet
+  
+  This stylesheet is loaded for larger devices. It's set to 
+  481px because at 480px it would load on a landscaped iPhone.
+  This isn't ideal because then you would be loading all those
+  extra styles on that same mobile connection. 
+  
+  A word of warning. This size COULD be a larger mobile device,
+  so you still want to keep it pretty light and simply expand
+  upon your base.less styles.
+  
+  ******************************************************************/
+  /*********************
+  NAVIGATION STYLES
+  *********************/
+
+				
+				
+  /*********************
+  POSTS & CONTENT STYLES
+  *********************/
+  /* entry content */
+  .entry-content {
+    /* at this larger size, we can start to align images */
+  
+  }
+  .entry-content .alignleft,
+  .entry-content img.alignleft {
+    margin-right: 1.5em;
+    display: inline;
+    float: left;
+  }
+  .entry-content .alignright,
+  .entry-content img.alignright {
+    margin-left: 1.5em;
+    display: inline;
+    float: right;
+  }
+  .entry-content .aligncenter,
+  .entry-content img.aligncenter {
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
+    clear: both;
+  }
+  /* end .entry-content */
+ 
+ 
+ 
+  /*********************
+  FOOTER STYLES
+  *********************/
+
+}
+
+
+
+/*Tablets */
+@media only screen and (min-width: 768px) {
+	
+}
+
+
+/*RETINA (2x RESOLUTION DEVICES)*/
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
+
+}
+
+
+/*iPHONE 5 MEDIA QUERY */
+@media (device-height: 568px) and (-webkit-min-device-pixel-ratio: 2) {
+  
+}
+
+
+
+/*PRINT STYLESHEET */
+@media print {
+
+  * {
+    background: transparent !important;
+    color: black !important;
+    text-shadow: none !important;
+    filter: none !important;
+    -ms-filter: none !important;
+  }
+  a,
+  a:visited {
+    color: #444 !important;
+    text-decoration: underline;
+  }
+  a:after,
+  a:visited:after {
+    content: " (" attr(href) ")";
+  }
+  a abbr[title]:after,
+  a:visited abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+  .ir a:after,
+  a[href^="javascript:"]:after,
+  a[href^="#"]:after {
+    content: "";
+  }
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+  thead {
+    display: table-header-group;
+  }
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+  img {
+    max-width: 100% !important;
+  }
+  @page  {
+    margin: 0.5cm;
+  }
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+  .sidebar,
+  .page-navigation,
+  .wp-prev-next,
+  .respond-form,
+  nav {
+    display: none;
+  }
+}
