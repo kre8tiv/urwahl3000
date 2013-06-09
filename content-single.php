@@ -9,7 +9,7 @@
 						
 						    <header class="article-header">							
 							    <h1 class="h2"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h1>
-							     <p class="byline">Veröffentlicht am <time class="updated" datetime="<?php echo the_time('Y-m-j'); ?>" pubdate><?php the_time('j. F Y')?> um <?php the_time('H:i')?> Uhr.</time></p>
+							     <p class="byline">Veröffentlicht am <time class="updated" datetime="<?php echo the_time('c'); ?>"><?php the_time('j. F Y')?> um <?php the_time('H:i')?> Uhr.</time></p>
 						    </header>
 					
 						    

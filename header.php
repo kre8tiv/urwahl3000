@@ -27,8 +27,7 @@
 		<meta property="og:description" content="<?php if ( is_single() ) { wp_title('-', true, 'right'); echo  strip_tags( get_the_excerpt() ); } elseif ( is_page() ) { wp_title('-', true, 'right'); echo strip_tags( get_the_excerpt() ); } else { bloginfo('description'); } ?>"/>
 		
 		<!-- basic meta-tags & seo-->
-		<meta name="language" content="<?php echo get_bloginfo('language'); ?>" />
-		<meta name="content-language" content="<?php echo get_bloginfo('language'); ?>" />
+
 		<meta name="publisher" content="<?php bloginfo('name'); ?>" />
 		<meta name="author" content="<?php bloginfo('name'); ?>" />
 		<meta name="description" content="<?php if ( is_single() ) { wp_title('-', true, 'right'); echo  strip_tags( get_the_excerpt() ); } elseif ( is_page() ) { wp_title('-', true, 'right'); echo strip_tags( get_the_excerpt() ); } else { bloginfo('description'); } ?>" />
@@ -83,11 +82,16 @@
 
 	<body <?php body_class(); ?>>
 	
-		<nav class="unsichtbar"><p><a href="#inhalt">Direkt zum Inhalt</a></p></nav>
+		<nav class="unsichtbar"><h6>Sprungmarken dieser Website</h6><ul>
+			<li><a href="#content">Direkt zum Inhalt</a></li>
+			<li><a href="#nav-main">Zur Navigation</a></li>
+			<li><a href="#sidebar1">Seitenleiste mit weiterführenden Informationen</a></li>
+			<li><a href="#footer">Zum Fußbereich</a></li>
+		</ul></nav>
 		
 		<section id="portal">
 			<div class="inner">
-					<nav role="navigation" id="nav-portal"><h6 class="unsichtbar">Links zu sozialen Netzwerken:</h6>
+					<nav role="navigation" id="nav-portal"><h6 class="unsichtbar">Links ähnlichen Websites:</h6>
 						<?php kr8_nav_portal(); ?>
 					</nav>
 			<?php get_search_form( $echo ); ?>
@@ -110,10 +114,10 @@
 						<?php } ?>
 
 						<p id="logo"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="Zur Startseite"><img src="<?php echo get_template_directory_uri(); ?>/lib/images/logo.png" width="185" height="100" alt="<?php bloginfo('name'); ?>"></a></p>
-						<hgroup>
+						<div class="hgroup">
 							<h1 id="site-title"><span><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></span></h1>
 							<h2 id="site-description"><?php bloginfo( 'description' ); ?></h2>
-						</hgroup>						
+						</div>						
 						<?php get_search_form( $echo ); ?>
 				</header>
 

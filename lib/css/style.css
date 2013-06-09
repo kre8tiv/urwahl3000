@@ -516,7 +516,7 @@ h6 {font-size:1em;}
   HEADER SYTLES
   *********************/
   #header{ padding: 1.5em 0 0 0;position: relative;margin-bottom: 2em;  }
-	  #header hgroup {display: inline-block;text-align: right;width: 79%;z-index: 2;position: relative;  }
+	  #header .hgroup {display: inline-block;text-align: right;width: 79%;z-index: 2;position: relative;  }
 	  	#header #logo {display: inline-block;width: 20%;z-index: 2;position: relative;margin-top: 0.5em; }
 	  	#header a {color: #fff;text-shadow: 1px 1px 5px rgba(0,0,0,0.3);}
 	  	#header h1, #header h2 {padding: 0 0 0 5px;margin: 0;line-height:1em;display: block;}
@@ -539,7 +539,7 @@ h6 {font-size:1em;}
   	
   	/*Image */
   		#header.widthimg{ padding: 0;margin: 2em 0; }
-  			#header.widthimg hgroup { position: absolute;top: 40%; right: 1em;}
+  			#header.widthimg .hgroup { position: absolute;top: 40%; right: 1em;}
   			#header.widthimg #logo{position: absolute;left: 1em;top: 40%;  }
 	  		#header.widthimg .headerimg {display: block;z-index: 1;top: 0;box-shadow: 5px 5px 10px rgba(0,0,0,0.2);  }
 

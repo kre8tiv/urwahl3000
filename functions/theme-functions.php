@@ -510,7 +510,7 @@ function kr8_page_navi($before = '', $after = '') {
 	}
 	echo $before.'<nav class="page-navigation"><ol class="kr8_page_navi clearfix">'."";
 	if ($start_page >= 2 && $pages_to_show < $max_page) {
-		$first_page_text = __( "First", 'kr8theme' );
+		$first_page_text = __( "Anfang", 'kr8theme' );
 		echo '<li class="kr8pn-first-page-link"><a href="'.get_pagenum_link().'" title="'.$first_page_text.'">'.$first_page_text.'</a></li>';
 	}
 	echo '<li class="kr8pn-prev-link">';
@@ -527,7 +527,7 @@ function kr8_page_navi($before = '', $after = '') {
 	next_posts_link('Nächste');
 	echo '</li>';
 	if ($end_page < $max_page) {
-		$last_page_text = __( "Last", 'kr8theme' );
+		$last_page_text = __( "Ende", 'kr8theme' );
 		echo '<li class="kr8pn-last-page-link"><a href="'.get_pagenum_link($max_page).'" title="'.$last_page_text.'">'.$last_page_text.'</a></li>';
 	}
 	echo '</ol></nav>'.$after."";
