@@ -77,7 +77,7 @@ function kr8_wpsearch($form) {
 		
 		echo $before_widget; ?>
 		<?php if($title != '')
-			echo '<h3 class="widget-title">'.$title.'</h3>'; ?>
+			echo '<h3 class="widgettitle">'.$title.'</h3>'; ?>
 
         <ul class="sociallinks">
 			<?php 
@@ -127,9 +127,19 @@ function kr8_wpsearch($form) {
 				echo '<li><a href="'.$foursquare.'" class="foursquare" title="Foursquare">Foursquare</a></li>';
 			}
 			?>
+			
+			<?php if($pinterest != '') {
+				echo '<li><a href="'.$pinterest.'" class="pinterest" title="Pinterst">Pinterest</a></li>';
+			}
+			?>
 
 			<?php if($xing != '') {
 				echo '<li><a href="'.$xing.'" class="xing" title="Xing">Xing</a></li>';
+			}
+			?>
+			
+			<?php if($tumblr != '') {
+				echo '<li><a href="'.$tumblr.'" class="tumblr" title="Tumblr">Tumblr</a></li>';
 			}
 			?>
     
@@ -165,6 +175,7 @@ function kr8_wpsearch($form) {
 		$pinterest = esc_attr($instance['pinterest']);
 		$soundcloud = esc_attr($instance['soundcloud']);
 		$foursquare = esc_attr($instance['foursquare']);
+		$tumblr = esc_attr($instance['tumblr']);
 		$xing = esc_attr($instance['xing']);
 		$rss = esc_attr($instance['rss']);
 		$rsscomments = esc_attr($instance['rsscomments']);
@@ -198,7 +209,7 @@ function kr8_wpsearch($form) {
         </p>
 		  
 		 <p>
-            <label for="<?php echo $this->get_field_id('instagram'); ?>"><?php _e('Instagram URL (e.g. via Instagrid.me):'); ?></label>
+            <label for="<?php echo $this->get_field_id('instagram'); ?>"><?php _e('Instagram URL:'); ?></label>
             <input type="text" name="<?php echo $this->get_field_name('instagram'); ?>" value="<?php echo $instagram; ?>" class="widefat" id="<?php echo $this->get_field_id('instagram'); ?>" />
         </p>
 
@@ -232,7 +243,13 @@ function kr8_wpsearch($form) {
             <label for="<?php echo $this->get_field_id('xing'); ?>"><?php _e('Xing URL:'); ?></label>
             <input type="text" name="<?php echo $this->get_field_name('xing'); ?>" value="<?php echo $xing; ?>" class="widefat" id="<?php echo $this->get_field_id('xing'); ?>" />
         </p>
+
+		<p>
+            <label for="<?php echo $this->get_field_id('tumblr'); ?>"><?php _e('Tumblr URL:'); ?></label>
+            <input type="text" name="<?php echo $this->get_field_name('tumblr'); ?>" value="<?php echo $xing; ?>" class="widefat" id="<?php echo $this->get_field_id('tumblr'); ?>" />
+        </p>
 		
+				
 		
 		<p>
             <label for="<?php echo $this->get_field_id('rss'); ?>"><?php _e('RSS-Feed URL:'); ?></label>

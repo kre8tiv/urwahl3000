@@ -50,6 +50,11 @@
 
 		<?php wp_head(); ?>
 		
+		<!--[if lt IE 9]>
+			<script src="<?php echo get_template_directory_uri(); ?>/lib/js/responsive.js"></script>
+		<![endif]-->
+		
+		
 		<?php if(is_single()): ?>
 			<script>
 			jQuery(document).ready(function($){

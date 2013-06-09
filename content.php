@@ -34,9 +34,12 @@
 								
 									<section class="entry-content clearfix"><?php the_content(); ?></section>
 								
+									<?php
+										if( has_tag() ) {?>
 									<footer class="article-footer">
-												<p class="tags"><?php the_tags('Stichworte: ', ', ', ''); ?></p>
+												<p class="tags"><?php the_tags('Schlagworte: ', ' ', ''); ?></p>
 									</footer> 
+									<?php }?>
 								</article> 
 					    
 					    <?php endif; ?>

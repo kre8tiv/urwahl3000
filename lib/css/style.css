@@ -282,12 +282,9 @@ h6 {font-size:1em;}
 	.single img.attachment-large.wp-post-image {width: 100%;height: auto;}
 	
 
-	p.wp-caption-text {font-size: 0.8em;font-family: 'OpenSansLight','OpenSansRegular', Arial, Helvetica Neue, Helvetica, Verdana, sans-serif;color: #0a321e;}
+	.wp-caption-text {font-size: 0.8em;font-family: 'OpenSansLight','OpenSansRegular', Arial, Helvetica Neue, Helvetica, Verdana, sans-serif;color: #0a321e;}
 
-		.home article.sticky {border: 1px solid #333;padding: 1em 1.5em;border: 1px solid #e2e2e2;background: #f7f7f7;background: -moz-linear-gradient(top,#f7f7f7 0%,#f1f1f1);background: -webkit-gradient(linear, left top, left bottom,from(#f7f7f7),to(#f1f1f1));}
-			.home #content .sticky p.byline {text-align: right;margin: 0;color: #888;}
-			.home #content .sticky img.wp-post-image {display: none;}
-			.home #content .sticky h1 {}		
+		.home article.sticky {padding: 2em!important;border-bottom: 0!important; margin: 0!important;background: #f7f7f7;background: -moz-linear-gradient(top,#f7f7f7 0%,#f1f1f1);background: -webkit-gradient(linear, left top, left bottom,from(#f7f7f7),to(#f1f1f1));}	
 		
 		.headerlist article {margin: 0;border-bottom: 1px solid #035b26;padding: 1em 0;}
 			.headerlist article h2, .headerlist article p {display: inline-block;}
@@ -324,6 +321,12 @@ h6 {font-size:1em;}
 	.sharewrap {margin: 0 2em 2em;border-top: 3px solid #e6e6e6;clear: both;}
 		#main .sharewrap p.calltoshare {font-size: 1em;float: left; padding: 1em 2em 0 0;margin: 0;font-family: 'OpenSansBold','OpenSansRegular', Arial, Helvetica Neue, Helvetica, Verdana, sans-serif;}
 		.sharewrap #socialshareprivacy{display: inline-block;}
+		
+		
+		.gallery {text-align: center; border-top: 3px solid #e6e6e6;border-bottom: 3px solid #e6e6e6;padding-top: 1em;margin-bottom: 1em;}
+			.gallery dl.gallery-item {display: inline-block;margin: 0 0.5em 1em 0.5em;vertical-align: top; }
+			.gallery dt {}
+
 
 /******************************************************************
 09. PAGE NAVI STYLES
@@ -389,16 +392,49 @@ h6 {font-size:1em;}
   h3.widgettitle {margin-bottom: 0.5em;color: #0a321e;}
 .widget {margin: 0 0 2em 0;padding: 1em;background: #e6e6e6;}
 	/*Twitter */
-		.widget.widget_twitter-tracker {padding: 1em;border: 1px solid #0f6994;box-shadow:5px 5px 10px rgba(0,0,0,0.2),0 1px 0 #91d8f9 inset;color: #fff;font-size: 0.9em;		}
-		.widget.widget_twitter-tracker h3 {color: #0f6994;}
-			.widget.widget_twitter-tracker {background: #45bef7;filter: progid: DXImageTransform.Microsoft.gradient(startColorstr = '#45bef7', endColorstr = '#24a8e7'); -ms-filter: "progid: DXImageTransform.Microsoft.gradient(startColorstr = '#45bef7', endColorstr = '#24a8e7')";background-image: -moz-linear-gradient(top, #45bef7, #24a8e7);background-image: -ms-linear-gradient(top, #45bef7, #24a8e7);background-image: -o-linear-gradient(top, #45bef7, #24a8e7);background-image: -webkit-gradient(linear, center top, center bottom, from(#45bef7), to(#24a8e7));background-image: -webkit-linear-gradient(top, #45bef7, #24a8e7);background-image: linear-gradient(top, #45bef7, #24a8e7); }
-			.widget.widget_twitter-tracker a {color: #0f6994;}
-			.widget.widget_twitter-tracker a.tweet-link {font-size: 0.6em;margin: 0 0 0 40px;background: #0f6994;color: #36b4ef;padding: 0.3em 0.5em;border-radius: 1em;}
-			.widget.widget_twitter-tracker img {float: left; margin: 5px 0 0.5em 0;width: 30px; height: auto;
-			}
-			.widget.widget_twitter-tracker .msg {margin: 0 0 0 40px;}
+		.widget.widget_twitter-tracker, .widget_twitter-profile-tracker {padding: 1em;border: 1px solid #0f6994;box-shadow:5px 5px 10px rgba(0,0,0,0.2),0 1px 0 #91d8f9 inset;color: #fff;font-size: 0.9em;		}
+		.widget.widget_twitter-tracker h3, .widget_twitter-profile-tracker h3 {color: #0f6994;}
+			.widget.widget_twitter-tracker, .widget_twitter-profile-tracker  {background: #45bef7;filter: progid: DXImageTransform.Microsoft.gradient(startColorstr = '#45bef7', endColorstr = '#24a8e7'); -ms-filter: "progid: DXImageTransform.Microsoft.gradient(startColorstr = '#45bef7', endColorstr = '#24a8e7')";background-image: -moz-linear-gradient(top, #45bef7, #24a8e7);background-image: -ms-linear-gradient(top, #45bef7, #24a8e7);background-image: -o-linear-gradient(top, #45bef7, #24a8e7);background-image: -webkit-gradient(linear, center top, center bottom, from(#45bef7), to(#24a8e7));background-image: -webkit-linear-gradient(top, #45bef7, #24a8e7);background-image: linear-gradient(top, #45bef7, #24a8e7); }
+			.widget.widget_twitter-tracker a, .widget_twitter-profile-tracker a {color: #0f6994;}
+			.widget.widget_twitter-tracker a.tweet-link, .widget_twitter-profile-tracker a.tweet-link {font-size: 0.6em;margin: 0 0 0 40px;background: #0f6994;color: #36b4ef;padding: 0.3em 0.5em;border-radius: 1em;}
+			.widget.widget_twitter-tracker img, .widget_twitter-profile-tracker img {float: left; margin: 5px 0 0.5em 0;width: 30px; height: auto;}
+			.widget.widget_twitter-tracker .msg, .widget_twitter-profile-tracker .msg {margin: 0 0 0 40px;}
 
 
+	/*Social Media */
+		.widget_kr8_socialmedia {padding: 0!important;background: transparent!important;box-shadow: 0 0 0 !important;}
+			.widget_kr8_socialmedia h3.widgettitle {}
+			.widget_kr8_socialmedia li {display: inline-block;margin: 0 0.5em 0.5em 0!important; padding: 0!important;}
+				.widget_kr8_socialmedia li a {display: block;background: url(../images/widget_social.png) 2px 3px no-repeat; height: 40px; width: 40px;background-color: #0a321e;text-indent: -9999px;}
+					.widget_kr8_socialmedia li a.twitter:hover {background-color: #31ccf0;}
+					.widget_kr8_socialmedia li a.facebook {background-position: -33px 3px;}
+					.widget_kr8_socialmedia li a.facebook:hover {background-color: #3b5998;}
+					.widget_kr8_socialmedia li a.googleplus {background-position: -66px 3px;}
+					.widget_kr8_socialmedia li a.googleplus:hover {background-color: #dd4e51;}
+					.widget_kr8_socialmedia li a.flickr {background-position: -108px 3px;}
+					.widget_kr8_socialmedia li a.flickr:hover {background-color: #fd3a93;}
+					.widget_kr8_socialmedia li a.instagram {background-position: -143px 3px;}
+					.widget_kr8_socialmedia li a.instagram:hover {background-color: #407291;}
+					.widget_kr8_socialmedia li a.youtube {background-position: -187px 3px;}
+					.widget_kr8_socialmedia li a.youtube:hover {background-color: #b1263a;}
+					.widget_kr8_socialmedia li a.vimeo {background-position: -223px 3px;}
+					.widget_kr8_socialmedia li a.vimeo:hover {background-color: #28c5ee;}
+					.widget_kr8_socialmedia li a.pinterest {background-position: -257px 3px;}
+					.widget_kr8_socialmedia li a.pinterest:hover {background-color: #d7373d;}
+					.widget_kr8_socialmedia li a.soundcloud {background-position: -292px 3px;}
+					.widget_kr8_socialmedia li a.soundcloud:hover {background-color: #fa3846;}
+					.widget_kr8_socialmedia li a.foursquare {background-position: -330px 3px;}
+					.widget_kr8_socialmedia li a.foursquare:hover {background-color: #5bc0e6;}
+					.widget_kr8_socialmedia li a.xing {background-position: -372px 3px;}
+					.widget_kr8_socialmedia li a.xing:hover {background-color: #074f4f;}
+					.widget_kr8_socialmedia li a.tumblr {background-position: -443px 3px;}
+					.widget_kr8_socialmedia li a.tumblr:hover {background-color: #2a455b;}
+					.widget_kr8_socialmedia li a.rss {background-position: -476px 3px;}
+					.widget_kr8_socialmedia li a.rss:hover {background-color: #fb9a61;}
+					.widget_kr8_socialmedia li a.rsscomments {background-position: -512px 3px;}
+					.widget_kr8_socialmedia li a.rsscomments:hover {background-color: #fb6c55;}
+
+					
 /*********************
 13. FOOTER STYLES
 *********************/
@@ -561,17 +597,16 @@ h6 {font-size:1em;}
   			.archive-title p {margin: 0!important;}
   			h1.archive-title span {font-size: 0.5em;color: #5acb21;}
   	
-  	a.liinternal {display: block; text-transform: lowercase;margin-top: 1em;font-size: 1em;font-family: 'OpenSansBold','OpenSansRegular', Helvetica Neue, Helvetica, Verdana, Arial, sans-serif;font-weight: normal;}
-  	
+ 
   	
   	#commentform li {width: 30%;float: left;margin: 0 5% 0 0; }
   		#commentform li:last-of-type {margin: 0; }
   		
 
 
-			.home article.sticky {margin: 2em 0 1em 2em;}
-				.home #content .sticky img.wp-post-image {display: block;position:absolute;border-radius: 50%;margin: -2.7em 0 0 -3.7em;box-shadow: 0px 3px 1em rgba(0,0,0,0.1);}
-				.home #content .sticky h1 {margin-top: 2.4em;}
+			.home article.sticky {}
+				.home #content .sticky img.wp-post-image {}
+				.home #content .sticky h1 {}
   		
   		
   	.archive #main article, .search-results #main article, .blog #main article { border-bottom: 2px solid #e6e6e6;padding: 0 0 2em;margin: 2em;}

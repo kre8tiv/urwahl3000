@@ -281,7 +281,8 @@ function kr8_nav_portal() {
         'after' => '',                                  // after the menu
         'link_before' => '',                            // before each link
         'link_after' => '',                             // after each link
-        'depth' => 1,                                   // limit the depth of the nav  
+        'depth' => 1,
+        'fallback_cb' => 'kr8_nav_portal_fallback'                                   // limit the depth of the nav  
 	));
 } /* end kr8 footer link */
 
@@ -305,9 +306,16 @@ function kr8_nav_footer_fallback() {
 }
 
 // this is the fallback for portal menu
-function kr8_nav_portal_fallback() {
-	/* you can put a default here if you like */
-}
+function kr8_nav_portal_fallback() { ?>
+	<nav role="navigation" id="nav-portal"><h6 class="unsichtbar">Links zu GRÜNEN Webseiten:</h6>
+		<ul id="menu-portalmenu" class="navigation">
+			<li><a href="http://gruene.de">Bundesverband</a></li>
+			<li><a href="http://gruene-fraktion.de">Bundestagsfraktion</a></li>
+			<li><a href="http://gruene-jugend.de">Grüne Jugend</a></li>
+			<li><a href="http://boell.de">Böll Stiftung</a></li>
+		</ul>
+	</nav>
+<? }
 
 
 //Adds First and Last - Class to Menu
@@ -533,24 +541,6 @@ IMAGES
 
 
 
-/**
- * Attach a class to linked images' parent anchors
- * e.g. a img => a.img img
- */
-function give_linked_images_class($html, $id, $caption, $title, $align, $url, $size, $alt = '' ){
-  $classes = 'fancybox'; // separated by spaces, e.g. 'img image-link'
-
-  // check if there are already classes assigned to the anchor
-  if ( preg_match('/<a.*? class=".*?">/', $html) ) {
-    $html = preg_replace('/(<a.*? class=".*?)(".*?>)/', '$1 ' . $classes . '$2', $html);
-  } else {
-    $html = preg_replace('/(<a.*?)>/', '$1 class="' . $classes . '" >', $html);
-  }
-  return $html;
-}
-add_filter('image_send_to_editor','give_linked_images_class',10,8);
-
-
 
 // remove the p from around imgs (http://css-tricks.com/snippets/wordpress/remove-paragraph-tags-from-around-images/)
 function kr8_filter_ptags_on_images($content){
@@ -562,13 +552,19 @@ function kr8_filter_ptags_on_images($content){
 add_filter('the_content', 'addlightboxrel_replace');
 function addlightboxrel_replace ($content)
 {	global $post;
+	$postid = get_the_ID();
 	$pattern = "/<a(.*?)href=('|\")(.*?).(bmp|gif|jpeg|jpg|png)('|\")(.*?)>/i";
-  	$replacement = '<a$1class="fancybox" href=$2$3.$4$5$6</a>';
+  	$replacement = '<a$1class="fancybox" rel="gallery'. $postid .'" href=$2$3.$4$5$6>';
     $content = preg_replace($pattern, $replacement, $content);
     return $content;
 }
 
-
+function add_class_attachment_link($html){
+    $postid = get_the_ID();
+    $html = str_replace('<a','<a class="fancybox" rel="gallery'. $postid .'"',$html);
+    return $html;
+}
+add_filter('wp_get_attachment_link','add_class_attachment_link',10,1);
 
 /* 10px Image-Margins entfernen */
 class fixImageMargins {
@@ -660,7 +656,8 @@ function nav_breadcrumb() {
     } elseif ( is_attachment() ) {
       $parent = get_post($post->post_parent);
       $cat = get_the_category($parent->ID); $cat = $cat[0];
-      echo get_category_parents($cat, TRUE, ' ' . $delimiter . ' ');
+      //echo get_category_parents($cat, TRUE, ' ' . $delimiter . ' ');
+      
       echo '<a href="' . get_permalink($parent) . '">' . $parent->post_title . '</a> ' . $delimiter . ' ';
       echo $before . get_the_title() . $after;
  
