@@ -195,7 +195,7 @@ a:visited {color:#023b19;}
 05. H1, H2, H3, H4, H5 STYLES
 ******************************************************************/
 
-h1,h2,h3,h4,h5,h6 {font-family: 'OpenSansBold','OpenSansRegular', Helvetica Neue, Helvetica, Verdana, Arial, sans-serif;font-weight: normal;color: #0a350a;}
+h1,h2,h3,h4,h5,h6 {font-family: 'OpenSansBold','OpenSansRegular', Helvetica Neue, Helvetica, Verdana, Arial, sans-serif;font-weight: normal;color: #0a350a;text-align: left;}
 h1 {font-size:2.4em;}
 h1.page-title {margin-bottom: 0.7em;}
 h2 {font-size:1.6em;}
