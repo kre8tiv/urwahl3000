@@ -6,8 +6,8 @@ START FUNCTIONS
 
 add_action('after_setup_theme','kr8_startup', 15);
 // Hook into the 'after_setup_theme' action
-add_action( 'after_setup_theme', 'kr8_theme_support' );
-add_action( 'after_setup_theme', 'custom_theme_features' );
+add_action( 'after_setup_theme', 'kr8_theme_support',16 );
+add_action( 'after_setup_theme', 'custom_theme_features',17 );
 
 function kr8_startup() {
 
