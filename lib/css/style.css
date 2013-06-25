@@ -519,7 +519,7 @@ h6 {font-size:1em;}
 	  #header .hgroup {display: inline-block;text-align: right;width: 79%;z-index: 2;position: relative;  }
 	  	#header #logo {display: inline-block;width: 20%;z-index: 2;position: relative;margin-top: 0.5em; }
 	  	#header a {color: #fff;text-shadow: 1px 1px 5px rgba(0,0,0,0.3);}
-	  	#header h1, #header h2 {padding: 0 0 0 5px;margin: 0;line-height:1em;display: block;}
+	  	#header h1, #header h2 {padding: 0 0 0 5px;margin: 0;line-height:1em;display: block;text-align: right;}
 	  	#header h2 {font-size: 1em;color: #ffe000; margin: 5px 0 0 0;font-family: 'OpenSansLight','OpenSansRegular', Arial, Helvetica Neue, Helvetica, Verdana, sans-serif;text-align: right; }
 	  	
 	  	
