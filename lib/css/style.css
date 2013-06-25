@@ -350,8 +350,7 @@ h6 {font-size:1em;}
 			.commentlist article img.avatar {margin: 0 0.5em 0 0;}
 			.commentlist article .vcard {padding: 0 0 0 0;font-size: 0.8em;margin-bottom: 0.7em;font-family: 'OpenSansBold','OpenSansRegular', Arial, Helvetica Neue, Helvetica, Verdana, sans-serif;color:#0a321e;}
 				.commentlist article .vcard a {color: #5dae59;}
-		.commentlist .comment-reply-link {font-size: 0.6em;padding: 0.2em 0.8em;border-radius: 1em;display: inline-block;text-align: right;color: #fff;background: #5dae59;float: right;
-		}
+		.commentlist .comment-reply-link {font-size: 0.6em;padding: 0.2em 0.8em;border-radius: 1em;display: inline-block;text-align: right;color: #fff;background: #5dae59;float: right;}
 		.commentlist article:hover .comment-reply-link {visibility: visible;}
 		
 		
@@ -433,6 +432,9 @@ h6 {font-size:1em;}
 					.widget_kr8_socialmedia li a.rss:hover {background-color: #fb9a61;}
 					.widget_kr8_socialmedia li a.rsscomments {background-position: -512px 3px;}
 					.widget_kr8_socialmedia li a.rsscomments:hover {background-color: #fb6c55;}
+					
+					
+	.widget_sp_image img {width:100%!important;height:auto!important;box-shadow:5px 5px 10px rgba(0,0,0,0.2);}
 
 					
 /*********************
