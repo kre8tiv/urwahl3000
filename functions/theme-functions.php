@@ -603,7 +603,7 @@ Breadcrumb
 *********************/
 function nav_breadcrumb() {
  
-  $delimiter = '❭';
+  $delimiter = '&rang;';
   $home = 'Startseite'; 
   $before = '<span class="current">'; 
   $after = '</span>'; 
