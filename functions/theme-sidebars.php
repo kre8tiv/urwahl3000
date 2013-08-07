@@ -69,7 +69,6 @@ function kr8_wpsearch($form) {
 		$soundcloud = $instance['soundcloud'];
 		$foursquare = $instance['foursquare'];
 		$xing = $instance['xing'];
-		$wordpress = $instance['wordpress'];
 		$tumblr = $instance['tumblr'];
 		$rss = $instance['rss'];
 		$rsscomments = $instance['rsscomments'];
