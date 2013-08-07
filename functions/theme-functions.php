@@ -126,6 +126,14 @@ function kr8_scripts_and_styles() {
 
     //adding scripts file in the footer
     wp_register_script( 'kr8-js', get_template_directory_uri() . '/lib/js/scripts.js', array( 'jquery' ), '', true );
+    
+        // register main stylesheet
+    wp_register_style( 'kr8-stylesheet', get_template_directory_uri() . '/lib/css/style.css', array(), '', 'all' );
+    wp_register_style( 'kr8-fancycss', get_template_directory_uri() . '/lib/js/libs/fancybox/jquery.fancybox.css', array(), '', 'all' );
+    wp_register_style( 'kr8-fancybuttoncss', get_template_directory_uri() . '/lib/js/libs/fancybox/jquery.fancybox-buttons.css', array(), '', 'all' );
+
+    // ie-only style sheet
+    wp_register_style( 'kr8-ie-only', get_template_directory_uri() . '/lib/css/ie.css', array(), '' );
 
     // enqueue styles and scripts
     wp_enqueue_script( 'kr8-modernizr' );
@@ -145,13 +153,7 @@ function kr8_scripts_and_styles() {
     wp_enqueue_script( 'kr8-fancybuttons' );
     
     
-    // register main stylesheet
-    wp_register_style( 'kr8-stylesheet', get_template_directory_uri() . '/lib/css/style.css', array(), '', 'all' );
-    wp_register_style( 'kr8-fancycss', get_template_directory_uri() . '/lib/js/libs/fancybox/jquery.fancybox.css', array(), '', 'all' );
-    wp_register_style( 'kr8-fancybuttoncss', get_template_directory_uri() . '/lib/js/libs/fancybox/jquery.fancybox-buttons.css', array(), '', 'all' );
 
-    // ie-only style sheet
-    wp_register_style( 'kr8-ie-only', get_template_directory_uri() . '/lib/css/ie.css', array(), '' );
     
 
   }
