@@ -95,7 +95,7 @@
 					<nav role="navigation" id="nav-portal"><h6 class="unsichtbar">Links ähnlichen Websites:</h6>
 						<?php kr8_nav_portal(); ?>
 					</nav>
-			<?php include (TEMPLATEPATH . '/searchform.php'); ?>
+			<?php get_search_form(); ?>
 			</div>
 		</section>
 			
@@ -119,7 +119,7 @@
 							<h1 id="site-title"><span><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></span></h1>
 							<h2 id="site-description"><?php bloginfo( 'description' ); ?></h2>
 						</div>						
-						<?php include (TEMPLATEPATH . '/searchform.php'); ?>
+						<?php get_search_form(); ?>
 				</header>
 
 
