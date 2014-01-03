@@ -8,7 +8,8 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title><?php wp_title(''); ?> - <?php bloginfo('name'); ?></title>
+		<title><?php wp_title('|',true,'right'); ?><?php bloginfo('name'); ?></title>
+
 
 		<!-- Google Chrome Frame for IE -->
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -106,7 +107,7 @@
 						
 						<?php if (get_header_image() != '') {	?>
 							<header id="header" class="pos widthimg" role="banner">
-							<img src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" alt="" class="headerimg"/><? 
+							<img src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" alt="" class="headerimg"/><?php 
 						
 						} else {?>
 							<header id="header" class="pos" role="banner">

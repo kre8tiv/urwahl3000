@@ -31,7 +31,7 @@ function kr8_startup() {
     add_action('after_setup_theme','kr8_theme_support');
     // adding sidebars to Wordpress (these are created in functions.php)
     add_action( 'widgets_init', 'kr8_register_sidebars' );
-    // adding the kr8 search form (created in functions.php)
+    // adding the kr8 search form (created in theme-sidebars.php)
     add_filter( 'get_search_form', 'kr8_wpsearch' );
 
     // cleaning up random code around images
@@ -320,7 +320,7 @@ function kr8_nav_portal_fallback() { ?>
 			<li><a href="http://boell.de">Böll Stiftung</a></li>
 		</ul>
 	</nav>
-<? }
+<?php }
 
 
 //Adds First and Last - Class to Menu
@@ -348,13 +348,8 @@ function custom_theme_features()  {
 		'admin-head-callback'    => '',
 		'admin-preview-callback' => '',
 	);
-	if ( version_compare( $wp_version, '3.4', '>=' ) ) :
-		add_theme_support( 'custom-background', $background_args );
-	else :
-		add_custom_background();
-	endif;
-	
-	
+	add_theme_support( 'custom-background', $background_args );
+		
 	
 	
 
@@ -372,11 +367,8 @@ function custom_theme_features()  {
 		'wp-head-callback'       => 'kr8_header_style',
 
 	);
-	if ( version_compare( $wp_version, '3.4', '>=' ) ) :
-		add_theme_support( 'custom-header', $header_args );
-	else :
-		add_custom_image_header();
-	endif;
+	add_theme_support( 'custom-header', $header_args );
+
 }
 
 
@@ -618,7 +610,7 @@ function nav_breadcrumb() {
     echo '<div id="breadcrumb">';
  
     global $post;
-    $homeLink = get_bloginfo('url');
+    $homeLink = home_url();
     echo '<a href="' . $homeLink . '">' . $home . '</a> ' . $delimiter . ' ';
  
     if ( is_category() ) {

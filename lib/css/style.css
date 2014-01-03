@@ -270,6 +270,8 @@ h6 {font-size:1em;}
 	
 	div.wp-caption {max-width: 100%;}
 	
+	.bypostauthor{}
+	
 	#content {padding: 0 1em;}
 	#content p {line-height: 1.5em;margin: 0 0 1.2em 0;}
 	#main article footer p, p.byline {font-size: 0.8em; color: #8c8c8c;margin: 0 0 0.5em;}
@@ -282,7 +284,7 @@ h6 {font-size:1em;}
 	.single img.attachment-large.wp-post-image {width: 100%;height: auto;}
 	
 
-	.wp-caption-text {font-size: 0.8em;font-family: 'OpenSansLight','OpenSansRegular', Arial, Helvetica Neue, Helvetica, Verdana, sans-serif;color: #0a321e;}
+	.wp-caption-text, .gallery-caption {font-size: 0.8em;font-family: 'OpenSansLight','OpenSansRegular', Arial, Helvetica Neue, Helvetica, Verdana, sans-serif;color: #0a321e;}
 
 		.home article.sticky {padding: 2em!important;border-bottom: 0!important; margin: 0!important;background: #f7f7f7;background: -moz-linear-gradient(top,#f7f7f7 0%,#f1f1f1);background: -webkit-gradient(linear, left top, left bottom,from(#f7f7f7),to(#f1f1f1));}	
 		
@@ -363,7 +365,7 @@ h6 {font-size:1em;}
 	
 	
 	#respond {background: #e6e6e6;padding: 2em;}
-		#comment-form-title {color: #0a321e;}
+		#reply-title {color: #0a321e;}
 		#commentform ul {margin: 0;}
 		#commentform li {list-style-type: none;}
 		#commentform  li:before{content: "";}

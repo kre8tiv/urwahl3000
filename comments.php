@@ -63,65 +63,22 @@ The comments page
 
 <?php if ( comments_open() ) : ?>
 <div id='tab2'>
-<section id="respond" class="respond-form">
+<section id="respondbox" class="respond-form">
 
-	<h3 id="comment-form-title" class="h2"><?php comment_form_title( __('Artikel kommentieren', 'kr8theme'), __('Dein Kommentar zu %s', 'kr8theme' )); ?></h3>
-
-	<div id="cancel-comment-reply">
-		<p class="small"><?php cancel_comment_reply_link(); ?></p>
-	</div>
-
-	<?php if ( get_option('comment_registration') && !is_user_logged_in() ) : ?>
-  	<div class="alert help">
-  		<p><?php printf( __('You must be %1$slogged in%2$s to post a comment.', 'kr8theme'), '<a href="<?php echo wp_login_url( get_permalink() ); ?>">', '</a>' ); ?></p>
-  	</div>
-	<?php else : ?>
-
-	<form action="<?php echo get_option('siteurl'); ?>/wp-comments-post.php" method="post" id="commentform">
-
-	<?php if ( is_user_logged_in() ) : ?>
-
-	<p class="comments-logged-in-as"><?php _e("Logged in as", "kr8theme"); ?> <a href="<?php echo get_option('siteurl'); ?>/wp-admin/profile.php"><?php echo $user_identity; ?></a>. <a href="<?php echo wp_logout_url(get_permalink()); ?>" title="<?php _e("Log out of this account", "kr8theme"); ?>"><?php _e("Log out", "kr8theme"); ?> <?php _e("&raquo;", "kr8theme"); ?></a></p>
-
-	<?php else : ?>
-	
-	<ul id="comment-form-elements" class="clearfix">
+<?php
+		$comments_args = array(
+			'comment_notes_before' =>__( ''),
+			'title_reply'=>__( 'Artikel kommentieren', 'kr8theme'),
+			'comment_notes_after' =>__( '<p class="required-info"><span class="req">*</span> Pflichtfeld', 'kr8theme'),
+			'comment_field'  => '<p class="comment-form-comment"><label for="comment">' . _x( 'Dein Kommentar<span class="req">*</span>', 'kr8theme' ) . 			'</label><br/><textarea id="comment" name="comment" tabindex="4" rows="8" placeholder="Dein Kommentar hier..."></textarea></p>',
+			'label_submit'	=> __( 'Abschicken', 'kr8theme' )
+			
+		);
 		
-		<li>
-		  <label for="author"><?php _e("Name", "kr8theme"); ?><span class="req"><?php if ($req) _e("*"); ?></span></label>
-		  <input type="text" name="author" id="author" value="<?php echo esc_attr($comment_author); ?>" placeholder="<?php _e('Name', 'kr8theme'); ?>" tabindex="1" <?php if ($req) echo "aria-required='true'"; ?> />
-		</li>
+		comment_form($comments_args);
 		
-		<li>
-		  <label for="email"><?php _e("Mail", "kr8theme"); ?><span class="req"><?php if ($req) _e("*"); ?></span> <small><?php _e("(Wird nicht veröffentlicht)", "kr8theme"); ?></small></label>
-		  <input type="email" name="email" id="email" value="<?php echo esc_attr($comment_author_email); ?>" placeholder="<?php _e('E-Mail', 'kr8theme'); ?>" tabindex="2" <?php if ($req) echo "aria-required='true'"; ?> />
-		  
-		</li>
-		
-		<li>
-		  <label for="url"><?php _e("Website", "kr8theme"); ?></label>
-		  <input type="url" name="url" id="url" value="<?php echo esc_attr($comment_author_url); ?>" placeholder="<?php _e('Website', 'kr8theme'); ?>" tabindex="3" />
-		</li>
-		
-	</ul>
+	?>
 
-	<?php endif; ?>
-	
-	<p><textarea name="comment" id="comment" placeholder="<?php _e('Dein Kommentar hier...', 'kr8theme'); ?>" tabindex="4"></textarea></p>
-	
-	<p>
-	  <input name="submit" type="submit" id="submit" class="button" tabindex="5" value="<?php _e('Abschicken', 'kr8theme'); ?>" />
-	  <?php comment_id_fields(); ?>
-	</p>
-	
-	
-	
-	
-	<?php do_action('comment_form', $post->ID); ?>
-	<p class="required-info">* Pflichtfeld</p>
-	</form>
-	
-	<?php endif; // If registration required and not logged in ?>
 </section>
 </div>
 

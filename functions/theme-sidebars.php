@@ -17,7 +17,7 @@ if (!function_exists('kr8_register_sidebars')) {
 			));
 			
 			register_sidebar(array(
-				'name' => 'Fußleiste',
+				'name' => 'Fussleiste',
 				'description'   => 'Platz für Widgets in der Fußleiste.',
 				'before_widget' => "\n\t\t" . '<li id="%1$s" class="widget %2$s">',
 				'after_widget' => '</li>',
@@ -37,11 +37,11 @@ if (!function_exists('kr8_register_sidebars')) {
 /************* SEARCH FORM LAYOUT *****************/
 
 function kr8_wpsearch($form) {
-    $form = '<form role="search" method="get" id="searchform" action="' . home_url( '/' ) . '" >
-    <label class="screen-reader-text" for="s">' . __('Suche nach:', 'kr8theme') . '</label>
-    <input type="text" value="' . get_search_query() . '" name="s" id="s" placeholder="'.esc_attr__('Durchsuche die Seite...','kr8theme').'" />
-    <input type="submit" id="searchsubmit" value="'. esc_attr__('Suchen') .'" />
-    </form>';
+    $form = '<section class="suche"><h6 class="unsichtbar">Suchformular</h6><form role="search" method="get" class="searchform" action="' . home_url( '/' ) . '" >
+    <label for="search">Der Suchbegriff nach dem die Website durchsucht werden soll.</label>
+    <input type="text" name="s" id="search" value="' . get_search_query() . '" placeholder="Suchbegriff eingeben ..." />
+    <input name="submitsearch" type="submit" value="Suchen">
+    </form></section>';
     return $form;
 } 
 
