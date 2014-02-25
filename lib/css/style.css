@@ -303,7 +303,8 @@ h6 {font-size:1em;}
 	
 		
 	article ul li {list-style-type: none;counter-increment: list;position: relative;margin: 0 0 1em 0;}
-		article ul li:before {content: "✲";position: absolute;left: -2.5em;width: 2em;text-align: right;color: #5dae59;}	
+		article ul li:before {content: "✲";position: absolute;left: -2.5em;width: 2em;text-align: right;color: #5dae59;}
+		#comment-nav ul li:before{content: "";}	
 	article ol {counter-reset:li;}
 		article ol > li {list-style-type: none;counter-increment: list;position: relative;margin: 0 0 1em 0;}
 			article ol > li:before {content:counter(li)'.'; counter-increment:li; position: absolute;left: -2.5em;width: 2em;text-align: right;color: #5dae59;font-family: 'OpenSansLight','OpenSansRegular', Arial, Helvetica Neue, Helvetica, Verdana, sans-serif;}	
@@ -328,6 +329,36 @@ h6 {font-size:1em;}
 		.gallery {text-align: center; border-top: 3px solid #e6e6e6;border-bottom: 3px solid #e6e6e6;padding-top: 1em;margin-bottom: 1em;}
 			.gallery dl.gallery-item {display: inline-block;margin: 0 0.5em 1em 0.5em;vertical-align: top; }
 			.gallery dt {}
+
+
+
+  		
+		  	/*Townhall */
+		  		
+		  		.thstream {margin: -2em -2em 0; background: #000;}
+		  		iframe.youtube {width: 100%!important;max-height: 476px;}
+		  		
+		  		#townhall_ask {background: #e6e6e6;margin: 1em -2em 2em;max-width: 100%; padding: 0.5em 2em;}
+		  			#townhall_ask .comment_inserted {font-family: 'OpenSansBold','OpenSansRegular', Helvetica Neue, Helvetica, Verdana, Arial, sans-serif;font-weight: normal;}
+		  			
+		  		#townhall_answers {}
+		  			.entry-content ul#townhall_answers li {background: transparent;padding: 0;margin: 0;}
+		  				.entry-content ul#townhall_answers li .comment-body {background: #e6e6e6;padding: 2em;color: #555;margin-bottom: 2em;}
+		  				.entry-content ul#townhall_answers li.parent .comment-body {background: #0a321e;color: #fff;margin: 0;}
+		  					.entry-content ul#townhall_answers li .comment-body .vcard {font-family: 'OpenSansBold','OpenSansRegular', Helvetica Neue, Helvetica, Verdana, Arial, sans-serif; color: #5dae59;font-weight: normal;}
+		  						.entry-content ul#townhall_answers li .comment-body .vcard cite {font-style: normal;}
+		  				.entry-content ul#townhall_answers li ul.children {padding: 0; margin: 0 0 3em 3em;}
+		  				.entry-content ul#townhall_answers li .children .comment-body {background: transparent;border: 1px solid #0a321e;border-top: 0;color: #0a321e;}
+		  			#townhall_answers {}
+		  			
+		  			#thclock {background: #e1007a; text-align: center;color: #fff;padding: 1em 0;}
+		  				#thclock .timebox {width: 21%;display: block;float: left;}
+		  				#thclock .timebox .tage {font-size: 5em;font-family: 'OpenSansBold','OpenSansRegular', Helvetica Neue, Helvetica, Verdana, Arial, sans-serif;line-height: 1em;}
+		  				#thclock .timebox .timeunit {clear: both;display: block;font-size: 0.8em;}
+		  				#thclock .colon {display: block;float: left; height: 100%;font-size: 5.5em;line-height: 1em;padding-left: 3px;font-family: 'OpenSansBold','OpenSansRegular', Helvetica Neue, Helvetica, Verdana, Arial, sans-serif;}
+		  			.tleft {display: block;width: 20%;margin: 0 auto; text-align: center;background: #e1007a;color: #fff;font-family: 'OpenSansBold','OpenSansRegular', Helvetica Neue, Helvetica, Verdana, Arial, sans-serif;margin-top: 1em;}
+		
+		  
 
 
 /******************************************************************
@@ -395,7 +426,7 @@ h6 {font-size:1em;}
 	/*Twitter */
 		.widget.widget_twitter-tracker, .widget_twitter-profile-tracker {padding: 1em;border: 1px solid #0f6994;box-shadow:5px 5px 10px rgba(0,0,0,0.2),0 1px 0 #91d8f9 inset;color: #fff;font-size: 0.9em;		}
 		.widget.widget_twitter-tracker h3, .widget_twitter-profile-tracker h3 {color: #0f6994;}
-			.widget.widget_twitter-tracker, .widget_twitter-profile-tracker  {background: #45bef7;filter: progid: DXImageTransform.Microsoft.gradient(startColorstr = '#45bef7', endColorstr = '#24a8e7'); -ms-filter: "progid: DXImageTransform.Microsoft.gradient(startColorstr = '#45bef7', endColorstr = '#24a8e7')";background-image: -moz-linear-gradient(top, #45bef7, #24a8e7);background-image: -ms-linear-gradient(top, #45bef7, #24a8e7);background-image: -o-linear-gradient(top, #45bef7, #24a8e7);background-image: -webkit-gradient(linear, center top, center bottom, from(#45bef7), to(#24a8e7));background-image: -webkit-linear-gradient(top, #45bef7, #24a8e7);background-image: linear-gradient(top, #45bef7, #24a8e7); }
+			.widget.widget_twitter-tracker, .widget.widget_twitter-profile-tracker  {background: #45bef7;filter: progid: DXImageTransform.Microsoft.gradient(startColorstr = '#45bef7', endColorstr = '#24a8e7'); -ms-filter: "progid: DXImageTransform.Microsoft.gradient(startColorstr = '#45bef7', endColorstr = '#24a8e7')";background-image: -moz-linear-gradient(top, #45bef7, #24a8e7);background-image: -ms-linear-gradient(top, #45bef7, #24a8e7);background-image: -o-linear-gradient(top, #45bef7, #24a8e7);background-image: -webkit-gradient(linear, center top, center bottom, from(#45bef7), to(#24a8e7));background-image: -webkit-linear-gradient(top, #45bef7, #24a8e7);background-image: linear-gradient(top, #45bef7, #24a8e7); }
 			.widget.widget_twitter-tracker a, .widget_twitter-profile-tracker a {color: #0f6994;}
 			.widget.widget_twitter-tracker a.tweet-link, .widget_twitter-profile-tracker a.tweet-link {font-size: 0.6em;margin: 0 0 0 40px;background: #0f6994;color: #36b4ef;padding: 0.3em 0.5em;border-radius: 1em;}
 			.widget.widget_twitter-tracker img, .widget_twitter-profile-tracker img {float: left; margin: 5px 0 0.5em 0;width: 30px; height: auto;}
@@ -437,7 +468,13 @@ h6 {font-size:1em;}
 					
 					
 	.widget_sp_image img {width:100%!important;height:auto!important;box-shadow:5px 5px 10px rgba(0,0,0,0.2);}
-
+	
+	.widget_search {background: transparent!important;box-shadow: 0 0 0!important;padding: 0!important;}
+		.widget_search label{display: none;}
+		.widget_search #search{padding: 1em 5%;width: 90%;border: 1px solid #0a321e;}
+			.widget_search #search:hover, .widget_search #search:focus {border-color: #5dae59;}
+		.widget_search input[type=submit]{background: #0a321e; color: #fff;font-family: 'OpenSansBold','OpenSansRegular', Arial, Helvetica Neue, Helvetica, Verdana, sans-serif;padding: 0.5em 1em;margin-top: 1em;}
+			.widget_search input[type=submit]:hover {background: #ffdc0a;color: #0a321e;}
 					
 /*********************
 13. FOOTER STYLES
@@ -620,7 +657,6 @@ h6 {font-size:1em;}
   		.blog .wp-post-image {margin-bottom: -1.5em;margin-top: 1em; }
   		
 
-  
   /*********************
   SIDEBARS & ASIDES
   *********************/
@@ -630,6 +666,7 @@ h6 {font-size:1em;}
   	.widget ul li {margin-bottom: 0.5em;/* deep nesting */}
   	.widget ul li ul {margin-top: 0.75em;padding-left: 1em;}
   	.widget.widget_sp_image {padding: 0;background: transparent!important;box-shadow: 0 0 0 !important;  }
+  	.widget_search #search, .widget_search input[type=submit]{box-shadow: 5px 5px 10px rgba(0,0,0,0.2);}
 
   /* recent-posts widget */
   /* archives widget */

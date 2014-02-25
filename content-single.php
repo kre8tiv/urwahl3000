@@ -22,7 +22,7 @@
 										
 										<section class="entry-content clearfix">											
 											<?php the_content(); ?>
-											<?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:', 'nilmini' ), 'after' => '</div>' ) ); ?>
+											<?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Seiten:', 'kr8' ), 'after' => '</div>' ) ); ?>
 										</section>
 										
 										<?php endif; ?>

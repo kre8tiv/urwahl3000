@@ -127,7 +127,7 @@
 					<nav role="navigation" class="pos" id="nav-main"><h6 class="unsichtbar">Hauptmenü:</h6>
 						<?php kr8_nav_main(); ?>
 					</nav>
-					<?php if (function_exists('nav_breadcrumb') && !is_home()) nav_breadcrumb(); ?>
+					<?php if (function_exists('nav_breadcrumb') ) nav_breadcrumb(); ?>
 				</section>
 
 			

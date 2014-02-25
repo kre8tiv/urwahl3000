@@ -605,7 +605,7 @@ function nav_breadcrumb() {
   $before = '<span class="current">'; 
   $after = '</span>'; 
  
-  if ( !is_home() && !is_front_page() || is_paged() ) {
+  if ( !is_front_page() || is_paged() ) {
  
     echo '<div id="breadcrumb">';
  
@@ -686,6 +686,8 @@ function nav_breadcrumb() {
  
     } elseif ( is_404() ) {
       echo $before . 'Fehler 404' . $after;
+    } elseif ( is_home() ) {
+      echo $before . 'Nachrichten' . $after;
     }
  
     if ( get_query_var('paged') ) {

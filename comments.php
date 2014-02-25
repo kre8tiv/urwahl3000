@@ -27,13 +27,6 @@ The comments page
 <?php if ( have_comments() ) : ?>
 <div id='tab1'>
 	
-
-	<nav id="comment-nav">
-		<ul class="clearfix">
-	  		<li><?php previous_comments_link() ?></li>
-	  		<li><?php next_comments_link() ?></li>
-	 	</ul>
-	</nav>
 	
 	<ol class="commentlist">
 		<?php wp_list_comments('type=comment&callback=kr8_comments'); ?>

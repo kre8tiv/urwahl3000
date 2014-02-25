@@ -48,15 +48,20 @@ function kr8_commentformfields($fields){
 	
 	    $fields['author'] = '<ul id="comment-form-elements" class="clearfix">
 	  			<li><label for="author">' . __('Name', 'kr8theme') . ( $req ? '<span class="req">*</span>' : '' ) . '</label>
-	  			<input type="text" name="author" id="author" value="' . esc_attr( $commenter['comment_author'] ) . '"placeholder="'. __('Name', 'kr8theme') .'" tabindex="1"' . $aria_req . ' /></li>';
+	  			<input type="text" name="author" id="author" value="' . esc_attr( $commenter['comment_author'] ) . '" placeholder="'. __('Name', 'kr8theme') .'" tabindex="1"' . $aria_req . ' /></li>';
 	  			
 	    $fields['email'] = '<li><label for="email">' . __('Mail', 'kr8theme') . ( $req ? '<span class="req">*</span>' : '' ) . ' <small>'. __('Wird nicht veröffentlicht', 'kr8theme') .'</small></label>
-	  			<input type="text" name="mail" id="mail" value="' . esc_attr( $commenter['comment_author_email'] ) . '"placeholder="'. __('Mail', 'kr8theme') .'" tabindex="2"' . $aria_req . ' /></li>';
+	  			<input type="text" name="email" id="email" value="' . esc_attr( $commenter['comment_author_email'] ) . '" placeholder="'. __('Mail', 'kr8theme') .'" tabindex="2"' . $aria_req . ' /></li>';
 	  			
 	    $fields['url'] = '<li><label for="url">' . __('Website', 'kr8theme') . '</label>
-	  			<input type="text" name="url" id="url" value="' . esc_attr( $commenter['comment_author_url'] ) . '"placeholder="'. __('Website', 'kr8theme') .'" tabindex="3" /></li></ul>';
+	  			<input type="text" name="url" id="url" value="' . esc_attr( $commenter['comment_author_url'] ) . '" placeholder="'. __('Website', 'kr8theme') .'" tabindex="3" /></li></ul>';
 	  			
-	    return $fields;
+	   
+	    
+			
+			 return $fields;
+	    
+	    
 }
 
 add_filter('comment_form_default_fields','kr8_commentformfields');
