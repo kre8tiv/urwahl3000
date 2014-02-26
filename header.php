@@ -26,6 +26,7 @@
 		<meta itemprop="og:type" content="article">
 		<meta itemprop="og:url" content="<?php the_permalink() ?>">
 		<meta property="og:description" content="<?php if ( is_single() ) { wp_title('-', true, 'right'); echo  strip_tags( get_the_excerpt() ); } elseif ( is_page() ) { wp_title('-', true, 'right'); echo strip_tags( get_the_excerpt() ); } else { bloginfo('description'); } ?>"/>
+		<?php if ( has_post_thumbnail() ){ $og_image = wp_get_attachment_image_src( get_post_thumbnail_id(), 'full'); echo '<meta property="og:image" content="'. $og_image[0].'">';} ?>
 		
 		<!-- basic meta-tags & seo-->
 

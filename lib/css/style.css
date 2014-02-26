@@ -344,6 +344,8 @@ h6 {font-size:1em;}
 		  		#townhall_answers {}
 		  			.entry-content ul#townhall_answers li {background: transparent;padding: 0;margin: 0;}
 		  				.entry-content ul#townhall_answers li .comment-body {background: #e6e6e6;padding: 2em;color: #555;margin-bottom: 2em;}
+		  				.entry-content ul#townhall_answers li.new_answer .comment-body {background: #ffdc0a;color: #0a321e; margin-bottom: 2em;}
+		  					.entry-content ul#townhall_answers li.new_answer.parent .comment-body {margin-bottom: 0;}
 		  				.entry-content ul#townhall_answers li.parent .comment-body {background: #0a321e;color: #fff;margin: 0;}
 		  					.entry-content ul#townhall_answers li .comment-body .vcard {font-family: 'OpenSansBold','OpenSansRegular', Helvetica Neue, Helvetica, Verdana, Arial, sans-serif; color: #5dae59;font-weight: normal;}
 		  						.entry-content ul#townhall_answers li .comment-body .vcard cite {font-style: normal;}
@@ -353,9 +355,9 @@ h6 {font-size:1em;}
 		  			
 		  			#thclock {background: #e1007a; text-align: center;color: #fff;padding: 1em 0;}
 		  				#thclock .timebox {width: 21%;display: block;float: left;}
-		  				#thclock .timebox .tage {font-size: 5em;font-family: 'OpenSansBold','OpenSansRegular', Helvetica Neue, Helvetica, Verdana, Arial, sans-serif;line-height: 1em;}
-		  				#thclock .timebox .timeunit {clear: both;display: block;font-size: 0.8em;}
-		  				#thclock .colon {display: block;float: left; height: 100%;font-size: 5.5em;line-height: 1em;padding-left: 3px;font-family: 'OpenSansBold','OpenSansRegular', Helvetica Neue, Helvetica, Verdana, Arial, sans-serif;}
+		  				#thclock .timebox .tage {font-size: 3em;font-family: 'OpenSansBold','OpenSansRegular', Helvetica Neue, Helvetica, Verdana, Arial, sans-serif;line-height: 1em;}
+		  				#thclock .timebox .timeunit {clear: both;display: block;font-size: 0.7em;}
+		  				#thclock .colon {display: block;float: left; height: 100%;font-size: 2.5em;line-height: 1em;padding-left: 3px;font-family: 'OpenSansBold','OpenSansRegular', Helvetica Neue, Helvetica, Verdana, Arial, sans-serif;}
 		  			.tleft {display: block;width: 20%;margin: 0 auto; text-align: center;background: #e1007a;color: #fff;font-family: 'OpenSansBold','OpenSansRegular', Helvetica Neue, Helvetica, Verdana, Arial, sans-serif;margin-top: 1em;}
 		
 		  
@@ -655,6 +657,15 @@ h6 {font-size:1em;}
   		.archive article h1.h2, .search-results article h1.h2{font-size: 1.6em;}
   		.archive article h1 a, .search-results article h1.h2 a{color:#0a321e;}
   		.blog .wp-post-image {margin-bottom: -1.5em;margin-top: 1em; }
+ 
+ 	/*Townhall */
+   			#thclock {}
+   				#thclock .timebox {}
+   				#thclock .timebox .tage {font-size: 5em;line-height: 1em;}
+   				#thclock .timebox .timeunit {font-size: 0.8em;}
+   				#thclock .colon {font-size: 5.5em;line-height: 1em;padding-left: 3px;}
+   		
+ 
   		
 
   /*********************
