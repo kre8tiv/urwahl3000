@@ -167,6 +167,8 @@ img {max-width:100%;height:auto;}
 
 blockquote {padding: 2em 2em 0.5em 2em;text-indent: -.3em;width: 100%; background: #e6e6e6;margin-left:-2em;color: #0a321e;margin-bottom: 1em;font-family: 'OpenSansLight','OpenSansRegular', Arial, Helvetica Neue, Helvetica, Verdana, sans-serif;}
 
+table, tr, td {vertical-align: top;}
+
 /********************
 02. WORDPRESS BODY CLASSES
 ********************/
@@ -303,6 +305,8 @@ h6 {font-size:1em;}
 	
 		
 	article ul li {list-style-type: none;counter-increment: list;position: relative;margin: 0 0 1em 0;}
+	
+	article iframe {max-width:100%;}
 		article ul li:before {content: "✲";position: absolute;left: -2.5em;width: 2em;text-align: right;color: #5dae59;}
 		#comment-nav ul li:before{content: "";}	
 	article ol {counter-reset:li;}
