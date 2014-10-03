@@ -5,6 +5,10 @@ URL: htp://kre8tiv.de
 
 /************* INCLUDE FILES ***************/
 
+
+	
+if ( ! isset( $content_width ) ) $content_width = 783;	
+
 add_filter( 'show_admin_bar', '__return_false' );
 
 require_once('functions/theme-functions.php');

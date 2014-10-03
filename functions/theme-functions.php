@@ -6,8 +6,8 @@ START FUNCTIONS
 
 add_action('after_setup_theme','kr8_startup', 15);
 // Hook into the 'after_setup_theme' action
-add_action( 'after_setup_theme', 'kr8_theme_support' );
-add_action( 'after_setup_theme', 'custom_theme_features' );
+add_action( 'after_setup_theme', 'kr8_theme_support',16 );
+add_action( 'after_setup_theme', 'custom_theme_features',17 );
 
 function kr8_startup() {
 
@@ -31,7 +31,7 @@ function kr8_startup() {
     add_action('after_setup_theme','kr8_theme_support');
     // adding sidebars to Wordpress (these are created in functions.php)
     add_action( 'widgets_init', 'kr8_register_sidebars' );
-    // adding the kr8 search form (created in functions.php)
+    // adding the kr8 search form (created in theme-sidebars.php)
     add_filter( 'get_search_form', 'kr8_wpsearch' );
 
     // cleaning up random code around images
@@ -118,13 +118,6 @@ function kr8_scripts_and_styles() {
      wp_register_script( 'kr8-socialshare', get_template_directory_uri() . '/lib/js/libs/jquery.socialshareprivacy.min.js', array(), '1.4', false );
 
 
-    // register main stylesheet
-    wp_register_style( 'kr8-stylesheet', get_template_directory_uri() . '/lib/css/style.css', array(), '', 'all' );
-    wp_register_style( 'kr8-fancycss', get_template_directory_uri() . '/lib/js/libs/fancybox/jquery.fancybox.css', array(), '', 'all' );
-    wp_register_style( 'kr8-fancybuttoncss', get_template_directory_uri() . '/lib/js/libs/fancybox/jquery.fancybox-buttons.css', array(), '', 'all' );
-
-    // ie-only style sheet
-    wp_register_style( 'kr8-ie-only', get_template_directory_uri() . '/lib/css/ie.css', array(), '' );
 
     // comment reply script for threaded comments
     if ( is_singular() AND comments_open() AND (get_option('thread_comments') == 1)) {
@@ -133,6 +126,14 @@ function kr8_scripts_and_styles() {
 
     //adding scripts file in the footer
     wp_register_script( 'kr8-js', get_template_directory_uri() . '/lib/js/scripts.js', array( 'jquery' ), '', true );
+    
+        // register main stylesheet
+    wp_register_style( 'kr8-stylesheet', get_template_directory_uri() . '/lib/css/style.css', array(), '', 'all' );
+    wp_register_style( 'kr8-fancycss', get_template_directory_uri() . '/lib/js/libs/fancybox/jquery.fancybox.css', array(), '', 'all' );
+    wp_register_style( 'kr8-fancybuttoncss', get_template_directory_uri() . '/lib/js/libs/fancybox/jquery.fancybox-buttons.css', array(), '', 'all' );
+
+    // ie-only style sheet
+    wp_register_style( 'kr8-ie-only', get_template_directory_uri() . '/lib/css/ie.css', array(), '' );
 
     // enqueue styles and scripts
     wp_enqueue_script( 'kr8-modernizr' );
@@ -150,6 +151,10 @@ function kr8_scripts_and_styles() {
     wp_enqueue_script( 'kr8-fancybox' );
     wp_enqueue_script( 'kr8-socialshare' );
     wp_enqueue_script( 'kr8-fancybuttons' );
+    
+    
+
+    
 
   }
 }
@@ -315,7 +320,7 @@ function kr8_nav_portal_fallback() { ?>
 			<li><a href="http://boell.de">Böll Stiftung</a></li>
 		</ul>
 	</nav>
-<? }
+<?php }
 
 
 //Adds First and Last - Class to Menu
@@ -343,13 +348,8 @@ function custom_theme_features()  {
 		'admin-head-callback'    => '',
 		'admin-preview-callback' => '',
 	);
-	if ( version_compare( $wp_version, '3.4', '>=' ) ) :
-		add_theme_support( 'custom-background', $background_args );
-	else :
-		add_custom_background();
-	endif;
-	
-	
+	add_theme_support( 'custom-background', $background_args );
+		
 	
 	
 
@@ -367,11 +367,8 @@ function custom_theme_features()  {
 		'wp-head-callback'       => 'kr8_header_style',
 
 	);
-	if ( version_compare( $wp_version, '3.4', '>=' ) ) :
-		add_theme_support( 'custom-header', $header_args );
-	else :
-		add_custom_image_header();
-	endif;
+	add_theme_support( 'custom-header', $header_args );
+
 }
 
 
@@ -510,7 +507,7 @@ function kr8_page_navi($before = '', $after = '') {
 	}
 	echo $before.'<nav class="page-navigation"><ol class="kr8_page_navi clearfix">'."";
 	if ($start_page >= 2 && $pages_to_show < $max_page) {
-		$first_page_text = __( "First", 'kr8theme' );
+		$first_page_text = __( "Anfang", 'kr8theme' );
 		echo '<li class="kr8pn-first-page-link"><a href="'.get_pagenum_link().'" title="'.$first_page_text.'">'.$first_page_text.'</a></li>';
 	}
 	echo '<li class="kr8pn-prev-link">';
@@ -527,7 +524,7 @@ function kr8_page_navi($before = '', $after = '') {
 	next_posts_link('Nächste');
 	echo '</li>';
 	if ($end_page < $max_page) {
-		$last_page_text = __( "Last", 'kr8theme' );
+		$last_page_text = __( "Ende", 'kr8theme' );
 		echo '<li class="kr8pn-last-page-link"><a href="'.get_pagenum_link($max_page).'" title="'.$last_page_text.'">'.$last_page_text.'</a></li>';
 	}
 	echo '</ol></nav>'.$after."";
@@ -603,17 +600,17 @@ Breadcrumb
 *********************/
 function nav_breadcrumb() {
  
-  $delimiter = '❭';
+  $delimiter = '&rang;';
   $home = 'Startseite'; 
   $before = '<span class="current">'; 
   $after = '</span>'; 
  
-  if ( !is_home() && !is_front_page() || is_paged() ) {
+  if ( !is_front_page() || is_paged() ) {
  
     echo '<div id="breadcrumb">';
  
     global $post;
-    $homeLink = get_bloginfo('url');
+    $homeLink = home_url();
     echo '<a href="' . $homeLink . '">' . $home . '</a> ' . $delimiter . ' ';
  
     if ( is_category() ) {
@@ -689,6 +686,8 @@ function nav_breadcrumb() {
  
     } elseif ( is_404() ) {
       echo $before . 'Fehler 404' . $after;
+    } elseif ( is_home() ) {
+      echo $before . 'Nachrichten' . $after;
     }
  
     if ( get_query_var('paged') ) {
