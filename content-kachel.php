@@ -6,11 +6,11 @@
 
 								 <article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article">
 								    <?php if ( has_post_thumbnail() ): ?>
-											<a href="	<?php the_permalink(); ?>" class="postimglist"><?php the_post_thumbnail('medium');  ?></a>
+											<a href="	<?php the_permalink(); ?>" class="postimglist"><?php the_post_thumbnail('large');  ?></a>
 									<?php endif; ?>								 
 								 
 									 <header class="article-header">							
-										 <h1 class="h2"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h1> 
+										 <h1 class="h2">111<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h1> 
 									</header>
 									
 									<footer class="article-footer">

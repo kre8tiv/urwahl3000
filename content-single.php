@@ -1,6 +1,6 @@
 
 							<?php if ( has_post_thumbnail() ): ?>
-								<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('large');  ?></a>
+								<a href="<?php the_permalink(); ?>" class="postimg"><?php the_post_thumbnail('titelbild');  ?></a>
 							<?php endif; ?>
 
 					    <article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article">
@@ -29,13 +29,33 @@
 						    
 						
 						    <footer class="article-footer">
-    							<p class="tags"><?php the_tags('<span class="tags-title">' . __('', '') . '</span> ', ', ', ''); ?></p>
+						    	<p class="categories"><span class"cats-title">Kategorien:</span> <?php the_category(', '); ?></p>
+    							<p class="tags"><?php the_tags('<span class="tags-title">' . __('Schlagworte:', '') . '</span> ', ', ', ''); ?></p>
 						    </footer> 
-						    <?php // comments_template(); // uncomment if you want to use them ?>
+						   
+						   <!-- Autor -->
+							<?php if ( get_post_format() ) : ?>	
+							<?php else: ?>
+								<?php if ( get_the_author_meta( 'description' ) ) : ?>
+								<div class="author cleafix">
+										
+										<?php echo get_avatar( get_the_author_meta( 'ID' ), 80 ); ?>
+										<div class="author-description">
+											<h3><?php the_author_posts_link(); ?></h3>
+											<p><?php the_author_meta( 'description' ); ?></p>
+										</div>		
+									</div>
+								<?php endif; ?>
+							<?php endif; ?>
+						   
+						   
 						    </article> 
 						    
 						    <div class="sharewrap">
-						    	<p class="calltoshare">Teile diesen Inhalt:</p>
-						    	<div id="socialshareprivacy"></div>
+						    	<p class="calltoshare">
+						    		<a href="https://twitter.com/intent/tweet?text=<?php the_title(); ?>&url=<?php the_permalink() ?>" class="twitter">Twitter</a>
+									<a href="http://www.facebook.com/sharer/sharer.php?u=<?php the_permalink() ?>" class="facebook">Facebook</a>
+									<a href="https://plus.google.com/share?url=<?php the_permalink() ?>" class="google">Google+</a>
+						    	</p>
 						    </div>
 						    

@@ -5,8 +5,8 @@
 // Comment Layout
 function kr8_comments($comment, $args, $depth) {
    $GLOBALS['comment'] = $comment; ?>
-	<li <?php comment_class(); ?>>
-		<article id="comment-<?php comment_ID(); ?>" class="clearfix">
+	<li class="clearfix">
+		<article id="comment-<?php comment_ID(); ?>" <?php comment_class(); ?>>
 			<header class="comment-author vcard">
 		
 			   <?php echo get_avatar( $comment, 32 ); ?>

@@ -7,7 +7,7 @@
 						    <?php echo category_description(); ?>
 						    </div>
 					    <?php } elseif (is_tag()) { ?> 
-						    <h1 class="archive-title h2"><?php single_tag_title(); ?></h1>
+						    <div class="archive-title"><h1 class="h2"><?php single_tag_title(); ?></h1></div>
 					    
 					    <?php } elseif (is_author()) { 
 					    	global $post;

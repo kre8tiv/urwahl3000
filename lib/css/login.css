@@ -11,39 +11,33 @@ This is the Wordpress logo in the admin area.
 You'll have to load your own images and mess
 with the width and height.
 */
-@font-face {
-    font-family: 'OpenSansRegular';
-    src: url('../fonts/OpenSans-Regular-webfont.eot');
-    src: url('../fonts/OpenSans-Regular-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/OpenSans-Regular-webfont.woff') format('woff'),
-         url('../fonts/OpenSans-Regular-webfont.ttf') format('truetype'),
-         url('../fonts/OpenSans-Regular-webfont.svg#OpenSansRegular') format('svg');
-    font-weight: normal;
-    font-style: normal;
 
-}
 @font-face {
-    font-family: 'OpenSansBold';
-    src: url('../fonts/OpenSans-Bold-webfont.eot');
-    src: url('../fonts/OpenSans-Bold-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/OpenSans-Bold-webfont.woff') format('woff'),
-         url('../fonts/OpenSans-Bold-webfont.ttf') format('truetype'),
-         url('../fonts/OpenSans-Bold-webfont.svg#OpenSansBold') format('svg');
-    font-weight: normal;
-    font-style: normal;
-
+  font-family: 'Source Sans Pro';
+  src: local('Source Sans Pro'), local('SourceSansPro-Regular'), url('../fonts/SourceSansPro-Regular.ttf.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
 }
+
+
+@font-face {
+  font-family: 'Source Sans Pro Bold';
+  src: local('Source Sans Pro Bold'), local('SourceSansPro-Bold'), url('../fonts/SourceSansPro-Bold.ttf.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
 
 
 body.login {
 	background: #559448 url('../images/body_bg.jpg') top center repeat fixed;
-	background-size:cover;font-family: 'OpenSansRegular', Arial, Helvetica Neue, Helvetica, Verdana, sans-serif;
+	font-family: 'Source Sans Pro', Arial, Helvetica Neue, Helvetica, Verdana, sans-serif;
 }
 
 body.login form {
 	background: #fff;border-radius: 0; border: 0;box-shadow: 5px 5px 10px rgba(0,0,0,0.2);
 }
-body.login form label {color: #5dae59; font-family: 'OpenSansBold','OpenSansRegular', Helvetica Neue, Helvetica, Verdana, Arial, sans-serif;font-weight: normal;}
+body.login form label {color: #5dae59; font-family: 'Source Sans Pro Bold','Source Sans Pro', Helvetica Neue, Helvetica, Verdana, Arial, sans-serif;font-weight: normal;}
 
 body.login p#nav a, body.login p#backtoblog a {color:#ffe000!important;text-shadow: 0 0 0;}
 body.login p#nav a:hover, body.login p#backtoblog a:hover {color:#fff!important;text-shadow: 0 0 0;}

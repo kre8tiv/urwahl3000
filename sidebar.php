@@ -1,9 +1,9 @@
 				<div id="sidebar1" class="sidebar threecol last clearfix" role="complementary">
 					
 
-					<?php if ( is_active_sidebar(1) ) : ?>
+					<?php if ( is_active_sidebar('infospalte') ) : ?>
 						<ul>
-						<?php dynamic_sidebar(1); ?>
+						<?php dynamic_sidebar('infospalte'); ?>
 						</ul>
 					<?php else : ?>
 

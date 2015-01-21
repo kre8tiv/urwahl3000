@@ -55,31 +55,9 @@
 			<script src="<?php echo get_template_directory_uri(); ?>/lib/js/responsive.js"></script>
 		<![endif]-->
 		
+		<?php if (get_header_image() != '') {	?><style>#header.widthimg {margin: 0;background: url(<?php header_image(); ?>) top center no-repeat;background-size: cover;}</style><?php } ?>
+
 		
-		<?php if(is_single()): ?>
-			<script>
-			jQuery(document).ready(function($){
-			      if($('#socialshareprivacy').length > 0){
-			        $('#socialshareprivacy').socialSharePrivacy({
-						 services : {
-						        facebook : {
-						            'dummy_img'  : '<?php echo get_template_directory_uri(); ?>/lib/js/libs/socialshareprivacy/images/dummy_facebook.png'
-						        }, 
-						        twitter : {
-						            'dummy_img'  : '<?php echo get_template_directory_uri(); ?>/lib/js/libs/socialshareprivacy/images/dummy_twitter.png'
-						        },
-						        gplus : {
-						            'dummy_img'  : '<?php echo get_template_directory_uri(); ?>/lib/js/libs/socialshareprivacy/images/dummy_gplus.png'
-						        }
-						    },
-						  'css_path' : '<?php echo get_template_directory_uri(); ?>/lib/js/libs/socialshareprivacy/socialshareprivacy.css'
-						});
-			        
-			      }
-			      
-			    });
-			</script>
-		<?php endif;?>
 	</head>
 
 	<body <?php body_class(); ?>>
@@ -103,16 +81,13 @@
 
 		<div id="wrap">
 			
-				<nav class="mobile-switch"><ul><li class="first"><a id="switch-menu" href="#menu">Menü</a></li><li class="middle"><?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?></li><li class="last"><a id="switch-search" href="#search">Suche</a></li></ul></nav>
+				
 				
 						
 						<?php if (get_header_image() != '') {	?>
 							<header id="header" class="pos widthimg" role="banner">
-							<img src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" alt="" class="headerimg"/><?php 
-						
-						} else {?>
-							<header id="header" class="pos" role="banner">
-						
+							<?php } else {?>
+							<header id="header" class="pos noimg" role="banner">
 						<?php } ?>
 
 						<p id="logo"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="Zur Startseite"><img src="<?php echo get_template_directory_uri(); ?>/lib/images/logo.png" width="185" height="100" alt="<?php bloginfo('name'); ?>"></a></p>
@@ -122,6 +97,8 @@
 						</div>						
 						<?php get_search_form(); ?>
 				</header>
+				
+				<nav class="mobile-switch"><ul><li class="first"><a id="switch-menu" href="#menu"><span class="fa fa-bars"></span><span class="hidden">Menü</span></a></li><li class="last"><a id="switch-search" href="#search"><span class="fa fa-search"></span><span class="hidden">Suche</span></a></li></ul></nav>
 
 
 				<section class="navwrap">

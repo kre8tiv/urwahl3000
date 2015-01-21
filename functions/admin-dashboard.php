@@ -56,9 +56,26 @@ function kr8_rss_dashboard_widget() {
 	<?php }
 }
 
+
+// Doku-Widget
+function kr8_doku_widget() { ?>
+
+	<p>Howdy,<br>Du nutzt <a href="http://kre8tiv.de/urwahl3000">Urwahl3000</a>, dass freie und GRÜNE Layout für Wordpress.</p>
+	<p>Urwahl3000 bietet eine Vielzahl an Funktionen und Möglichkeiten. <strong>Deshalb habe ich eine Dokumentation erstellt</strong>, die Antworten auf häufige Fragen gibt und Dir die ersten Schritte erleichtert. Wenn Du mehr aus deinem Urwahl3000 rausholen willst, wirf doch einen Blick hinein.</p>
+	<p><strong>Kleiner Tipp:</strong> Schau regelmäßig auf der <a href="http://kre8tiv.de/urwahl3000">Urwahl3000-Seite</a> vorbei, vielleicht gibt es ja ein Update. Nun aber viel Spaß mit deiner Website im Urwahl3000-Outfit.</p>
+	<p>Viele Grüße<br>Ben</p>
+	
+	<p><a href="http://kre8tiv.de/doku/urwahl3000/" class="button-primary" target="_blank">Dokumentation</a>  <a href="http://kre8tiv.de/urwahl3000/" class="button-primary" target="_blank">Updates & Support</a></p>
+	
+	
+<?php }
+
+
+
 // calling all custom dashboard widgets
 function kr8_custom_dashboard_widgets() {
 	wp_add_dashboard_widget('kr8_rss_dashboard_widget', __('Neues von kre8tiv - Benjamin Jopen', 'kr8theme'), 'kr8_rss_dashboard_widget');
+	wp_add_dashboard_widget('kr8_doku_widget', __('Urwahl3000 Dokumentation', 'kr8theme'), 'kr8_doku_widget');
 	/*
 	Be sure to drop any other created Dashboard Widgets
 	in this function and they will all load.
@@ -105,7 +122,7 @@ you like.
 
 // Custom Backend Footer
 function kr8_custom_admin_footer() {
-	_e('<span id="footer-thankyou"><a href="http://kre8tiv.de" target="_blank">Urwahl3000</a></span> - entwickelt von <a href="http://kre8tiv.de" target="_blank">Benjamin Jopen</a>.', 'kr8theme');
+	_e('<span id="footer-thankyou"><a href="http://kre8tiv.de/urwahl3000" target="_blank">Urwahl3000</a></span> - entwickelt von <a href="http://kre8tiv.de" target="_blank">Benjamin Jopen</a>.', 'kr8theme');
 }
 
 // adding it to the admin area

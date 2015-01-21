@@ -9,13 +9,18 @@ URL: htp://kre8tiv.de
 	
 if ( ! isset( $content_width ) ) $content_width = 783;	
 
-add_filter( 'show_admin_bar', '__return_false' );
 
 require_once('functions/theme-functions.php');
 require_once('functions/theme-sidebars.php');
 require_once('functions/theme-comments.php');
 require_once('functions/theme-shortcodes.php');
 require_once('functions/admin-dashboard.php');
+
+require 'functions/theme-update.php';
+$MyThemeUpdateChecker = new ThemeUpdateChecker(
+'urwahl3000', //Theme slug. Usually the same as the name of its directory.
+'http://themes.kre8tiv.de/?action=get_metadata&slug=urwahl3000' //Metadata URL.
+);
 
 
 ?>

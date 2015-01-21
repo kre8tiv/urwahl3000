@@ -7,7 +7,7 @@
 					
 					<section class="sidebar cleafix">
 						<ul>
-							<?php dynamic_sidebar(2); ?>
+							<?php dynamic_sidebar('fussleiste'); ?>
 						</ul>	
 					</section>
 					<nav role="navigation">
@@ -21,6 +21,7 @@
 		
 			
 		</div> 
+		<p id="back-top"><a href="#header" title="Zum Seitenanfang springen"><span>↑</span></a></p>
 		
 
 		<?php wp_footer(); ?>

@@ -114,8 +114,7 @@ function kr8_scripts_and_styles() {
     // modernizr (without media query polyfill)
     wp_register_script( 'kr8-modernizr', get_template_directory_uri() . '/lib/js/libs/modernizr.custom.min.js', array(), '2.5.3', false );
     wp_register_script( 'kr8-fancybox', get_template_directory_uri() . '/lib/js/libs/fancybox/jquery.fancybox.pack.js', array(), '2.1.4', false );
-     wp_register_script( 'kr8-fancybuttons', get_template_directory_uri() . '/lib/js/libs/fancybox/jquery.fancybox-buttons.js', array(), '1.0.5', false );
-     wp_register_script( 'kr8-socialshare', get_template_directory_uri() . '/lib/js/libs/jquery.socialshareprivacy.min.js', array(), '1.4', false );
+    wp_register_script( 'kr8-tabs', get_template_directory_uri() . '/lib/js/responsiveTabs.min.js', array(), '2.1.4', false );
 
 
 
@@ -129,6 +128,7 @@ function kr8_scripts_and_styles() {
     
         // register main stylesheet
     wp_register_style( 'kr8-stylesheet', get_template_directory_uri() . '/lib/css/style.css', array(), '', 'all' );
+    wp_register_style( 'kr8-fontawesome', get_template_directory_uri() . '/lib/css/font-awesome.min.css', array(), '', 'all' );
     wp_register_style( 'kr8-fancycss', get_template_directory_uri() . '/lib/js/libs/fancybox/jquery.fancybox.css', array(), '', 'all' );
     wp_register_style( 'kr8-fancybuttoncss', get_template_directory_uri() . '/lib/js/libs/fancybox/jquery.fancybox-buttons.css', array(), '', 'all' );
 
@@ -137,6 +137,7 @@ function kr8_scripts_and_styles() {
 
     // enqueue styles and scripts
     wp_enqueue_script( 'kr8-modernizr' );
+    wp_enqueue_style( 'kr8-fontawesome' );
     wp_enqueue_style( 'kr8-stylesheet' );
     wp_enqueue_style( 'kr8-fancycss' );
     wp_enqueue_style( 'kr8-fancybuttoncss' );
@@ -151,6 +152,7 @@ function kr8_scripts_and_styles() {
     wp_enqueue_script( 'kr8-fancybox' );
     wp_enqueue_script( 'kr8-socialshare' );
     wp_enqueue_script( 'kr8-fancybuttons' );
+     wp_enqueue_script( 'kr8-tabs' );
     
     
 
@@ -180,18 +182,19 @@ function kr8_theme_support() {
 	add_theme_support('post-thumbnails');
 
 	// default thumb size
-	set_post_thumbnail_size(125, 125, true);
-	add_image_size( 'medium', 540, 370,true );
-	add_image_size( 'large', 847, 500, true );
+	set_post_thumbnail_size(150, 150, false);
+	add_image_size( 'medium', 400, 600,false );
+	add_image_size( 'large', 800, 1200, false );
+	add_image_size( 'titelbild', 850, 450, true );
 	
 	
 	
 	update_option('thumbnail_size_w', 150);
 	update_option('thumbnail_size_h', 150);
-	update_option('medium_size_w', 540);
-	update_option('medium_size_h', 370);
-	update_option('large_size_w', 847);
-	update_option('large_size_h', 500);
+	update_option('medium_size_w', 400);
+	update_option('medium_size_h', 600);
+	update_option('large_size_w', 800);
+	update_option('large_size_h', 1200);
 	
 	//add_image_size( 'slider', 300, 300, true  );
 
@@ -205,6 +208,7 @@ function kr8_theme_support() {
                 
 
 	// adding post format support
+	/*
 	add_theme_support( 'post-formats',
 		array(
 			'aside',             // title less blurb
@@ -217,7 +221,7 @@ function kr8_theme_support() {
 			'audio',             // audio
 			'chat'               // chat transcript
 		)
-	);
+	);*/
 
 	// wp menus
 	add_theme_support( 'menus' );
@@ -243,8 +247,7 @@ MENUS & NAVIGATION
 function kr8_nav_main() {
 	// display the wp3 menu if available
     wp_nav_menu(array(
-    	'container' => false,                           // remove nav container
-    	'menu' => __( 'Hauptmenü', '' ),  				// nav name
+    	'container' => false,                           // remove nav container	
     	'menu_class' => 'navigation clearfix',         // adding custom nav class
     	'theme_location' => 'nav-main',                 // where it's located in the theme
     	'before' => '',                                 // before the menu
@@ -261,7 +264,6 @@ function kr8_nav_footer() {
 	// display the wp3 menu if available
     wp_nav_menu(array(
     	'container' => false,                         // remove nav container
-    	'menu' => __( 'Footer Links', '' ),  		    // nav name
     	'menu_class' => 'navigation clearfix nav-footer',          // adding custom nav class
     	'theme_location' => 'nav-footer',             // where it's located in the theme
     	'before' => '',                                 // before the menu
@@ -279,7 +281,6 @@ function kr8_nav_portal() {
 	// display the wp3 menu if available
     wp_nav_menu(array(
     	'container' => false,                         // remove nav container
-    	'menu' => __( 'Portal Links', '' ),  		    // nav name
     	'menu_class' => 'navigation',          // adding custom nav class
     	'theme_location' => 'nav-portal',             // where it's located in the theme
     	'before' => '',                                 // before the menu
@@ -312,24 +313,17 @@ function kr8_nav_footer_fallback() {
 
 // this is the fallback for portal menu
 function kr8_nav_portal_fallback() { ?>
-	<nav role="navigation" id="nav-portal"><h6 class="unsichtbar">Links zu GRÜNEN Webseiten:</h6>
+	
 		<ul id="menu-portalmenu" class="navigation">
 			<li><a href="http://gruene.de">Bundesverband</a></li>
 			<li><a href="http://gruene-fraktion.de">Bundestagsfraktion</a></li>
 			<li><a href="http://gruene-jugend.de">Grüne Jugend</a></li>
 			<li><a href="http://boell.de">Böll Stiftung</a></li>
 		</ul>
-	</nav>
+	
 <?php }
 
 
-//Adds First and Last - Class to Menu
-function add_first_and_last($output) {
-  $output = preg_replace('/class="menu-item/', 'class="first-menu-item menu-item', $output, 1);
-  $output = substr_replace($output, 'class="last-menu-item menu-item', strripos($output, 'class="menu-item'), strlen('class="menu-item'));
-  return $output;
-}
-add_filter('wp_nav_menu', 'add_first_and_last');
 
 
 /*********************
@@ -344,7 +338,9 @@ function custom_theme_features()  {
 	$background_args = array(
 		'default-color'          => '559448',
 		'default-image'          => get_template_directory_uri() . '/lib/images/body_bg.jpg',
-		'wp-head-callback'       => 'kr8_custom_bg',
+		'default-attachment' => 'fixed',
+		'default-position-x' => 'center',
+		'default-position-y' => 'top',
 		'admin-head-callback'    => '',
 		'admin-preview-callback' => '',
 	);
@@ -357,14 +353,16 @@ function custom_theme_features()  {
 	$header_args = array(
 		'default-image'          => '',
 		'width'                  => 1140,
-		'height'                 => 200,
+		'height'                 => 280,
 		'flex-width'             => false,
-		'flex-height'            => true,
+		'flex-height'            => false,
 		'random-default'         => false,
 		'header-text'            => true,
 		'default-text-color'     => 'ffffff',
 		'uploads'                => true,
 		'wp-head-callback'       => 'kr8_header_style',
+		'admin-head-callback'    => 'kr8_admin_header_style',
+		'admin-preview-callback' => 'kr8_admin_header_image',
 
 	);
 	add_theme_support( 'custom-header', $header_args );
@@ -372,40 +370,7 @@ function custom_theme_features()  {
 }
 
 
-function kr8_custom_bg() {
-	$background = get_background_image();
-	$color = get_background_color();
-	if ( ! $background && ! $color )
-		return;
 
-	$style = $color ? "background-color: #$color;background-size:cover;" : '';
-
-	if ( $background ) {
-		$image = " background-image: url('$background');";
-
-		$repeat = get_theme_mod( 'background_repeat', 'repeat' );
-		if ( ! in_array( $repeat, array( 'no-repeat', 'repeat-x', 'repeat-y', 'repeat' ) ) )
-			$repeat = 'repeat';
-		$repeat = " background-repeat: $repeat;";
-
-		$position = get_theme_mod( 'background_position_x', 'center' );
-		if ( ! in_array( $position, array( 'center', 'right', 'left' ) ) )
-			$position = 'center';
-		$position = " background-position: top $position;";
-
-		$attachment = get_theme_mod( 'background_attachment', 'fixed' );
-		if ( ! in_array( $attachment, array( 'fixed', 'scroll' ) ) )
-			$attachment = 'fixed';
-		$attachment = " background-attachment: $attachment;";
-
-		$style .= $image . $repeat . $position . $attachment;
-	}
-?>
-<style type="text/css">
-body.custom-background { <?php echo trim( $style ); ?> }
-</style>
-<?php
-}
 
 
 function kr8_header_style() {
@@ -439,33 +404,156 @@ function kr8_header_style() {
 	<?php
 }
 
+
+/*********************
+ADMIN PREVIEW
+*********************/
+
+//Editor-Stylesheet
+function kr8_add_editor_styles() {
+    add_editor_style( 'lib/css/editor.css' );
+}
+add_action( 'after_setup_theme', 'kr8_add_editor_styles' );
+
+
+//Custom Styles in Editor
+function wpb_mce_buttons_2($buttons) {
+	array_unshift($buttons, 'styleselect');
+	return $buttons;
+}
+add_filter('mce_buttons_2', 'wpb_mce_buttons_2');
+
+
+function kr8_mce_before_init_insert_formats( $init_array ) {  
+	// Define the style_formats array
+	$style_formats = array(  
+		// Each array child is a format with it's own settings
+		array(  
+			'title' => 'Absatz Einleitung',  
+			'block' => 'p',  
+			'classes' => 'intro',
+			'wrapper' => false,
+			
+		),  
+		array(  
+			'title' => 'Link - Button',  
+			'block' => 'span',  
+			'classes' => 'button',
+			'wrapper' => true,
+		),
+		
+	);  
+	// Insert the array, JSON ENCODED, into 'style_formats'
+	$init_array['style_formats'] = json_encode( $style_formats );  
+	
+	return $init_array;  
+  
+} 
+// Attach callback to 'tiny_mce_before_init' 
+add_filter( 'tiny_mce_before_init', 'kr8_mce_before_init_insert_formats' );  
+
+
+
+//Custom Header Preview
+if ( ! function_exists( 'kr8_admin_header_style' ) ) :
+function kr8_admin_header_style() { ?>
+	<style type="text/css" id="kr8-admin-header-css">
+	
+
+	@font-face {
+	  font-family: 'Source Sans Pro';
+	  src: local('Source Sans Pro'), local('SourceSansPro-Regular'), url('../fonts/SourceSansPro-Regular.ttf.woff') format('woff');
+	  font-weight: normal;
+	  font-style: normal;
+	}
+	
+	
+	@font-face {
+	  font-family: 'Source Sans Pro Bold';
+	  src: local('Source Sans Pro Bold'), local('SourceSansPro-Bold'), url('../fonts/SourceSansPro-Bold.ttf.woff') format('woff');
+	  font-weight: normal;
+	  font-style: normal;
+	}
+
+	
+	.appearance_page_custom-header #headimg {background:url(<?php echo get_template_directory_uri(); ?>/lib/images/body_bg.jpg) top left no-repeat;border: none;width: 1140px;height: 280px;}
+	#headimg {font-family: 'Source Sans Pro Bold','Source Sans Pro', Helvetica Neue, Helvetica, Verdana, Arial, sans-serif;position: relative;}
+	#headimg .hgroup {position: absolute;top: 40%; right: 1em;}
+	#headimg h1, #headimg h2 {padding: 0 0 0 5px;margin: 0;line-height:1em;display: block;text-align: right;text-shadow: 1px 1px 5px rgba(0,0,0,0.3);}
+		#headimg h1 a {	color: #fff;text-decoration: none;font-weight:normal;font-size:1.4em;}
+	#headimg h2 {font-size: 1em;text-shadow: 1px 1px 5px rgba(0,0,0,0.3);color: #ffe000; margin: 5px 0 0 0;font-family: 'Source Sans Pro Bold','Source Sans Pro', Arial, Helvetica Neue, Helvetica, Verdana, sans-serif;text-align: right;}
+	#headimg img {vertical-align: middle;}
+	#headimg p#logo {position: absolute;left: 1em;top: 30%; }
+	</style>
+<?php
+}
+endif;
+
+if ( ! function_exists( 'kr8_admin_header_image' ) ) :
+function kr8_admin_header_image() {
+?>
+	<div id="headimg">
+		<?php if ( get_header_image() ) : ?>
+		<img src="<?php header_image(); ?>" alt="">
+		<?php endif; ?>
+		<div class="displaying-header-text">
+		<p id="logo"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="Zur Startseite"><img src="<?php echo get_template_directory_uri(); ?>/lib/images/logo.png" width="185" height="100" alt="<?php bloginfo('name'); ?>"></a></p>
+		<div class="hgroup">
+			<h1 id="site-title"><a id="name"<?php echo sprintf( ' style="color:#%s;"', get_header_textcolor() ); ?> onclick="return false;" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a></h1>
+			<h2 id="site-description"><?php bloginfo( 'description' ); ?></h2>
+			
+		</div>
+		</div>
+	</div>
+<?php
+}
+endif; 
+
+
+
 /*********************
 RELATED POSTS FUNCTION
 *********************/
 
 // Related Posts Function (call using kr8_related_posts(); )
 function kr8_related_posts() {
-	echo '<ul id="kr8-related-posts">';
+	echo '<section id="related-posts">';
 	global $post;
-	$tags = wp_get_post_tags($post->ID);
-	if($tags) {
-		foreach($tags as $tag) { $tag_arr .= $tag->slug . ','; }
-        $args = array(
-        	'tag' => $tag_arr,
-        	'numberposts' => 5, /* you can change this to show more */
-        	'post__not_in' => array($post->ID)
-     	);
+	$categories = get_the_category($post->ID);
+	if ($categories) {
+		$category_ids = array();
+		foreach($categories as $individual_category) $category_ids[] = $individual_category->term_id;
+		$args=array(
+			'category__in' => $category_ids,
+			'post__not_in' => array($post->ID),
+			'posts_per_page'=> 3, // Number of related posts that will be shown.
+			'caller_get_posts'=>1
+			);
         $related_posts = get_posts($args);
         if($related_posts) {
         	foreach ($related_posts as $post) : setup_postdata($post); ?>
-	           	<li class="related_post"><a class="entry-unrelated" href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></li>
+	           	<?php get_template_part( 'content', get_post_format() ); ?>
 	        <?php endforeach; }
-	    else { ?>
-            <?php echo '<li class="no_related_post">' . __( 'No Related Posts Yet!', 'kr8theme' ) . '</li>'; ?>
-		<?php }
+	    else { 
+		    
+		    $args=array(
+			'post__not_in' => array($post->ID),
+			'posts_per_page'=> 3, // Number of related posts that will be shown.
+			'caller_get_posts'=>1
+			);
+			
+			$all_posts = get_posts($args);
+			if($all_posts) {
+        	foreach ($all_posts as $post) : setup_postdata($post); ?>
+	           	<?php get_template_part( 'content', get_post_format() ); ?>
+	        <?php endforeach; }
+
+		    
+		    
+		     }
 	}
 	wp_reset_query();
-	echo '</ul>';
+	echo '</section>';
 } /* end kr8 related posts function */
 
 
@@ -508,10 +596,10 @@ function kr8_page_navi($before = '', $after = '') {
 	echo $before.'<nav class="page-navigation"><ol class="kr8_page_navi clearfix">'."";
 	if ($start_page >= 2 && $pages_to_show < $max_page) {
 		$first_page_text = __( "Anfang", 'kr8theme' );
-		echo '<li class="kr8pn-first-page-link"><a href="'.get_pagenum_link().'" title="'.$first_page_text.'">'.$first_page_text.'</a></li>';
+		echo '<li class="kr8pn-first-page-link"><a href="'.get_pagenum_link().'" title="'.$first_page_text.'"><span class="fa fa-angle-double-left"></span></a></li>';
 	}
 	echo '<li class="kr8pn-prev-link">';
-	previous_posts_link('Vorherige');
+	previous_posts_link('<span class="fa fa-angle-left"></span>');
 	echo '</li>';
 	for($i = $start_page; $i  <= $end_page; $i++) {
 		if($i == $paged) {
@@ -521,11 +609,11 @@ function kr8_page_navi($before = '', $after = '') {
 		}
 	}
 	echo '<li class="kr8pn-next-link">';
-	next_posts_link('Nächste');
+	next_posts_link('<span class="fa fa-angle-right"></span>');
 	echo '</li>';
 	if ($end_page < $max_page) {
 		$last_page_text = __( "Ende", 'kr8theme' );
-		echo '<li class="kr8pn-last-page-link"><a href="'.get_pagenum_link($max_page).'" title="'.$last_page_text.'">'.$last_page_text.'</a></li>';
+		echo '<li class="kr8pn-last-page-link"><a href="'.get_pagenum_link($max_page).'" title="'.$last_page_text.'"><span class="fa fa-angle-double-right"></span></a></li>';
 	}
 	echo '</ol></nav>'.$after."";
 } /* end page navi */

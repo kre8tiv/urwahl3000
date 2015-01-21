@@ -18,24 +18,57 @@ The comments page
 
 <!-- You can start editing here. -->
 
-<ul class='tabs'>
-    <?php if ( have_comments() ) : ?><li><a href='#tab1'>Kommentare <span><?php comments_number( '0', '1', '%' ); ?></span></a></li><?php endif; ?>
-    <?php if ( comments_open() ) : ?><li><a href='#tab2'>Kommentar verfassen</a></li><?php endif; ?>
-</ul>
+<div class="responsive-tabs comment-tabs">
+	
+	<?php if ( !is_page() ) { ?>
+	<h2>Verwandte Artikel</h2>
+	<div class="tab">
+		 <?php  kr8_related_posts(); ?>
 
+		
+	</div>
+	
+	
+	<?php 
+		}
+		if ( comments_open() ) : ?>
+	<h2>Kommentar verfassen</h2>
+	<div class="tab">
+	<section id="respondbox" class="respond-form">
+	
+	<?php
+			$comments_args = array(
+				'comment_notes_before' =>__( ''),
+				'title_reply'=>__( 'Artikel kommentieren', 'kr8theme'),
+				'comment_notes_after' =>__( '<p class="required-info"><span class="req">*</span> Pflichtfeld', 'kr8theme'),
+				'comment_field'  => '<p class="comment-form-comment"><label for="comment">' . _x( 'Dein Kommentar<span class="req">*</span>', 'kr8theme' ) . 			'</label><br/><textarea id="comment" name="comment" tabindex="4" rows="8" placeholder="Dein Kommentar hier..."></textarea></p>',
+				'label_submit'	=> __( 'Abschicken', 'kr8theme' )
+				
+			);
+			
+			comment_form($comments_args);
+			
+		?>
+	
+	</section>
+	</div>
+	
+	<?php endif; // if you delete this the sky will fall on your head ?>	
+	
 
 <?php if ( have_comments() ) : ?>
-<div id='tab1'>
+
 	
-	
+	<h2><?php comments_number( '0', '1 Kommentar', '% Kommentare' ); ?></h2>
+	<div class="tab">
 	<ol class="commentlist">
 		<?php wp_list_comments('type=comment&callback=kr8_comments'); ?>
 	</ol>
 	
 	<nav id="comment-nav">
 		<ul class="clearfix">
-	  		<li><?php previous_comments_link() ?></li>
-	  		<li><?php next_comments_link() ?></li>
+	  		<li class="prev"><?php previous_comments_link() ?></li>
+	  		<li class="next"><?php next_comments_link() ?></li>
 		</ul>
 	</nav>
 </div>
@@ -54,25 +87,4 @@ The comments page
 <?php endif; ?>
 
 
-<?php if ( comments_open() ) : ?>
-<div id='tab2'>
-<section id="respondbox" class="respond-form">
-
-<?php
-		$comments_args = array(
-			'comment_notes_before' =>__( ''),
-			'title_reply'=>__( 'Artikel kommentieren', 'kr8theme'),
-			'comment_notes_after' =>__( '<p class="required-info"><span class="req">*</span> Pflichtfeld', 'kr8theme'),
-			'comment_field'  => '<p class="comment-form-comment"><label for="comment">' . _x( 'Dein Kommentar<span class="req">*</span>', 'kr8theme' ) . 			'</label><br/><textarea id="comment" name="comment" tabindex="4" rows="8" placeholder="Dein Kommentar hier..."></textarea></p>',
-			'label_submit'	=> __( 'Abschicken', 'kr8theme' )
-			
-		);
-		
-		comment_form($comments_args);
-		
-	?>
-
-</section>
-</div>
-
-<?php endif; // if you delete this the sky will fall on your head ?>
+</div><script>jQuery(document).ready(function() { RESPONSIVEUI.responsiveTabs(); }) </script>

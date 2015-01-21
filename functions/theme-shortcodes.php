@@ -41,5 +41,48 @@ add_shortcode('unterseiten', 'kr8_sitemap');
 add_post_type_support( 'page', 'excerpt' );
 
 
+//Tabs for Editor ***************
+function tabs_shortcode( $atts, $content = null ) {
+	
+	if ( comments_open() || have_comments() ) {
+		return '<div class="responsive-tabs content-tabs">' . do_shortcode($content) . '</div>';
+	}
+	else {
+		
+		return '<div class="responsive-tabs content-tabs">' . do_shortcode($content) . '</div><script>jQuery(document).ready(function() { RESPONSIVEUI.responsiveTabs(); }) </script>';
+		
+	}
+}
+add_shortcode( 'tabs', 'tabs_shortcode' );
+
+function tab_shortcode( $atts, $content = null ) {
+	extract(shortcode_atts(array(
+      'title' => 'Titel anpassen',
+   ), $atts));
+	return '<h2>' .$title .'</h2><div>' . $content . '</div>';
+}
+add_shortcode( 'tab', 'tab_shortcode' );
+
+
+
+add_filter("the_content", "the_content_filter");
+
+function the_content_filter($content) {
+
+	// array of custom shortcodes requiring the fix 
+	$block = join("|",array("col","tabs","tab"));
+
+	// opening tag
+	$rep = preg_replace("/(<p>)?\[($block)(\s[^\]]+)?\](<\/p>|<br \/>)?/","[$2$3]",$content);
+		
+	// closing tag
+	$rep = preg_replace("/(<p>)?\[\/($block)](<\/p>|<br \/>)?/","[/$2]",$rep);
+
+	return $rep;
+
+}
+
+
+
 
 ?>
