@@ -310,7 +310,6 @@ h6 {font-size:1em;}
 
 
 	#main article {background: #fff;padding: 1em;margin: 1em;}
-		#main article.sticky {background: #e4f8df;border: 0;}
 			 article img.wp-post-image {width: 100%;height: auto;}
 			.article-header h1 a {color:#0a321e;}
 	
@@ -822,15 +821,13 @@ h6 {font-size:1em;}
 		h1 {font-size:2.4em;}
 		
   		#main article {padding: 2em;border-bottom: 2px solid #e6e6e6;}
-  			#main article.sticky {margin: 0;padding: 2em;border: 0;}
   	
 
   		
 		div.archive-title {margin: 0;}
 
-			.home article.sticky {}
-				.home #content .sticky img.wp-post-image {}
-				.home #content .sticky h1 {}
+			/*Sticky Posts*/
+			.home #main article.sticky {margin: 0;padding: 2em;background: #e4f8df;border: 0;border-bottom: 3px solid #fff;}
   		
   		
   	#main article { border-bottom: 2px solid #e6e6e6;padding: 0 0 2em;margin: 2em;}
