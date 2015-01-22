@@ -19,9 +19,11 @@ Template Name: Einspaltig
 							    <?php the_content(); ?>
 							</section>
 						    
-						    <?php comments_template(); ?>
+						    
 					
 					    </article>
+					    
+					    <?php comments_template(); ?>
 					
 					    <?php endwhile; ?>
 			
