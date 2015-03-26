@@ -1,3 +1,6 @@
+/* @override 
+	http://urwahl3000.kre8tiv.de/wp-content/themes/urwahl3000/lib/css/style.css */
+
 /*Farb-Schema
 	Hauptfarbe 1: #61ae4d (Helles grün)
 	Hauptfarbe 2: #0a321e (Dunkles grün)
@@ -442,7 +445,17 @@ h6 {font-size:1em;}
 					.archiv .archiv-tags a {font-size: 1em!important;}
 
 
-
+			
+			/*Person*/
+					.single article.person {position: relative;}
+					.listenplatz {display: block;position: absolute; width: 2em;height: 2em;box-sizing: border-box;padding-top: 0.2em;
+						text-align: center; top: -50px; background: #5dae59; font-family: 'Source Sans Pro Bold','Source Sans Pro', Helvetica Neue, Helvetica, Verdana, Arial, sans-serif;border-radius: 50%;font-size: 2em;	color: #fff;right: 0;		}
+					h2.h3 {font-family: 'Source Sans Pro', Helvetica Neue, Helvetica, Verdana, Arial, sans-serif;font-size: 1.3em;color: #5dae59;margin-top: -0.2em;margin-bottom: 1em;}
+						.socialprofile {}
+						.socialprofile a {font-size: 1.2em;background: #0a321e;width: 2em;height: 2em; display: inline-block;box-sizing: border-box;padding-top: 0.25em;border-radius: 50%;text-align: center;margin:0 0.1em 1em; color: #fff;			}
+							.socialprofile a:hover {background: #5dae59;}
+							
+							.anschrift {background: #e5e5e5; width: 60%;padding: 1em 1em 0.1em 1em;margin-left: 5%;}
 	
 
 

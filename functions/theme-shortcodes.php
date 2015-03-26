@@ -85,4 +85,61 @@ function the_content_filter($content) {
 
 
 
+
+//Tabs for Editor ***************
+function kr8_pers_listing( ) {
+	
+					    ob_start();
+					 
+					    // define attributes and their defaults
+					    extract( shortcode_atts( array (
+					        'order' => 'date',
+					        'orderby' => 'title',
+					        'posts' => -1,
+					        'category' => '',
+					    ), $atts ) );
+							
+							query_posts('post_type=person&posts_per_page=-1'); 
+							?>
+					    		
+    		
+    					<?php while ( have_posts() ) : the_post(); ?>
+					    	<?php get_template_part( 'content', get_post_type() ); ?>
+					    <?php endwhile; 			
+		
+}
+//add_shortcode( 'personen', 'kr8_pers_listing' );
+
+
+function myLoop($atts, $content = null) {
+	extract(shortcode_atts(array(
+		"pagination" => 'true',
+		"query" => '',
+		"category" => '',
+	), $atts));
+	global $wp_query,$paged,$post;
+	$temp = $wp_query;
+	$wp_query= null;
+	$wp_query = new WP_Query();
+	$query .= 'post_type=person';
+	
+	$wp_query->query($query);
+	ob_start();
+	?>
+	
+	
+	<?php while ($wp_query->have_posts()) : $wp_query->the_post(); ?>
+		<?php get_template_part( 'content', get_post_type() ); ?>
+	<?php endwhile; ?>
+
+
+
+	<?php $wp_query = null; $wp_query = $temp;
+	$content = ob_get_contents();
+	ob_end_clean();
+	return $content;
+}
+add_shortcode("personen", "myLoop");
+
+
 ?>
