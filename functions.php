@@ -1,7 +1,7 @@
 <?php
 /*
 Author: Benjamin Jopen
-URL: htp://kre8tiv.de
+URL: htp://kre8tiv.de 
 
 /************* INCLUDE FILES ***************/
 
@@ -23,6 +23,6 @@ $MyThemeUpdateChecker = new ThemeUpdateChecker(
 'urwahl3000', //Theme slug. Usually the same as the name of its directory.
 'http://themes.kre8tiv.de/?action=get_metadata&slug=urwahl3000' //Metadata URL.
 );
-
+hallo
 
 ?>

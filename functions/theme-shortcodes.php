@@ -61,7 +61,7 @@ function tab_shortcode( $atts, $content = null ) {
    ), $atts));
 	return '<h2>' .$title .'</h2><div>' . $content . '</div>';
 }
-add_shortcode( 'tab', 'tab_shortcode' );
+add_shortcode( 'tab', 'tab_shortcode' ); 
 
 
 
