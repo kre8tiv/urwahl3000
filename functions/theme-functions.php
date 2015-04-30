@@ -38,6 +38,9 @@ function kr8_startup() {
     add_filter('the_content', 'kr8_filter_ptags_on_images');
     // cleaning up excerpt
     add_filter('excerpt_more', 'kr8_excerpt_more');
+    add_filter( 'excerpt_length', 'kr8_excerpt_length', 999 );
+    
+
 
 } /* end */
 
@@ -336,7 +339,7 @@ function custom_theme_features()  {
 
 	// Add theme support for Custom Background
 	$background_args = array(
-		'default-color'          => '559448',
+		'default-color'          => '46962b',
 		'default-image'          => get_template_directory_uri() . '/lib/images/body_bg.jpg',
 		'default-attachment' => 'fixed',
 		'default-position-x' => 'center',
@@ -476,7 +479,7 @@ function kr8_admin_header_style() { ?>
 	}
 
 	
-	.appearance_page_custom-header #headimg {background:url(<?php echo get_template_directory_uri(); ?>/lib/images/body_bg.jpg) top left no-repeat;border: none;width: 1140px;height: 280px;}
+	.appearance_page_custom-header #headimg {background:url(<?php echo get_template_directory_uri(); ?>/lib/images/body_bg.jpg) top left no-repeat;background-size: cover;border: none;width: 1140px;height: 280px;}
 	#headimg {font-family: 'Source Sans Pro Bold','Source Sans Pro', Helvetica Neue, Helvetica, Verdana, Arial, sans-serif;position: relative;}
 	#headimg .hgroup {position: absolute;top: 40%; right: 1em;}
 	#headimg h1, #headimg h2 {padding: 0 0 0 5px;margin: 0;line-height:1em;display: block;text-align: right;text-shadow: 1px 1px 5px rgba(0,0,0,0.3);}
@@ -804,6 +807,12 @@ function kr8_excerpt_more($more) {
 	// edit here if you like
 	return '...  <a href="'. get_permalink($post->ID) . '" title="Read '.get_the_title($post->ID).'" class="readmore">Weiterlesen &raquo;</a>';
 }
+
+//Excerpt Länge ändern
+function kr8_excerpt_length( $length ) {
+return 30;
+}
+
 
 /*
  * This is a modified the_author_posts_link() which just returns the link.

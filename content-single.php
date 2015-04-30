@@ -1,6 +1,12 @@
 
 							<?php if ( has_post_thumbnail() ): ?>
 								<a href="<?php the_permalink(); ?>" class="postimg"><?php the_post_thumbnail('titelbild');  ?></a>
+								<?php 
+									$imgexc = get_post(get_post_thumbnail_id())->post_excerpt;
+									if ($imgexc != "") {
+										?><p class="caption"><?php echo $imgexc;?></p><?php 
+									}
+									 ?>
 							<?php endif; ?>
 
 					    <article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article">
@@ -53,9 +59,11 @@
 						    
 						    <div class="sharewrap">
 						    	<p class="calltoshare">
-						    		<a href="https://twitter.com/intent/tweet?text=<?php the_title(); ?>&url=<?php the_permalink() ?>" class="twitter">Twitter</a>
-									<a href="http://www.facebook.com/sharer/sharer.php?u=<?php the_permalink() ?>" class="facebook">Facebook</a>
+						    		<a href="https://twitter.com/intent/tweet?text=<?php the_title(); ?>&url=<?php the_permalink() ?>" class="twitter" title="Artikel twittern">Twitter</a>
+						    		<a href="whatsapp://send?abid=256&text=Schau%20Dir%20das%20mal%20an%3A%20<?php the_permalink(); ?>" class="whatsapp" title="Per WhatsApp verschicken">WhatsApp</a>
+									<a href="http://www.facebook.com/sharer/sharer.php?u=<?php the_permalink() ?>" class="facebook" title="Auf Facebook teilen">Facebook</a>
 									<a href="https://plus.google.com/share?url=<?php the_permalink() ?>" class="google">Google+</a>
+									<a href="mailto:?subject=Das musst Du lesen: <?php echo rawurlencode(get_the_title()); ?>&body=Hey, schau Dir das mal den Artikel auf <?php bloginfo('name'); ?> an: <?php the_permalink(); ?>" title="Per E-Mail weiterleiten" class="email">E-Mail</a>
 						    	</p>
 						    </div>
 						    
