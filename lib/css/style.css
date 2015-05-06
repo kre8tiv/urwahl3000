@@ -1,11 +1,11 @@
 /*Farb-Schema
-	Hauptfarbe 1: #46962b (Helles grün)
-	Hauptfarbe 2: #0a321e (Dunkles grün)
-	Kontrast: #ffee00 (Gelb)
-	Highlight: #e6e6e6 (leichtes Grau)
-	Highlight 2: #e4f8df (blas Grün)
+	Hauptfarbe Grün: #46962b
+	Akzentfarbe Dunkelgrün: #0a321e
+	Haupt- und Akzentfarbe Gelb: #ffee00
+	Akzentfarbe Magenta: #e6007e
+	Leichtes Grau: #e6e6e6
+	Blasses Grün: #e4f8df
 */
-
 
 /**********************************************************************/
 /* 1. CSS Reset by Eric Meyer                                         */
@@ -113,8 +113,8 @@ a img.aligncenter {display: block; margin-left: auto; margin-right: auto}
 }
 
 @font-face {
-  font-family: 'Arvo Green';
-  src: local('Arvo Green'), local('ArvoGreen'), url('../fonts/arvo_green.woff') format('woff');
+  font-family: 'Arvo Gruen';
+  src: local('Arvo Gruen'), local('ArvoGruen'), url('../fonts/arvo_gruen.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
@@ -156,7 +156,7 @@ body {font-family: 'PT Sans', Trebuchet, Helvetica Neue, Helvetica, Arial, Verda
 img {max-width:100%;height:auto;}
 
 
-blockquote {padding: 2em 2em 0.5em 2em;text-indent: 0em;width: 100%; background: #e6e6e6;margin-left:-2em;color: #333;margin-bottom: 1em;font-family: 'Arvo Regular', 'Arvo Green', Trebuchet, Helvetica Neue, Helvetica, Arial, Verdana, sans-serif;font-weight: 500;}
+blockquote {padding: 2em 2em 0.5em 2em;text-indent: 0em;width: 100%; background: #e6e6e6;margin-left:-2em;color: #333;margin-bottom: 1em;font-family: 'Arvo Regular', 'Arvo Gruen', Trebuchet, Helvetica Neue, Helvetica, Arial, Verdana, sans-serif;font-weight: 500;}
 
 table, tr, td {vertical-align: top;}
 
@@ -189,7 +189,7 @@ a {color:#46962b;text-decoration: none;}
 a:hover {color:#0a321e;text-decoration: underline;}
 a:visited {color:#0a321e;}
 
-a span.button, span.button a {display: inline-block; background: #46962b; color: #fff; padding: 0.5em;font-family: 'Arvo Regular', 'Arvo Green', Trebuchet, Helvetica Neue, Helvetica, Arial, Verdana, sans-serif;border-radius: 0.3em;}
+a span.button, span.button a {display: inline-block; background: #46962b; color: #fff; padding: 0.5em;font-family: 'Arvo Regular', 'Arvo Gruen', Trebuchet, Helvetica Neue, Helvetica, Arial, Verdana, sans-serif;border-radius: 0.3em;}
 
 a:hover span.button, span.button a:hover {background:#0a321e;}
 
@@ -197,7 +197,7 @@ a:hover span.button, span.button a:hover {background:#0a321e;}
 05. H1, H2, H3, H4, H5 STYLES
 ******************************************************************/
 
-h1,h2,h3,h4,h5,h6 {line-height: 1.4em;margin-bottom:0.3em;font-family: 'Arvo Regular', 'Arvo Green', Trebuchet, Helvetica Neue, Helvetica, Arial, Verdana, sans-serif;font-weight: normal;color: #0a350a;text-align: left;}
+h1,h2,h3,h4,h5,h6 {line-height: 1.4em;margin-bottom:0.3em;font-family: 'Arvo Regular', 'Arvo Gruen', Trebuchet, Helvetica Neue, Helvetica, Arial, Verdana, sans-serif;font-weight: normal;color: #0a350a;text-align: left;}
 h1 {font-size:1.8em;margin-bottom:0em;}
 h1.page-title {margin-bottom: 0.7em;}
 h2 {font-size:1.6em;}
@@ -214,14 +214,14 @@ h6 {font-size:1em;}
 	#header {margin: 0;padding: 4em 2em;position: relative;}
 	#header.noimg {background: url(../images/header_mobile.jpg);background-size: cover;}
 	
-	#header h1 {text-align: center;color: #fff;text-shadow: 2px 2px 5px rgba(0,0,0,0.4);text-transform: uppercase;font-family: 'Arvo Green','Arvo Regular', Trebuchet, Helvetica Neue, Helvetica, Arial, Verdana, sans-serif;font-size: 2.5em;}
-		#header h1 a {color: #fff;}
+	#header h1 {text-align: center;color: #fff;text-shadow: 2px 2px 5px rgba(0,0,0,0.4);text-transform: uppercase;font-family: 'Arvo Gruen','Arvo Regular', Trebuchet, Helvetica Neue, Helvetica, Arial, Verdana, sans-serif;font-size: 2.5em;}
+		#header h1 a {color: #fff;text-decoration: none;}
 	#header h2 {font-size: 1em;text-shadow: 1px 1px 5px rgba(0,0,0,0.3);color: #ffe000; margin: 5px 0 0 0;text-align: center;}
 	#header #logo {display: none;}
 	
 	#header .searchform {display: none; position: absolute; background: #000;background: rgba(0,0,0,0.7); height: 100%;width: 100%;	top: 0;left: 0;}
 		#header .searchform label {display: none;}
-		#header .searchform input#search {border: 1px solid #333;padding: 1em;box-sizing: border-box;box-shadow: 0 0 10px #888 inset;font-family: 'Arvo Regular', 'Arvo Green', Trebuchet, Helvetica Neue, Helvetica, Arial, Verdana, sans-serif;background: #fff;color: #333;font-size: 1em;width: 80%;margin: 0 10%;position: absolute;top:41%; }
+		#header .searchform input#search {border: 1px solid #333;padding: 1em;box-sizing: border-box;box-shadow: 0 0 10px #888 inset;font-family: 'Arvo Regular', 'Arvo Gruen', Trebuchet, Helvetica Neue, Helvetica, Arial, Verdana, sans-serif;background: #fff;color: #333;font-size: 1em;width: 80%;margin: 0 10%;position: absolute;top:41%; }
 		#header .searchform .button-submit {display: none;}
 		
 	#portal, #breadcrumb, #header .searchform {display: none;}
@@ -310,12 +310,12 @@ h6 {font-size:1em;}
 	#content p {line-height: 1.5em;margin: 0 0 1.2em 0;}
 	#main article footer p, p.byline {font-size: 0.8em; color: #8c8c8c;margin: 0 0 0.5em;}
 		p.byline {display: inline-block; padding: 0.2em 0 0;}
-		footer .categories span, footer .tags span {font-family: 'Arvo Regular', 'Arvo Green', Trebuchet, Helvetica Neue, Helvetica, Arial, Verdana, sans-serif;color: #333;}
+		footer .categories span, footer .tags span {font-family: 'Arvo Regular', 'Arvo Gruen', Trebuchet, Helvetica Neue, Helvetica, Arial, Verdana, sans-serif;color: #333;}
 		footer .categories {margin-top: 0;}
 		article footer p a, p.byline a, article footer p a:visited, p.byline a:visited {color: #8c8c8c;}
 	article.post {text-align:justify;margin-bottom: 2em;}
 	
-	a.readmore {background: #e6007e; padding: 0.3em 0.5em;border-radius: 0.3em;color: #fff;float: right;font-family: 'Arvo Regular', 'Arvo Green', Trebuchet, Helvetica Neue, Helvetica, Arial, Verdana, sans-serif; font-size: 0.75em;margin-top: 1em;margin-bottom: 0.5em;}
+	a.readmore {background: #e6007e; padding: 0.3em 0.5em;border-radius: 0.3em;color: #fff;float: right;font-family: 'Arvo Regular', 'Arvo Gruen', Trebuchet, Helvetica Neue, Helvetica, Arial, Verdana, sans-serif; font-size: 0.75em;margin-top: 1em;margin-bottom: 0.5em;}
 	
 	.hentry ul, .hentry ol {margin: 0 2em;}
 
@@ -355,18 +355,18 @@ h6 {font-size:1em;}
 
 			#comment-nav li {width: 50%;display: inline-block;padding: 0!important;margin: 0;box-sizing: border-box;font-size: 0.9em;}	
 			#comment-nav li.next {text-align: right;float: right;}
-			#comment-nav li a {color:#0a321e;font-family: 'Arvo Regular', 'Arvo Green', Trebuchet, Helvetica Neue, Helvetica, Arial, Verdana, sans-serif;	}
+			#comment-nav li a {color:#0a321e;font-family: 'Arvo Regular', 'Arvo Gruen', Trebuchet, Helvetica Neue, Helvetica, Arial, Verdana, sans-serif;	}
 	article ol {counter-reset:li;}
 		article ol > li {list-style-type: none;counter-increment: list;position: relative;margin: 0 0 1em 0;}
-			article ol > li:before {content:counter(li)'.'; counter-increment:li; position: absolute;left: -2.5em;width: 2em;text-align: right;color: #5dae59;font-family: 'Arvo Regular', 'Arvo Green', Trebuchet, Helvetica Neue, Helvetica, Arial, Verdana, sans-serif;}	
+			article ol > li:before {content:counter(li)'.'; counter-increment:li; position: absolute;left: -2.5em;width: 2em;text-align: right;color: #5dae59;font-family: 'Arvo Regular', 'Arvo Gruen', Trebuchet, Helvetica Neue, Helvetica, Arial, Verdana, sans-serif;}	
 	article ul li li, article ol li li {margin: 1em 0 1em 0;}
 	
 	ul.sitemap {margin: 0;}
 		ul.sitemap li {list-style-type: none;clear: both;}
 		ul.sitemap li:before{content: "";}
 		ul.sitemap li img {float: left;margin: 0 0.5em 2em 0;}
-		ul.sitemap li a {font-size: 1.1em;font-family: 'Arvo Regular', 'Arvo Green', Trebuchet, Helvetica Neue, Helvetica, Arial, Verdana, sans-serif;font-weight: normal;}
-		ul.sitemap li span {display: block;font-size: 0.9em;font-family: 'Arvo Regular', 'Arvo Green', Trebuchet, Helvetica Neue, Helvetica, Arial, Verdana, sans-serif;}
+		ul.sitemap li a {font-size: 1.1em;font-family: 'Arvo Regular', 'Arvo Gruen', Trebuchet, Helvetica Neue, Helvetica, Arial, Verdana, sans-serif;font-weight: normal;}
+		ul.sitemap li span {display: block;font-size: 0.9em;font-family: 'Arvo Regular', 'Arvo Gruen', Trebuchet, Helvetica Neue, Helvetica, Arial, Verdana, sans-serif;}
 
 
 	article .searchform {background: #e6e6e6; padding:  2em; width: 100%;margin: 0 -2em -4em -2em;}
@@ -374,7 +374,7 @@ h6 {font-size:1em;}
 	
 	/*Share */	
 	.sharewrap {margin: -1em 1em 1em; padding: 1em 1em 0.1em; clear: both;background: #fff;}
-		.sharewrap a {display: block; text-align: center; padding: 0.5em; margin-bottom: 0.5em;	font-family: 'Arvo Regular', 'Arvo Green', Trebuchet, Helvetica Neue, Helvetica, Arial, Verdana, sans-serif;color: #fff;font-size: 0.8em;}
+		.sharewrap a {display: block; text-align: center; padding: 0.5em; margin-bottom: 0.5em;	font-family: 'Arvo Regular', 'Arvo Gruen', Trebuchet, Helvetica Neue, Helvetica, Arial, Verdana, sans-serif;color: #fff;font-size: 0.8em;}
 		.sharewrap a.twitter {background: #59adeb;}
 		.sharewrap a.facebook {background: #3b5998;}
 		.sharewrap a.whatsapp {background: #4dc247;}
@@ -410,7 +410,7 @@ h6 {font-size:1em;}
 
 		/*Tabelle */
 			article table {margin-bottom: 1.5em;	}
-				article table th {font-family: 'Arvo Regular', 'Arvo Green', Trebuchet, Helvetica Neue, Helvetica, Arial, Verdana, sans-serif; padding: 1em 1em 1em 0;border-bottom: 2px solid #0a321e;color: #0a321e;	}
+				article table th {font-family: 'Arvo Regular', 'Arvo Gruen', Trebuchet, Helvetica Neue, Helvetica, Arial, Verdana, sans-serif; padding: 1em 1em 1em 0;border-bottom: 2px solid #0a321e;color: #0a321e;	}
 				article table td{ padding: 1em 1em 1em 0;border-bottom: 1px solid #e6e6e6;	}
 
 		
@@ -424,7 +424,7 @@ h6 {font-size:1em;}
 		  		iframe.youtube {width: 100%!important;max-height: 476px;}
 		  		
 		  		#townhall_ask {background: #e6e6e6;margin: 1em -2em 2em;max-width: 100%; padding: 0.5em 2em;}
-		  			#townhall_ask .comment_inserted {font-family: 'Arvo Regular', 'Arvo Green', Trebuchet, Helvetica Neue, Helvetica, Arial, Verdana, sans-serif;font-weight: normal;}
+		  			#townhall_ask .comment_inserted {font-family: 'Arvo Regular', 'Arvo Gruen', Trebuchet, Helvetica Neue, Helvetica, Arial, Verdana, sans-serif;font-weight: normal;}
 		  			
 		  		#townhall_answers {}
 		  			.entry-content ul#townhall_answers li {background: transparent;padding: 0;margin: 0;}
@@ -432,7 +432,7 @@ h6 {font-size:1em;}
 		  				.entry-content ul#townhall_answers li.new_answer .comment-body {background: #ffee00;color: #0a321e; margin-bottom: 2em;}
 		  					.entry-content ul#townhall_answers li.new_answer.parent .comment-body {margin-bottom: 0;}
 		  				.entry-content ul#townhall_answers li.parent .comment-body {background: #0a321e;color: #fff;margin: 0;}
-		  					.entry-content ul#townhall_answers li .comment-body .vcard {font-family: 'Arvo Regular', 'Arvo Green', Trebuchet, Helvetica Neue, Helvetica, Arial, Verdana, sans-serif; color: #5dae59;font-weight: normal;}
+		  					.entry-content ul#townhall_answers li .comment-body .vcard {font-family: 'Arvo Regular', 'Arvo Gruen', Trebuchet, Helvetica Neue, Helvetica, Arial, Verdana, sans-serif; color: #5dae59;font-weight: normal;}
 		  						.entry-content ul#townhall_answers li .comment-body .vcard cite {font-style: normal;}
 		  				.entry-content ul#townhall_answers li ul.children {padding: 0; margin: 0 0 3em 3em;}
 		  				.entry-content ul#townhall_answers li .children .comment-body {background: transparent;border: 1px solid #0a321e;border-top: 0;color: #0a321e;}
@@ -440,10 +440,10 @@ h6 {font-size:1em;}
 		  			
 		  			#thclock {background: #e1007a; text-align: center;color: #fff;padding: 1em 0;}
 		  				#thclock .timebox {width: 21%;display: block;float: left;}
-		  				#thclock .timebox .tage {font-size: 3em;font-family: 'Arvo Regular', 'Arvo Green', Trebuchet, Helvetica Neue, Helvetica, Arial, Verdana, sans-serif;line-height: 1em;}
+		  				#thclock .timebox .tage {font-size: 3em;font-family: 'Arvo Regular', 'Arvo Gruen', Trebuchet, Helvetica Neue, Helvetica, Arial, Verdana, sans-serif;line-height: 1em;}
 		  				#thclock .timebox .timeunit {clear: both;display: block;font-size: 0.7em;}
-		  				#thclock .colon {display: block;float: left; height: 100%;font-size: 2.5em;line-height: 1em;padding-left: 3px;font-family: 'Arvo Regular', 'Arvo Green', Trebuchet, Helvetica Neue, Helvetica, Arial, Verdana, sans-serif;}
-		  			.tleft {display: block;width: 20%;margin: 0 auto; text-align: center;background: #e1007a;color: #fff;font-family: 'Arvo Regular', 'Arvo Green', Trebuchet, Helvetica Neue, Helvetica, Arial, Verdana, sans-serif;margin-top: 1em;}
+		  				#thclock .colon {display: block;float: left; height: 100%;font-size: 2.5em;line-height: 1em;padding-left: 3px;font-family: 'Arvo Regular', 'Arvo Gruen', Trebuchet, Helvetica Neue, Helvetica, Arial, Verdana, sans-serif;}
+		  			.tleft {display: block;width: 20%;margin: 0 auto; text-align: center;background: #e1007a;color: #fff;font-family: 'Arvo Regular', 'Arvo Gruen', Trebuchet, Helvetica Neue, Helvetica, Arial, Verdana, sans-serif;margin-top: 1em;}
 		
 
 			/*Author */
@@ -472,8 +472,8 @@ h6 {font-size:1em;}
 			/*Person*/
 					.single article.person {position: relative;}
 					.listenplatz {display: block;position: absolute; width: 2em;height: 2em;box-sizing: border-box;padding-top: 0.2em;
-						text-align: center; top: -50px; background: #5dae59; font-family: 'Arvo Regular', 'Arvo Green', Trebuchet, Helvetica Neue, Helvetica, Arial, Verdana, sans-serif;border-radius: 50%;font-size: 2em;	color: #fff;right: 0;		}
-					h2.h3 {font-family: 'Arvo Regular', 'Arvo Green', Trebuchet, Helvetica Neue, Helvetica, Arial, Verdana, sans-serif;font-size: 1.3em;color: #5dae59;margin-top: -0.2em;margin-bottom: 1em;}
+						text-align: center; top: -50px; background: #5dae59; font-family: 'Arvo Regular', 'Arvo Gruen', Trebuchet, Helvetica Neue, Helvetica, Arial, Verdana, sans-serif;border-radius: 50%;font-size: 2em;	color: #fff;right: 0;		}
+					h2.h3 {font-family: 'Arvo Regular', 'Arvo Gruen', Trebuchet, Helvetica Neue, Helvetica, Arial, Verdana, sans-serif;font-size: 1.3em;color: #5dae59;margin-top: -0.2em;margin-bottom: 1em;}
 						.socialprofile {}
 						.socialprofile a {font-size: 1.2em;background: #0a321e;width: 2em;height: 2em; display: inline-block;box-sizing: border-box;padding-top: 0.25em;border-radius: 50%;text-align: center;margin:0 0.1em 1em; color: #fff;			}
 							.socialprofile a:hover {background: #5dae59;}
@@ -503,7 +503,7 @@ h6 {font-size:1em;}
 			.responsive-tabs__heading { background: #fff;border: 1px solid #aaa;font-size: 1.2em; border-top: 0;padding: 0.3em 0.5em; margin: 0;color: #333;position:relative;}
 			.responsive-tabs__panel { border: 1px solid #000;padding: 1em;margin: 0;}
 
-				.responsive-tabs__list {margin: 0!important;padding-left: 2em;font-family: 'Arvo Regular', 'Arvo Green', Trebuchet, Helvetica Neue, Helvetica, Arial, Verdana, sans-serif;}
+				.responsive-tabs__list {margin: 0!important;padding-left: 2em;font-family: 'Arvo Regular', 'Arvo Gruen', Trebuchet, Helvetica Neue, Helvetica, Arial, Verdana, sans-serif;}
 				.responsive-tabs__list li {float: none;display: inline-block;margin: 0!important;font-size: 0.8em;	}
 
 				.responsive-tabs__heading::after {content: "\f077";	font-family: FontAwesome; right: 0.5em;font-size: 0.7em; position: absolute;color: #5dae59;	}
@@ -546,7 +546,7 @@ h6 {font-size:1em;}
 		ul.children {margin-left: 1em;}
 		#main ol.commentlist article {background: transparent;padding: 0.5em;margin: 0 0 1em 1em;}
 			.commentlist article img.avatar {margin: 0 0.5em 0 0;}
-			.commentlist article .vcard {padding: 0 0 0 0;font-size: 0.8em;margin-bottom: 0.7em;font-family: 'Arvo Regular', 'Arvo Green', Trebuchet, Helvetica Neue, Helvetica, Arial, Verdana, sans-serif;color:#0a321e;}
+			.commentlist article .vcard {padding: 0 0 0 0;font-size: 0.8em;margin-bottom: 0.7em;font-family: 'Arvo Regular', 'Arvo Gruen', Trebuchet, Helvetica Neue, Helvetica, Arial, Verdana, sans-serif;color:#0a321e;}
 				.commentlist article .vcard a {color: #5dae59;}
 		.commentlist .comment-reply-link {font-size: 0.6em;padding: 0.2em 0.8em;border-radius: 1em;display: inline-block;text-align: right;color: #fff;background: #5dae59;float: right;}
 		.commentlist article:hover .comment-reply-link {visibility: visible;}
@@ -580,14 +580,14 @@ h6 {font-size:1em;}
 			width: 97.3%;height: 6em;}
 		#main form input:hover, #main form textarea:hover {border: 1px solid #999;background: #fff;box-shadow: 0 0 5px #eee inset;}
 		#main form input:focus, #main form textarea:focus {border: 1px solid #5dae59;background: #fff;box-shadow: 0 0 5px #eee inset;}
-		#main form label {font-size: 0.8em;font-family: 'Arvo Regular', 'Arvo Green', Trebuchet, Helvetica Neue, Helvetica, Arial, Verdana, sans-serif;color: #888;}
-		#main form input[type=submit] {display: inline-block;padding: 0.5em 1em; border: 1px solid #035b26;text-shadow:1px 1px 2px #012b12;color: #fff;box-shadow: 0 1px 0 #54b845 inset;border-radius:7px;font-weight: normal;font-family: 'Arvo Regular', 'Arvo Green', Trebuchet, Helvetica Neue, Helvetica, Arial, Verdana, sans-serif;width: auto;}
+		#main form label {font-size: 0.8em;font-family: 'Arvo Regular', 'Arvo Gruen', Trebuchet, Helvetica Neue, Helvetica, Arial, Verdana, sans-serif;color: #888;}
+		#main form input[type=submit] {display: inline-block;padding: 0.5em 1em; border: 1px solid #035b26;text-shadow:1px 1px 2px #012b12;color: #fff;box-shadow: 0 1px 0 #54b845 inset;border-radius:7px;font-weight: normal;font-family: 'Arvo Regular', 'Arvo Gruen', Trebuchet, Helvetica Neue, Helvetica, Arial, Verdana, sans-serif;width: auto;}
 			#main form input[type=submit] {background: #63a14f;background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzYzYTE0ZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMyYzhiNDIiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);background: -moz-linear-gradient(top,  #63a14f 0%, #2c8b42 100%);background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#63a14f), color-stop(100%,#2c8b42));background: -webkit-linear-gradient(top,  #63a14f 0%,#2c8b42 100%);background: -o-linear-gradient(top,  #63a14f 0%,#2c8b42 100%);background: -ms-linear-gradient(top,  #63a14f 0%,#2c8b42 100%);background: linear-gradient(to bottom,  #63a14f 0%,#2c8b42 100%);filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#63a14f', endColorstr='#2c8b42',GradientType=0 );}
 		#main form input[type=submit]:hover {background: #5ebd4c;border-color: #166608;box-shadow: 0 1px 0 0 #7dd66c inset;color: #0a321e;text-shadow: 1px 1px 0 #63c251;			}
 		 #main form input[type=submit]:hover {filter: progid: DXImageTransform.Microsoft.gradient(startColorstr = '#429f31', endColorstr = '#5ebd4c');/*INNER ELEMENTS MUST NOT BREAK THIS ELEMENTS BOUNDARIES*//*Element must have a height (not auto)*//*All filters must be placed together*/-ms-filter: "progid: DXImageTransform.Microsoft.gradient(startColorstr = '#429f31', endColorstr = '#5ebd4c')";/*Element must have a height (not auto)*//*All filters must be placed together*/background-image: -moz-linear-gradient(top, #429f31, #5ebd4c);background-image: -ms-linear-gradient(top, #429f31, #5ebd4c);background-image: -o-linear-gradient(top, #429f31, #5ebd4c);background-image: -webkit-gradient(linear, center top, center bottom, from(#429f31), to(#5ebd4c));background-image: -webkit-linear-gradient(top, #429f31, #5ebd4c);background-image: linear-gradient(top, #429f31, #5ebd4c);					/*--IE9 DOES NOT SUPPORT GRADIENT BACKGROUNDS--*/}
 		#recaptcha_area {margin-bottom: 1em;}
 			#main form .req {color: #5dae59;}
-			#main form label small {font-size: 0.8em;color: #aaa;font-family: 'Arvo Regular', 'Arvo Green', Trebuchet, Helvetica Neue, Helvetica, Arial, Verdana, sans-serif;}
+			#main form label small {font-size: 0.8em;color: #aaa;font-family: 'Arvo Regular', 'Arvo Gruen', Trebuchet, Helvetica Neue, Helvetica, Arial, Verdana, sans-serif;}
 			form .required-info {font-size: 0.8em;color: #888;	}
 
 
@@ -641,7 +641,7 @@ h6 {font-size:1em;}
 		.widget_search label{display: none;}
 		.widget_search #search{padding: 1em 5%;width: 90%;border: 1px solid #0a321e;}
 			.widget_search #search:hover, .widget_search #search:focus {border-color: #5dae59;}
-		.widget_search .button-submit {border:0;background: #0a321e; color: #fff;font-family: 'Arvo Regular', 'Arvo Green', Trebuchet, Helvetica Neue, Helvetica, Arial, Verdana, sans-serif;padding: 0.5em 1em;margin-top: 1em;font-size: 1em;font-weight: normal;}
+		.widget_search .button-submit {border:0;background: #0a321e; color: #fff;font-family: 'Arvo Regular', 'Arvo Gruen', Trebuchet, Helvetica Neue, Helvetica, Arial, Verdana, sans-serif;padding: 0.5em 1em;margin-top: 1em;font-size: 1em;font-weight: normal;}
 			.widget_search .button-submit:hover {background: #ffee00;color: #0a321e;}
 			.sidebar .widget_search .button-submit .fa {display: none;}
 	
@@ -669,7 +669,7 @@ h6 {font-size:1em;}
 		p.copyright a:hover{color: #ffee00;}
 	
 	#footer .widget_nav_menu {font-size: 1.2em;}
-	    #footer .widget_nav_menu li {font-family:  'Arvo Regular', 'Arvo Green', Trebuchet, Helvetica Neue, Helvetica, Arial, Verdana, sans-serif;margin-bottom: 2em;}
+	    #footer .widget_nav_menu li {font-family:  'Arvo Regular', 'Arvo Gruen', Trebuchet, Helvetica Neue, Helvetica, Arial, Verdana, sans-serif;margin-bottom: 2em;}
 	    #footer .widget_nav_menu li a {color: #fff;}
 	    #footer .widget_nav_menu li li a {color: #afdca7;}
 	    #footer .widget_nav_menu li li {float: none;font-size: 0.8em;margin: 0;width: 100%;font-family: 'PT Sans bold', Trebuchet, Helvetica Neue, Helvetica, Arial, Verdana, sans-serif;}
@@ -750,7 +750,7 @@ h6 {font-size:1em;}
   HEADER SYTLES
   *********************/
   #header{ padding: 1.5em 0 0 0;position: relative;margin-bottom: 2em;}
-	  #header.noimg {background: none;}
+	  #header.noimg {background: none; margin-bottom: 4em;  }
 	  #header .hgroup {display: inline-block;text-align: right;width: 79%;z-index: 2;position: absolute;top: 43%;right: 0;  }
 	  	#header #logo {display: inline-block;width: 20%;z-index: 2;position: relative;margin-top: 0.5em; }
 	  	#header a {color: #fff;text-shadow: 1px 1px 5px rgba(0,0,0,0.3);}
@@ -786,7 +786,7 @@ h6 {font-size:1em;}
   /*********************
   NAVIGATION STYLES
   *********************/
-	#nav-main {display:block;width:100%;text-align: left;font-size:1.3em;background:transparent;font-family: 'Arvo Regular', 'Arvo Green', Trebuchet, Helvetica Neue, Helvetica, Arial, Verdana, sans-serif;z-index: 3;position: relative; }
+	#nav-main {display:block;width:100%;text-align: left;font-size:1.3em;background:transparent;font-family: 'Arvo Regular', 'Arvo Gruen', Trebuchet, Helvetica Neue, Helvetica, Arial, Verdana, sans-serif;z-index: 3;position: relative; }
 		#nav-main .navigation {display:block;width:100%; background: #0a321e;}
 			
 			#nav-main li {display: block;float: left;position: relative;padding:0;margin:0;}
@@ -801,7 +801,7 @@ h6 {font-size:1em;}
 						 #nav-main li.current-menu-parent li a:hover,#nav-main li.current-menu-item li a:hover,#nav-main li ul li a:hover,#nav-main li.current-menu-parent li.current-menu-item a {color:#fff; background: #0a321e; }
 						 #nav-main li ul li a:before {}
 				/*Aktives Element */
-				#nav-main li.current-menu-item a, #nav-main li.current-menu-parent a {color: #ffe000;font-family: 'Arvo Regular', 'Arvo Green', Trebuchet, Helvetica Neue, Helvetica, Arial, Verdana, sans-serif;}
+				#nav-main li.current-menu-item a, #nav-main li.current-menu-parent a {color: #ffe000;font-family: 'Arvo Regular', 'Arvo Gruen', Trebuchet, Helvetica Neue, Helvetica, Arial, Verdana, sans-serif;}
 					#nav-main li.current-menu-item li a, #nav-main li.current-menu-parent li a {background: #fff;color:#0a321e;	}
 					
   
@@ -922,7 +922,7 @@ h6 {font-size:1em;}
 	
 	
 		/*Tabs */
-			.responsive-tabs__list, .content-tabs .responsive-tabs__list { display: block;margin: 0!important;padding-left: 2em;font-family: 'Arvo Regular', 'Arvo Green', Trebuchet, Helvetica Neue, Helvetica, Arial, Verdana, sans-serif;}
+			.responsive-tabs__list, .content-tabs .responsive-tabs__list { display: block;margin: 0!important;padding-left: 2em;font-family: 'Arvo Regular', 'Arvo Gruen', Trebuchet, Helvetica Neue, Helvetica, Arial, Verdana, sans-serif;}
 			.responsive-tabs__list li {float: none;display: inline-block;margin: 0!important;font-size: 1em;color: #0a321e;}
 			.responsive-tabs__heading { display: none;}
 			.responsive-tabs__panel--closed-accordion-only { display: block;}
@@ -1009,7 +1009,7 @@ h6 {font-size:1em;}
 		
 		#footer .adresse {font-size: 0.8em;padding-top: 1em;}
 		#footer .adresse p {margin-bottom: 0.5em;}		
-			#footer .adresse strong {font-weight: normal;color: #fee500;font-family: 'Arvo Regular', 'Arvo Green', Trebuchet, Helvetica Neue, Helvetica, Arial, Verdana, sans-serif;font-size: 1.2em;		}	
+			#footer .adresse strong {font-weight: normal;color: #fee500;font-family: 'Arvo Regular', 'Arvo Gruen', Trebuchet, Helvetica Neue, Helvetica, Arial, Verdana, sans-serif;font-size: 1.2em;		}	
 
 
 		#footer .widget_nav_menu  {width: 100%;display: block;font-size: 1em;}

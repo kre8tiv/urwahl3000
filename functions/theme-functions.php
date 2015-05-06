@@ -363,9 +363,6 @@ function custom_theme_features()  {
 		'header-text'            => true,
 		'default-text-color'     => 'ffffff',
 		'uploads'                => true,
-		'wp-head-callback'       => 'kr8_header_style',
-		'admin-head-callback'    => 'kr8_admin_header_style',
-		'admin-preview-callback' => 'kr8_admin_header_image',
 
 	);
 	add_theme_support( 'custom-header', $header_args );
@@ -456,61 +453,6 @@ function kr8_mce_before_init_insert_formats( $init_array ) {
 add_filter( 'tiny_mce_before_init', 'kr8_mce_before_init_insert_formats' );  
 
 
-
-//Custom Header Preview
-if ( ! function_exists( 'kr8_admin_header_style' ) ) :
-function kr8_admin_header_style() { ?>
-	<style type="text/css" id="kr8-admin-header-css">
-	
-
-	@font-face {
-	  font-family: 'Source Sans Pro';
-	  src: local('Source Sans Pro'), local('SourceSansPro-Regular'), url('../fonts/SourceSansPro-Regular.ttf.woff') format('woff');
-	  font-weight: normal;
-	  font-style: normal;
-	}
-	
-	
-	@font-face {
-	  font-family: 'Source Sans Pro Bold';
-	  src: local('Source Sans Pro Bold'), local('SourceSansPro-Bold'), url('../fonts/SourceSansPro-Bold.ttf.woff') format('woff');
-	  font-weight: normal;
-	  font-style: normal;
-	}
-
-	
-	.appearance_page_custom-header #headimg {background:url(<?php echo get_template_directory_uri(); ?>/lib/images/body_bg.jpg) top left no-repeat;background-size: cover;border: none;width: 1140px;height: 280px;}
-	#headimg {font-family: 'Source Sans Pro Bold','Source Sans Pro', Helvetica Neue, Helvetica, Verdana, Arial, sans-serif;position: relative;}
-	#headimg .hgroup {position: absolute;top: 40%; right: 1em;}
-	#headimg h1, #headimg h2 {padding: 0 0 0 5px;margin: 0;line-height:1em;display: block;text-align: right;text-shadow: 1px 1px 5px rgba(0,0,0,0.3);}
-		#headimg h1 a {	color: #fff;text-decoration: none;font-weight:normal;font-size:1.4em;}
-	#headimg h2 {font-size: 1em;text-shadow: 1px 1px 5px rgba(0,0,0,0.3);color: #ffe000; margin: 5px 0 0 0;font-family: 'Source Sans Pro Bold','Source Sans Pro', Arial, Helvetica Neue, Helvetica, Verdana, sans-serif;text-align: right;}
-	#headimg img {vertical-align: middle;}
-	#headimg p#logo {position: absolute;left: 1em;top: 30%; }
-	</style>
-<?php
-}
-endif;
-
-if ( ! function_exists( 'kr8_admin_header_image' ) ) :
-function kr8_admin_header_image() {
-?>
-	<div id="headimg">
-		<?php if ( get_header_image() ) : ?>
-		<img src="<?php header_image(); ?>" alt="">
-		<?php endif; ?>
-		<div class="displaying-header-text">
-		<p id="logo"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="Zur Startseite"><img src="<?php echo get_template_directory_uri(); ?>/lib/images/logo.png" width="185" height="100" alt="<?php bloginfo('name'); ?>"></a></p>
-		<div class="hgroup">
-			<h1 id="site-title"><a id="name"<?php echo sprintf( ' style="color:#%s;"', get_header_textcolor() ); ?> onclick="return false;" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a></h1>
-			<h2 id="site-description"><?php bloginfo( 'description' ); ?></h2>
-			
-		</div>
-		</div>
-	</div>
-<?php
-}
-endif; 
 
 
 

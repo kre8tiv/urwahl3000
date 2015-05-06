@@ -42,7 +42,7 @@ with the width and height.
 
 body.login {
 	background: #559448 url('../images/body_bg.jpg') top center repeat fixed;
-	font-family: 'PT Sans', Trebuchet, Helvetica Neue, Helvetica, Arial, Verdana, sans-serif;
+	font-family: 'PT Sans', Trebuchet, Helvetica Neue, Helvetica, Arial, Verdana, sans-serif;background-size: cover;
 }
 
 body.login form {
