@@ -453,9 +453,6 @@ function kr8_mce_before_init_insert_formats( $init_array ) {
 add_filter( 'tiny_mce_before_init', 'kr8_mce_before_init_insert_formats' );  
 
 
-
-<<<<<<< HEAD
-=======
 //Custom Header Preview
 if ( ! function_exists( 'kr8_admin_header_style' ) ) :
 function kr8_admin_header_style() { ?>
@@ -510,7 +507,6 @@ function kr8_admin_header_image() {
 }
 endif; 
 
->>>>>>> origin/master
 
 
 /*********************
