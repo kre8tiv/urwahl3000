@@ -51,10 +51,25 @@ Template Name: Startseite mit drei Kacheln (Sticky Posts)
 							if ( get_query_var('paged') ) { $paged = get_query_var('paged'); }
 							elseif ( get_query_var('page') ) { $paged = get_query_var('page'); }
 							else { $paged = 1; }
+							
+							
+							
+							
 							$postsperpage = get_option('posts_per_page');
 							
-							query_posts('posts_per_page='. $postsperpage .'&ignore_sticky_posts=1&paged=' . $paged); 
+							
 							?>
+							
+							
+							
+						<?php $args3 = array(
+								'posts_per_page' => $postsperpage,
+								'paged' => $paged,
+								'post__not_in'  => get_option( 'sticky_posts' ),
+								'ignore_sticky_posts' => 1
+							);
+							query_posts($args3);
+						?>
 					    		
     		
     					<?php while ( have_posts() ) : the_post(); ?>

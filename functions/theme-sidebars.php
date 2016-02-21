@@ -53,10 +53,10 @@ function kr8_wpsearch($form) {
 /************* SOCIAL MEDIA WIDGET *****************/
  class kr8_socialmedia extends WP_Widget {
 
-	function kr8_socialmedia() {
+	function __construct() {
 		$widget_ops = array('description' => 'Links zu deinen Profilen in den Sozialen Netzwerken.');
 
-		parent::WP_Widget(false, __('Social Media Links'),$widget_ops);
+		parent::__construct(false, __('Social Media Links'),$widget_ops);
 	}
 
 	function widget($args, $instance) {  

@@ -525,7 +525,7 @@ function kr8_related_posts() {
 			'category__in' => $category_ids,
 			'post__not_in' => array($post->ID),
 			'posts_per_page'=> 3, // Number of related posts that will be shown.
-			'caller_get_posts'=>1
+			'ignore_sticky_posts'=>1
 			);
         $related_posts = get_posts($args);
         if($related_posts) {
@@ -684,6 +684,8 @@ $fixImageMargins = new fixImageMargins();
 /*********************
 Breadcrumb
 *********************/
+
+if ( ! function_exists ( 'nav_breadcrumb' ) ) {
 function nav_breadcrumb() {
  
   $delimiter = '&rang;';
@@ -732,9 +734,12 @@ function nav_breadcrumb() {
         echo $before . get_the_title() . $after;
       }
  
+    } elseif ( is_search() ) {
+      echo $before . 'Ergebnisse für die Suche nach "' . get_search_query() . '"' . $after;
+ 
     } elseif ( !is_single() && !is_page() && get_post_type() != 'post' && !is_404() ) {
       $post_type = get_post_type_object(get_post_type());
-      echo $before . $post_type->labels->singular_name . $after;
+      echo $before .  $post_type->labels->singular_name . $after;
  
     } elseif ( is_attachment() ) {
       $parent = get_post($post->post_parent);
@@ -758,9 +763,6 @@ function nav_breadcrumb() {
       $breadcrumbs = array_reverse($breadcrumbs);
       foreach ($breadcrumbs as $crumb) echo $crumb . ' ' . $delimiter . ' ';
       echo $before . get_the_title() . $after;
- 
-    } elseif ( is_search() ) {
-      echo $before . 'Ergebnisse für die Suche nach "' . get_search_query() . '"' . $after;
  
     } elseif ( is_tag() ) {
       echo $before . 'Beiträge mit dem Schlagwort "' . single_tag_title('', false) . '"' . $after;
@@ -786,7 +788,7 @@ function nav_breadcrumb() {
  
   }
 }
-
+}
 
 
 

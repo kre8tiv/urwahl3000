@@ -1,10 +1,12 @@
 
 							<?php if ( has_post_thumbnail() ): ?>
-								<a href="<?php the_permalink(); ?>" class="postimg"><?php the_post_thumbnail('titelbild');  ?></a>
+							<?php $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' );
+								$url = $thumb['0']; ?>
+								<a href="<?php echo $url ?>" class="postimg fancybox"><?php the_post_thumbnail('titelbild');  ?></a>
 								<?php 
 									$imgexc = get_post(get_post_thumbnail_id())->post_excerpt;
 									if ($imgexc != "") {
-										?><p class="caption"><?php echo $imgexc;?></p><?php 
+										?><p class="caption"><span><i class="fa fa-picture-o"></i> <?php echo $imgexc;?></span></p><?php 
 									}
 									 ?>
 							<?php endif; ?>
@@ -14,8 +16,20 @@
 
 						
 						    <header class="article-header">							
+							   	<?php 	$posttags = get_the_tags();
+											 	if ($posttags) {
+											 		?><p class="byline"><?php
+											 		foreach($posttags as $tag) {
+											 		echo '' .$tag->name. ' '; 
+										  			}
+										  		?></p><?php	
+												} else {
+													
+													?> <p class="byline"><?php the_category(', '); ?></p><?php
+												}
+										?>		
 							    <h1 class="h2"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h1>
-							     <p class="byline">Veröffentlicht am <time class="updated" datetime="<?php echo the_time('c'); ?>"><?php the_time('j. F Y')?> um <?php the_time('H:i')?> Uhr.</time></p>
+							     
 						    </header>
 					
 						    
@@ -35,8 +49,7 @@
 						    
 						
 						    <footer class="article-footer">
-						    	<p class="categories"><span class"cats-title">Kategorien:</span> <?php the_category(', '); ?></p>
-    							<p class="tags"><?php the_tags('<span class="tags-title">' . __('Schlagworte:', '') . '</span> ', ', ', ''); ?></p>
+						    	<p class="byline">Veröffentlicht am <time class="updated" datetime="<?php echo the_time('c'); ?>"><?php the_time('j. F Y')?> um <?php the_time('H:i')?> Uhr.</time></p>
 						    </footer> 
 						   
 						   <!-- Autor -->

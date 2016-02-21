@@ -20,7 +20,7 @@ The comments page
 
 <div class="responsive-tabs comment-tabs">
 	
-	<?php if ( !is_page() ) { ?>
+	<?php if ( is_singular( 'post' ) ) { ?>
 	<h2>Verwandte Artikel</h2>
 	<div class="tab">
 		 <?php  kr8_related_posts(); ?>
