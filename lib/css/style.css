@@ -187,7 +187,7 @@ strong, b {font-family: 'PT Sans Bold', Trebuchet, Helvetica Neue, Helvetica, Ar
 
 a {color:#46962b;text-decoration: none;}
 a:hover {color:#0a321e;text-decoration: underline;}
-a:visited {color:#0a321e;}
+a:visited {color:#46962b;}
 
 a span.button, span.button a {display: inline-block; background: #46962b; color: #fff; padding: 0.5em;font-family: 'Arvo Regular', 'Arvo Gruen', Trebuchet, Helvetica Neue, Helvetica, Arial, Verdana, sans-serif;border-radius: 0.3em;}
 
@@ -354,10 +354,10 @@ h6 {font-size:1em;}
 		
 	
 		
-	article ul li {list-style-type: none;counter-increment: list;position: relative;margin: 0 0 1em 0;}
+	article ul li, .archive-title ul li {list-style-type: none;counter-increment: list;position: relative;margin: 0 0 1em 0;}
 	
 	article iframe {max-width:100%;}
-		article ul li:before {content: "✲";position: absolute;left: -2.5em;width: 2em;text-align: right;color: #5dae59;}
+		article ul li:before, .archive-title ul li:before {content: "✲";position: absolute;left: -2.5em;width: 2em;text-align: right;color: #5dae59;}
 		#comment-nav ul li:before{content: "";}
 		 #comment-nav {padding: 0;margin: 0; background: transparent;}
 
