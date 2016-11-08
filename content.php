@@ -6,7 +6,7 @@
 
 								 <article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article">
 								    <?php if ( has_post_thumbnail() ): ?>
-											<a href="	<?php the_permalink(); ?>" class="postimglist"><?php the_post_thumbnail('medium');  ?></a>
+											<a href="<?php the_permalink(); ?>" class="postimglist"><?php the_post_thumbnail('medium');  ?></a>
 									<?php endif; ?>
 									
 																		
@@ -31,7 +31,7 @@
 									</header>
 							
 								
-									<section class="entry-content"><?php the_excerpt(); ?></section>
+									<section class="entry-content"><?php the_excerpt(); ?><p><a href="<?php the_permalink() ?>" title="<?php the_title(); ?>" class="readmore">Weiterlesen »</a></p></section>
 								
 
 								</article> 					    

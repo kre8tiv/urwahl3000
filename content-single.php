@@ -36,6 +36,7 @@
 						    		<?php if ( is_archive() || is_search() ) : // Only display excerpts for archives and search. ?>		
 										 <section class="entry-content clearfix">
 											<?php the_excerpt(); ?>
+											<p><a href="<?php the_permalink() ?>" title="<?php the_title(); ?>" class="readmore">Weiterlesen »</a></p>
 										</section> 
 							
 										<?php else : ?>

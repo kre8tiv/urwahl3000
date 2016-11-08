@@ -920,7 +920,7 @@ h6 {font-size:1em;}
   	/*Bilder */
 	  	.wp-post-image {margin-bottom: 0;margin-top: 1em; }
 		.single a.postimg, a.postimglist {margin: 0;}
-		.single img.attachment-titelbild.wp-post-image {width: 100%;height: auto;margin-top: 0;}
+		.single img.attachment-titelbild.wp-post-image, .page img.attachment-titelbild.wp-post-image {width: 100%;height: auto;margin-top: 0;}
 		img.size-medium {width: 49%;height: auto;}
 			.wp-caption img.size-medium {width: 100%;height: auto;}
 		.single p.caption {padding: 0 2em;margin-bottom: 0!important;text-align: right;color: #8c8c8c;}
