@@ -46,7 +46,7 @@ Template Name: Startseite mit Willkommenstext
 					    		
     		
     					<?php while ( have_posts() ) : the_post(); ?>
-					    	<?php get_template_part( 'content', get_post_format() ); ?>
+					    	<?php kr8_template_part( 'content', get_post_format() ); ?>
 					    	
 					    <?php endwhile; ?>	
 					    

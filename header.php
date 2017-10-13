@@ -69,52 +69,64 @@
 			<li><a href="#footer">Zum Fußbereich</a></li>
 		</ul></nav>
 		
+		<?php do_action('kr8_vor_portal'); ?>
+		
 		<section id="portal">
 			<div class="inner">
-					<nav role="navigation" id="nav-portal"><h6 class="unsichtbar">Links ähnlichen Websites:</h6>
-						<?php kr8_nav_portal(); ?>
-					</nav>
-			<?php get_search_form(); ?>
+				<nav role="navigation" id="nav-portal"><h6 class="unsichtbar">Links zu ähnlichen Websites:</h6>
+					<?php kr8_nav_portal(); ?>
+				</nav>
+
+				<?php get_search_form(); ?>
+
+				<?php do_action('kr8_in_portal'); ?>
 			</div>
 		</section>
 			
+		<?php do_action('kr8_nach_portal'); ?>
 
 		<div id="wrap">
 			
-				
-				
-						
-						<?php if (get_header_image() != '') {	?>
-							<header id="header" class="pos widthimg" role="banner">
-							<?php } else {?>
-							<header id="header" class="pos noimg" role="banner">
-						<?php } ?>
-						<?php if ( display_header_text() ) : ?>
-						<p id="logo"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="Zur Startseite"><img src="<?php echo get_template_directory_uri(); ?>/lib/images/logo.png" width="185" height="100" alt="<?php bloginfo('name'); ?>"></a></p>
-						
-						 
-						
-						<div class="hgroup">
-							<h1 id="site-title"><span><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></span></h1>
-							<h2 id="site-description"><?php bloginfo( 'description' ); ?></h2>
-						</div>
-						<?php endif; ?>
+			<?php if (get_header_image() != '') {	?>
+				<?php do_action('kr8_vor_header'); ?>
+				<?php do_action('kr8_vor_header_mitbild'); ?>
+				<header id="header" class="pos widthimg" role="banner">
+			<?php } else {?>
+				<?php do_action('kr8_vor_header'); ?>
+				<?php do_action('kr8_vor_header_ohnebild'); ?>
+				<header id="header" class="pos noimg" role="banner">
+			<?php } ?>
+
+				<?php if ( display_header_text() ) : ?>
+					<p id="logo"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="Zur Startseite"><img src="<?php echo get_template_directory_uri(); ?>/lib/images/logo.png" width="185" height="100" alt="<?php bloginfo('name'); ?>"></a></p>
+					
+					<div class="hgroup">
+						<h1 id="site-title"><span><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></span></h1>
+						<h2 id="site-description"><?php bloginfo( 'description' ); ?></h2>
+					</div>
+				<?php endif; ?>
 												
-						<?php get_search_form(); ?>
-				</header>
+				<?php get_search_form(); ?>
+
+				<?php do_action('kr8_im_header'); ?>
+			</header>
+
+			<?php do_action('kr8_nach_header'); ?>
 				
-				<nav class="mobile-switch"><ul><li class="first"><a id="switch-menu" href="#menu"><span class="fa fa-bars"></span><span class="hidden">Menü</span></a></li><li class="last"><a id="switch-search" href="#search"><span class="fa fa-search"></span><span class="hidden">Suche</span></a></li></ul></nav>
+			<nav class="mobile-switch"><ul><li class="first"><a id="switch-menu" href="#menu"><span class="fa fa-bars"></span><span class="hidden">Menü</span></a></li><li class="last"><a id="switch-search" href="#search"><span class="fa fa-search"></span><span class="hidden">Suche</span></a></li></ul></nav>
 
+			<?php do_action('kr8_vor_navwrap'); ?>
 
-				<section class="navwrap">
-					<nav role="navigation" class="pos" id="nav-main"><h6 class="unsichtbar">Hauptmenü:</h6>
-						<?php kr8_nav_main(); ?>
-					</nav>
-					<?php if (function_exists('nav_breadcrumb') ) nav_breadcrumb(); ?>
-				</section>
+			<section class="navwrap">
+				<nav role="navigation" class="pos" id="nav-main"><h6 class="unsichtbar">Hauptmenü:</h6>
+					<?php kr8_nav_main(); ?>
+				</nav>
+				<?php if (function_exists('nav_breadcrumb') ) nav_breadcrumb(); ?>
 
-			
+				<?php do_action('kr8_im_navwrap'); ?>
+			</section>
 
-			
+			<?php do_action('kr8_nach_navwrap'); ?>
+
 			<section id="content">
 				<div class="inner wrap clearfix">

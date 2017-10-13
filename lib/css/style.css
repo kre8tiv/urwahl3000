@@ -148,7 +148,7 @@ a img.aligncenter {display: block; margin-left: auto; margin-right: auto}
 /*********************
 01. GENERAL STYLES
 *********************/
-body {font-family: 'PT Sans', Trebuchet, Helvetica Neue, Helvetica, Arial, Verdana, sans-serif;font-size: 100%;line-height: 1.5em;color: #333; background-size: cover;}
+body {font-family: 'PT Sans', Trebuchet, Helvetica Neue, Helvetica, Arial, Verdana, sans-serif;font-size: 100%;line-height: 1.5em;color: #333; background-size: cover !important;} 
 
 #wrap {}
 .pos {}
@@ -646,7 +646,7 @@ h6 {font-size:1em;}
 
 
 	/*Social Media */
-		.widget_kr8_socialmedia {padding: 0!important;background: transparent!important;box-shadow: 0 0 0 !important;}
+		.widget_kr8_socialmedia {padding: 0!important;background: transparent!important;box-shadow: none !important;}
 			.widget_kr8_socialmedia h3.widgettitle {}
 			.widget_kr8_socialmedia li {display: inline-block;margin: 0 0.5em 0.5em 0!important; padding: 0!important;}
 				.widget_kr8_socialmedia li span {border-radius: 50%;box-sizing: border-box;height: 40px;width: 40px;color: #fff;text-align: center;background-color: #0a321e; font-size: 1.3em;padding-top: 0.5em;}
@@ -670,7 +670,7 @@ h6 {font-size:1em;}
 	.widget_sp_image img {width:100%!important;height:auto!important;box-shadow:5px 5px 10px rgba(0,0,0,0.2);}
 	
 	/*Suche */
-	.widget_search {background: transparent!important;box-shadow: 0 0 0!important;padding: 0!important;display: none;}
+	.widget_search {background: transparent!important;box-shadow: none!important;padding: 0!important;display: none;}
 		.widget_search label{display: none;}
 		.widget_search #search{padding: 1em 5%;width: 90%;border: 1px solid #0a321e;}
 			.widget_search #search:hover, .widget_search #search:focus {border-color: #5dae59;}
@@ -702,7 +702,7 @@ h6 {font-size:1em;}
 13. FOOTER STYLES
 *********************/
 #footer {clear: both;background:#0a321e; padding: 0;color: #fff; }
-	#footer .widget {background: transparent; box-shadow: 0 0 0 0 #000;color: #8d9e96;}
+	#footer .widget {background: transparent; box-shadow: none;color: #8d9e96;}
 		#footer .widget:last-of-type {border-bottom: 0;}
 	#footer .widgettitle {color: #fff;}
 	p.copyright {text-align: center; font-size: 0.8em;background: #0a1a12;color: #56685f;padding: 1em;}
@@ -1037,8 +1037,8 @@ h6 {font-size:1em;}
   .widget {margin: 0 0 2em 0;padding: 1.5em;border: 0;background: #e6e6e6;box-shadow: 5px 5px 10px rgba(0,0,0,0.2);}
   	.sidebar .widget:last-of-type {margin-bottom: 2em;}
   	.widget ul li {margin-bottom: 0.5em;/* deep nesting */}
-  	.widget ul li ul {margin-top: 0.75em;padding-left: 1em;}
-  	.widget.widget_sp_image {padding: 0;background: transparent!important;box-shadow: 0 0 0 !important;  }
+  	.widget ul li ul {margin-top: 0.75em;margin-left:0;padding-left: 1em;}
+  	.widget.widget_sp_image {padding: 0;background: transparent!important;box-shadow: none !important;  }
   	.widget_search #search, .widget_search .button-submit {box-shadow: 5px 5px 10px rgba(0,0,0,0.2);}
   	.widget_search {display: block;}
   	h3.widgettitle {color: #0a321e;	}
@@ -1046,7 +1046,7 @@ h6 {font-size:1em;}
   /* recent-posts widget */
   /* archives widget */
   /* tag-cloud widget */
-  	.widget_tag_cloud {background: transparent;box-shadow: 0 0 0;padding: 0;}
+  	.widget_tag_cloud {background: transparent;box-shadow: none;padding: 0;}
 		.widget_tag_cloud h3.widgettitle {color: #fff;text-shadow: 2px 2px 7px rgba(0,0,0,0.3); }
 		#wrap .widget_tag_cloud a {background: #0a321e;color: #fff;}
 			#wrap .widget_tag_cloud a:hover{background: #ffee00;color: #0a321e;text-decoration: none;}	  		
@@ -1066,7 +1066,7 @@ h6 {font-size:1em;}
     	.widget_termine_liste_widget p{display: none;}
   
   /*Termine: Karte */
-  .termine_widget {padding: 0;background: transparent;box-shadow: 0 0 0;}
+  .termine_widget {padding: 0;background: transparent;box-shadow: none;}
   	.termine_widget h3{color: #fff;}
   	.termine_widget #termin_karte{box-shadow: 5px 5px 10px rgba(0,0,0,0.2); }
   

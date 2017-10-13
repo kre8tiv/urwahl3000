@@ -1,21 +1,22 @@
 
-							<?php if ( has_post_thumbnail() ): ?>
-							<?php $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' );
-								$url = $thumb['0']; ?>
-								<a href="<?php echo $url ?>" class="postimg fancybox"><?php the_post_thumbnail('titelbild');  ?></a>
-								<?php 
-									$imgexc = get_post(get_post_thumbnail_id())->post_excerpt;
-									if ($imgexc != "") {
-										?><p class="caption"><span><i class="fa fa-picture-o"></i> <?php echo $imgexc;?></span></p><?php 
-									}
-									 ?>
-							<?php endif; ?>
+						<?php if ( has_post_thumbnail() ): ?>
+							<?php 	$thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' );
+									$url = $thumb['0']; ?>
+									<a href="<?php echo $url ?>" class="postimg fancybox"><?php the_post_thumbnail('titelbild');  ?></a>
+									<?php 	$imgexc = get_post(get_post_thumbnail_id())->post_excerpt;
+											if ($imgexc != "") { ?>
+												<p class="caption"><span><i class="fa fa-picture-o"></i> <?php echo $imgexc;?></span></p>
+									<?php 	} ?>
+						<?php endif; ?>
 
 					    <article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article">
-					    
-
 						
+							<?php do_action('kr8_contentsingle_vor_article_header'); ?>
+
 						    <header class="article-header">							
+
+								<?php do_action('kr8_contentsingle_im_article_header1'); ?>
+
 							   	<?php 	$posttags = get_the_tags();
 											 	if ($posttags) {
 											 		?><p class="byline"><?php
@@ -28,30 +29,69 @@
 													?> <p class="byline"><?php the_category(', '); ?></p><?php
 												}
 										?>		
+
+								<?php do_action('kr8_contentsingle_im_article_header2'); ?>
+
 							    <h1 class="h2"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h1>
+
+								<?php do_action('kr8_contentsingle_im_article_header3'); ?>
 							     
 						    </header>
-					
+
+							<?php do_action('kr8_contentsingle_nach_article_header'); ?>
 						    
-						    		<?php if ( is_archive() || is_search() ) : // Only display excerpts for archives and search. ?>		
-										 <section class="entry-content clearfix">
-											<?php the_excerpt(); ?>
-											<p><a href="<?php the_permalink() ?>" title="<?php the_title(); ?>" class="readmore">Weiterlesen »</a></p>
-										</section> 
+				    		<?php if ( is_archive() || is_search() ) : // Only display excerpts for archives and search. ?>		
+
+								<?php do_action('kr8_contentsingle_vor_article_content'); ?>
+
+								<section class="entry-content clearfix">
+									<?php do_action('kr8_contentsingle_im_article_content1'); ?>
+
+									<?php the_excerpt(); ?>
+
+									<?php do_action('kr8_contentsingle_im_article_content2'); ?>
+
+									<p><a href="<?php the_permalink() ?>" title="<?php the_title(); ?>" class="readmore">Weiterlesen »</a></p>
+
+									<?php do_action('kr8_contentsingle_im_article_content3'); ?>
+								</section> 
+
+								<?php do_action('kr8_contentsingle_nach_article_content'); ?>
 							
-										<?php else : ?>
+							<?php else : ?>
 										
-										<section class="entry-content clearfix">											
-											<?php the_content(); ?>
-											<?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Seiten:', 'kr8' ), 'after' => '</div>' ) ); ?>
-										</section>
-										
-										<?php endif; ?>
+								<?php do_action('kr8_contentsingle_vor_article_content'); ?>
+
+								<section class="entry-content clearfix">											
+
+									<?php do_action('kr8_contentsingle_im_article_content1'); ?>
+
+									<?php the_content(); ?>
+
+									<?php do_action('kr8_contentsingle_im_article_content2'); ?>
+
+									<?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Seiten:', 'kr8' ), 'after' => '</div>' ) ); ?>
+
+									<?php do_action('kr8_contentsingle_im_article_content3'); ?>
+								</section>
+
+								<?php do_action('kr8_contentsingle_nach_article_content'); ?>
+							
+							<?php endif; ?>
 						    
+							<?php do_action('kr8_contentsingle_vor_article_footer'); ?>
 						
 						    <footer class="article-footer">
+	
+								<?php do_action('kr8_contentsingle_im_article_footer1'); ?>
+
 						    	<p class="byline">Veröffentlicht am <time class="updated" datetime="<?php echo the_time('c'); ?>"><?php the_time('j. F Y')?> um <?php the_time('H:i')?> Uhr.</time></p>
+	
+								<?php do_action('kr8_contentsingle_im_article_footer2'); ?>
+
 						    </footer> 
+
+							<?php do_action('kr8_contentsingle_nach_article_footer'); ?>
 						   
 						   <!-- Autor -->
 							<?php if ( get_post_format() ) : ?>	

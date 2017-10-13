@@ -3,7 +3,7 @@
 					<h1>Suche</h1>
 
 					    <?php while ( have_posts() ) : the_post(); ?>
-					    	<?php get_template_part( 'content-headerlist', get_post_format() ); ?>
+					    	<?php kr8_template_part( 'content-headerlist', get_post_format() ); ?>
 					    <?php endwhile; ?>	
 					
 					        <?php if (function_exists('kr8_page_navi')) { ?>

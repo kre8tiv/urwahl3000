@@ -39,9 +39,6 @@ function kr8_startup() {
     // cleaning up excerpt
     add_filter('excerpt_more', 'kr8_excerpt_more');
     add_filter( 'excerpt_length', 'kr8_excerpt_length', 999 );
-    
-
-
 } /* end */
 
 
@@ -50,10 +47,6 @@ CLEANING UP THE HEAD
 *********************/
 
 function kr8_head_cleanup() {
-	// category feeds
-	// remove_action( 'wp_head', 'feed_links_extra', 3 );
-	// post and comment feeds
-	// remove_action( 'wp_head', 'feed_links', 2 );
 	// EditURI link
 	remove_action( 'wp_head', 'rsd_link' );
 	// windows live writer
@@ -68,43 +61,30 @@ function kr8_head_cleanup() {
 	remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0 );
 	// WP version
 	remove_action( 'wp_head', 'wp_generator' );
-  // remove WP version from css
-  add_filter( 'style_loader_src', 'kr8_remove_wp_ver_css_js', 9999 );
-  // remove Wp version from scripts
-  add_filter( 'script_loader_src', 'kr8_remove_wp_ver_css_js', 9999 );
-
 } /* end */
 
 // remove WP version from RSS
 function kr8_rss_version() { return ''; }
 
-// remove WP version from scripts
-function kr8_remove_wp_ver_css_js( $src ) {
-    if ( strpos( $src, 'ver=' ) )
-        $src = remove_query_arg( 'ver', $src );
-    return $src;
-}
-
 // remove injected CSS for recent comments widget
 function kr8_remove_wp_widget_recent_comments_style() {
-   if ( has_filter('wp_head', 'wp_widget_recent_comments_style') ) {
-      remove_filter('wp_head', 'wp_widget_recent_comments_style' );
-   }
+	if ( has_filter('wp_head', 'wp_widget_recent_comments_style') ) {
+		remove_filter('wp_head', 'wp_widget_recent_comments_style' );
+	}
 }
 
 // remove injected CSS from recent comments widget
 function kr8_remove_recent_comments_style() {
-  global $wp_widget_factory;
-  if (isset($wp_widget_factory->widgets['WP_Widget_Recent_Comments'])) {
-    remove_action('wp_head', array($wp_widget_factory->widgets['WP_Widget_Recent_Comments'], 'recent_comments_style'));
-  }
+	global $wp_widget_factory;
+	if (isset($wp_widget_factory->widgets['WP_Widget_Recent_Comments'])) {
+		remove_action('wp_head', array($wp_widget_factory->widgets['WP_Widget_Recent_Comments'], 'recent_comments_style'));
+	}
 }
 
 // remove injected CSS from gallery
 function kr8_gallery_style($css) {
-  return preg_replace("!<style type='text/css'>(.*?)</style>!s", '', $css);
+	return preg_replace("!<style type='text/css'>(.*?)</style>!s", '', $css);
 }
-
 
 /*********************
 SCRIPTS & ENQUEUEING
@@ -112,58 +92,51 @@ SCRIPTS & ENQUEUEING
 
 // loading modernizr and jquery, and reply script
 function kr8_scripts_and_styles() {
-  if (!is_admin()) {
-
-    // modernizr (without media query polyfill)
-    wp_register_script( 'kr8-modernizr', get_template_directory_uri() . '/lib/js/libs/modernizr.custom.min.js', array(), '2.5.3', false );
-    wp_register_script( 'kr8-fancybox', get_template_directory_uri() . '/lib/js/libs/fancybox/jquery.fancybox.pack.js', array(), '2.1.4', false );
-    wp_register_script( 'kr8-tabs', get_template_directory_uri() . '/lib/js/responsiveTabs.min.js', array(), '2.1.4', false );
-
-
-
-    // comment reply script for threaded comments
-    if ( is_singular() AND comments_open() AND (get_option('thread_comments') == 1)) {
-      wp_enqueue_script( 'comment-reply' );
-    }
-
-    //adding scripts file in the footer
-    wp_register_script( 'kr8-js', get_template_directory_uri() . '/lib/js/scripts.js', array( 'jquery' ), '', true );
-    
-        // register main stylesheet
-    wp_register_style( 'kr8-stylesheet', get_template_directory_uri() . '/lib/css/style.css', array(), '', 'all' );
-    wp_register_style( 'kr8-fontawesome', get_template_directory_uri() . '/lib/css/font-awesome.min.css', array(), '', 'all' );
-    wp_register_style( 'kr8-fancycss', get_template_directory_uri() . '/lib/js/libs/fancybox/jquery.fancybox.css', array(), '', 'all' );
-    wp_register_style( 'kr8-fancybuttoncss', get_template_directory_uri() . '/lib/js/libs/fancybox/jquery.fancybox-buttons.css', array(), '', 'all' );
-
-    // ie-only style sheet
-    wp_register_style( 'kr8-ie-only', get_template_directory_uri() . '/lib/css/ie.css', array(), '' );
-
-    // enqueue styles and scripts
-    wp_enqueue_script( 'kr8-modernizr' );
-    wp_enqueue_style( 'kr8-fontawesome' );
-    wp_enqueue_style( 'kr8-stylesheet' );
-    wp_enqueue_style( 'kr8-fancycss' );
-    wp_enqueue_style( 'kr8-fancybuttoncss' );
-    wp_enqueue_style('kr8-ie-only');
-    /*
-    I recommend using a plugin to call jQuery
-    using the google cdn. That way it stays cached
-    and your site will load faster.
-    */
-    wp_enqueue_script( 'jquery' );
-    wp_enqueue_script( 'kr8-js' );
-    wp_enqueue_script( 'kr8-fancybox' );
-    wp_enqueue_script( 'kr8-socialshare' );
-    wp_enqueue_script( 'kr8-fancybuttons' );
-     wp_enqueue_script( 'kr8-tabs' );
-    
-    
-
-    
-
-  }
+	if (!is_admin()) {
+		// modernizr (without media query polyfill)
+		wp_register_script( 'kr8-modernizr', get_template_directory_uri() . '/lib/js/libs/modernizr.custom.min.js', array(), '2.5.3', false );
+		wp_register_script( 'kr8-fancybox', get_template_directory_uri() . '/lib/js/libs/fancybox/jquery.fancybox.pack.js', array(), '2.1.4', false );
+		wp_register_script( 'kr8-tabs', get_template_directory_uri() . '/lib/js/responsiveTabs.min.js', array(), '2.1.4', false );
+		
+		
+		
+		// comment reply script for threaded comments
+		if ( is_singular() AND comments_open() AND (get_option('thread_comments') == 1)) {
+		  wp_enqueue_script( 'comment-reply' );
+		}
+		
+		//adding scripts file in the footer
+		wp_register_script( 'kr8-js', get_template_directory_uri() . '/lib/js/scripts.js', array( 'jquery' ), '', true );
+		
+		    // register main stylesheet
+		wp_register_style( 'kr8-stylesheet', get_template_directory_uri() . '/lib/css/style.css', array(), '', 'all' );
+		wp_register_style( 'kr8-fontawesome', get_template_directory_uri() . '/lib/css/font-awesome.min.css', array(), '', 'all' );
+		wp_register_style( 'kr8-fancycss', get_template_directory_uri() . '/lib/js/libs/fancybox/jquery.fancybox.css', array(), '', 'all' );
+		wp_register_style( 'kr8-fancybuttoncss', get_template_directory_uri() . '/lib/js/libs/fancybox/jquery.fancybox-buttons.css', array(), '', 'all' );
+		
+		// ie-only style sheet
+		wp_register_style( 'kr8-ie-only', get_template_directory_uri() . '/lib/css/ie.css', array(), '' );
+		
+		// enqueue styles and scripts
+		wp_enqueue_script( 'kr8-modernizr' );
+		wp_enqueue_style( 'kr8-fontawesome' );
+		wp_enqueue_style( 'kr8-stylesheet' );
+		wp_enqueue_style( 'kr8-fancycss' );
+		wp_enqueue_style( 'kr8-fancybuttoncss' );
+		wp_enqueue_style('kr8-ie-only');
+		/*
+		I recommend using a plugin to call jQuery
+		using the google cdn. That way it stays cached
+		and your site will load faster.
+		*/
+		wp_enqueue_script( 'jquery' );
+		wp_enqueue_script( 'kr8-js' );
+		wp_enqueue_script( 'kr8-fancybox' );
+		wp_enqueue_script( 'kr8-socialshare' );
+		wp_enqueue_script( 'kr8-fancybuttons' );
+		wp_enqueue_script( 'kr8-tabs' );
+	}
 }
-
 
 // adding the conditional wrapper around ie stylesheet
 // source: http://code.garyjones.co.uk/ie-conditional-style-sheets-wordpress/
@@ -172,7 +145,6 @@ function kr8_ie_conditional( $tag, $handle ) {
 		$tag = '<!--[if lt IE 9]>' . "\n" . $tag . '<![endif]-->' . "\n";
 	return $tag;
 }
-
 
 /*********************
 THEME SUPPORT
@@ -190,8 +162,6 @@ function kr8_theme_support() {
 	add_image_size( 'large', 800, 1200, false );
 	add_image_size( 'titelbild', 850, 450, true );
 	
-	
-	
 	update_option('thumbnail_size_w', 150);
 	update_option('thumbnail_size_h', 150);
 	update_option('medium_size_w', 400);
@@ -199,32 +169,8 @@ function kr8_theme_support() {
 	update_option('large_size_w', 800);
 	update_option('large_size_h', 1200);
 	
-	//add_image_size( 'slider', 300, 300, true  );
-
-
-
-  
-
 	// rss thingy
 	add_theme_support('automatic-feed-links');
-
-                
-
-	// adding post format support
-	/*
-	add_theme_support( 'post-formats',
-		array(
-			'aside',             // title less blurb
-			'gallery',           // gallery of images
-			'link',              // quick link to other site
-			'image',             // an image
-			'quote',             // a quick quote
-			'status',            // a Facebook like status update
-			'video',             // video
-			'audio',             // audio
-			'chat'               // chat transcript
-		)
-	);*/
 
 	// wp menus
 	add_theme_support( 'menus' );
@@ -238,9 +184,6 @@ function kr8_theme_support() {
 		)
 	);
 } /* end kr8 theme support */
-
-
-
 
 /*********************
 MENUS & NAVIGATION
@@ -316,18 +259,13 @@ function kr8_nav_footer_fallback() {
 
 // this is the fallback for portal menu
 function kr8_nav_portal_fallback() { ?>
-	
-		<ul id="menu-portalmenu" class="navigation">
-			<li><a href="http://gruene.de">Bundesverband</a></li>
-			<li><a href="http://gruene-fraktion.de">Bundestagsfraktion</a></li>
-			<li><a href="http://gruene-jugend.de">Grüne Jugend</a></li>
-			<li><a href="http://boell.de">Böll Stiftung</a></li>
-		</ul>
-	
+	<ul id="menu-portalmenu" class="navigation">
+		<li><a href="http://gruene.de">Bundesverband</a></li>
+		<li><a href="http://gruene-fraktion.de">Bundestagsfraktion</a></li>
+		<li><a href="http://gruene-jugend.de">Grüne Jugend</a></li>
+		<li><a href="http://boell.de">Böll Stiftung</a></li>
+	</ul>
 <?php }
-
-
-
 
 /*********************
 INDIVIDUALISATION
@@ -368,10 +306,6 @@ function custom_theme_features()  {
 	add_theme_support( 'custom-header', $header_args );
 
 }
-
-
-
-
 
 function kr8_header_style() {
 	$text_color = get_header_textcolor();
@@ -621,10 +555,6 @@ function kr8_page_navi($before = '', $after = '') {
 IMAGES
 *********************/
 
-
-
-
-
 // remove the p from around imgs (http://css-tricks.com/snippets/wordpress/remove-paragraph-tags-from-around-images/)
 function kr8_filter_ptags_on_images($content){
    return preg_replace('/<p>\s*(<a .*>)?\s*(<img .* \/>)\s*(<\/a>)?\s*<\/p>/iU', '\1\2\3', $content);
@@ -676,10 +606,6 @@ class fixImageMargins {
     }
 }
 $fixImageMargins = new fixImageMargins();
-
-
-
-
 
 /*********************
 Breadcrumb
@@ -790,10 +716,6 @@ function nav_breadcrumb() {
 }
 }
 
-
-
-
-
 /*********************
 RANDOM CLEANUP ITEMS
 *********************/
@@ -827,6 +749,19 @@ function kr8_get_the_author_posts_link() {
 		get_the_author()
 	);
 	return $link;
+}
+
+/*********************
+REWRITE TEMPLATE PART
+*********************/
+
+function kr8_template_part( $slug, $name = null ) {
+	if($action = apply_filters( 'kr8_template_part_filter', $false, array('slug' => $slug, 'name' => $name))) {
+		do_action($action);
+		return;
+	}
+	
+	get_template_part($slug, $name);
 }
 
 ?>
