@@ -185,6 +185,14 @@ function kr8_theme_support() {
 	);
 } /* end kr8 theme support */
 
+function kr8_image_title($attr, $attachment, $size) {
+	if(!isset($attr['title']) && isset($attachment->post_title))
+		$attr['title'] = $attachment->post_title;
+
+	return $attr;
+}
+add_filter('wp_get_attachment_image_attributes', 'kr8_image_title', 10, 3);
+
 /*********************
 MENUS & NAVIGATION
 *********************/
