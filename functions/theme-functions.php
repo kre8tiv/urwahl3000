@@ -123,12 +123,7 @@ function kr8_scripts_and_styles() {
 		wp_enqueue_style( 'kr8-stylesheet' );
 		wp_enqueue_style( 'kr8-fancycss' );
 		wp_enqueue_style( 'kr8-fancybuttoncss' );
-		wp_enqueue_style('kr8-ie-only');
-		/*
-		I recommend using a plugin to call jQuery
-		using the google cdn. That way it stays cached
-		and your site will load faster.
-		*/
+		wp_enqueue_style( 'kr8-ie-only');
 		wp_enqueue_script( 'jquery' );
 		wp_enqueue_script( 'kr8-js' );
 		wp_enqueue_script( 'kr8-fancybox' );
