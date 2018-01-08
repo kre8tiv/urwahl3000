@@ -1,0 +1,19 @@
+<html>
+<head>
+<title>Popup-Fenster mit JavaScript</title>
+<script type="text/javascript">
+function popup (url) {
+	fenster = window.open(url, "Landkarte", "width=650,height=300,resizable=yes");
+	fenster.focus();
+	return false;
+}
+</script>
+</head>
+<body>
+<p><a href="index.php" target="_blank" onclick="return popup(this.href);">Landkarte anzeigen</a></p>
+
+<input id="termine_new_field6" name="termine_field6" placeholder="Lat (ca. 48.5)" value="48.36781" style="width:35%">
+<input id="termine_new_field9" name="termine_field9" placeholder="Lon (ca. 11.4)" value="10.89838" style="width:35%">
+<input id="termine_new_field10" name="termine_field10" placeholder="Zoom (11-13)" value="13" style="width:35%">
+</body>
+</html>

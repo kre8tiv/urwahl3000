@@ -245,6 +245,7 @@ h6 {font-size:1em;}
 			#nav-main .current-menu-item li a {color: #fff;}
 			#nav-main li li {margin:0;}
 			#nav-main ul ul a {background:#46962b;color:#fff;padding-left: 3em;	}
+			#nav-main ul ul ul a { padding-left: 4.5em;}
 			
 			
 			
@@ -842,6 +843,19 @@ h6 {font-size:1em;}
 						#nav-main li ul li a,  #nav-main li.current-menu-parent li a,  #nav-main li.current-menu-item li a {background: #fff;color:#0a321e;border: 0;padding: 0.5em 1.2em;font-family: 'PT Sans bold', Trebuchet, Helvetica Neue, Helvetica, Arial, Verdana, sans-serif;	}
 						 #nav-main li.current-menu-parent li a:hover,#nav-main li.current-menu-item li a:hover,#nav-main li ul li a:hover,#nav-main li.current-menu-parent li.current-menu-item a {color:#fff; background: #0a321e; }
 						 #nav-main li ul li a:before {}
+				/*3te Ebene */
+				#nav-main li ul ul {
+					position: relative;
+					margin-left: 0;
+					box-shadow: inset 0 0px 10px rgba(0,0,0,0.2);
+					margin-top: 0;
+					padding-top: 10px;
+					padding-left: 10px;
+					background: #ffffff;
+					width: 230px;
+					padding-bottom: 10px;
+					padding-right: 10px;
+				}
 				/*Aktives Element */
 				#nav-main li.current-menu-item a, #nav-main li.current-menu-parent a {color: #ffe000;font-family: 'Arvo Regular', 'Arvo Gruen', Trebuchet, Helvetica Neue, Helvetica, Arial, Verdana, sans-serif;}
 					#nav-main li.current-menu-item li a, #nav-main li.current-menu-parent li a {background: #fff;color:#0a321e;	}
@@ -1060,19 +1074,27 @@ h6 {font-size:1em;}
   /* text widget */
   
     /*Termine: Liste */
-    .widget_termine_liste_widget {overflow: hidden;  }
-    	.widget_termine_liste_widget li li {	}
+    .widget_termine_liste_widget {overflow: hidden; background: #ffee00; }
     	.widget_termine_liste_widget span{margin-right: 0;font-size: 0.8em;}
     	.widget_termine_liste_widget span:after{content: ", ";}
     	.widget_termine_liste_widget span:last-of-type:after{content: "";}
     	.widget_termine_liste_widget h4 {font-size: 1em;	}
     	.widget_termine_liste_widget p{display: none;}
+    .widget_kal3000_termine_liste_widget {overflow: hidden; background: #ffee00; }
+    	.widget_kal3000_termine_liste_widget span{margin-right: 0;font-size: 0.8em;}
+    	.widget_kal3000_termine_liste_widget span:after{content: ", ";}
+    	.widget_kal3000_termine_liste_widget span:last-of-type:after{content: "";}
+    	.widget_kal3000_termine_liste_widget h4 {font-size: 1em;	}
+    	.widget_kal3000_termine_liste_widget p{display: none;}
   
   /*Termine: Karte */
   .termine_widget {padding: 0;background: transparent;box-shadow: none;}
   	.termine_widget h3{color: #fff;}
   	.termine_widget #termin_karte{box-shadow: 5px 5px 10px rgba(0,0,0,0.2); }
   
+  .kal3000_termine_widget {padding: 0;background: transparent;box-shadow: none;}
+  	.kal3000_termine_widget h3{color: #fff;}
+  	.kal3000_termine_widget #termin_karte{box-shadow: 5px 5px 10px rgba(0,0,0,0.2); }
   
   /*********************
   FOOTER STYLES

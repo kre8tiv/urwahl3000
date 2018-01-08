@@ -203,7 +203,7 @@ function kr8_nav_main() {
         'after' => '',                                  // after the menu
         'link_before' => '',                            // before each link
         'link_after' => '',                             // after each link
-        'depth' => 2,                                   // limit the depth of the nav
+        'depth' => 3,                                   // limit the depth of the nav
     	'fallback_cb' => 'kr8_main_nav_fallback'      // fallback function
 	));
 } /* end kr8 main nav */
