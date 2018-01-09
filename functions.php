@@ -21,4 +21,15 @@ $MyThemeUpdateChecker = new ThemeUpdateChecker(
 	'http://themes.kre8tiv.de/?action=get_metadata&slug=urwahl3000' //Metadata URL.
 );
 
+function urwahl3000_after_update() {
+	$current_version = wp_get_theme()->get('Version');
+	$old_version = get_option( 'urwahl3000_theme_version' );
+	
+	if ($old_version !== $current_version) {
+		flush_rewrite_rules();
+		update_option('urwahl3000_theme_version', $current_version);
+	}
+}
+add_action('after_setup_theme', 'urwahl3000_after_update');
+
 ?>

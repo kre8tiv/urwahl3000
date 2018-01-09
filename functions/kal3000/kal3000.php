@@ -125,9 +125,24 @@ function kal3000_termine_save_postdata( $post_id ) {
 	}   
 	update_post_meta($_POST['post_ID'], '_secretevent', $wert14); 
 
-	 update_post_meta($_POST['post_ID'], '_bis', $_POST['wpc_until'], false); 
-	 $zeitstempel = strftime( strToTime( $_POST['wpc_from'] ) );
-	 update_post_meta($_POST['post_ID'], '_zeitstempel', $zeitstempel, false); 
+	update_post_meta($_POST['post_ID'], '_bis', $_POST['wpc_until'], false); 
+	$zeitstempel = strftime( strToTime( $_POST['wpc_from'] ) );
+	if(!$zeitstempel) {
+		// strftime doesn't seem to work, so let's get creative
+		preg_match("/([0-9]{1,2}).\s(\w{1,})\s([0-9]{4})\s([0-9]{2}):([0-9]{2})/", $_POST['wpc_from'], $zeitstempel);
+		
+		$month_number = "";
+		for($i=1;$i<=12;$i++){
+			if(strtolower(date_i18n("F", mktime(0, 0, 0, $i, 1, 0))) == strtolower($zeitstempel[2])){
+				$month_number = $i;
+				break;
+			}
+		}
+
+		$zeit = mktime($zeitstempel[4], $zeitstempel[5], 0, $month_number, $zeitstempel[1], $zeitstempel[3]);
+		$zeitstempel = date_i18n('U', $zeit);
+	}
+	update_post_meta($_POST['post_ID'], '_zeitstempel', $zeitstempel, false); 
 }
 add_action( 'save_post', 'kal3000_termine_save_postdata' );
 
@@ -210,7 +225,7 @@ function kal3000_the_termin(){
 	if(date('G',$meta_angabe_zeit['_zeitstempel'][0])==0){
 		// Ohne Stundenangabe
 		$echo .= '<span class="termin_tag">';
-			echo date_i18n('l, j.m.Y', $meta_angabe_zeit['_zeitstempel'][0]);
+			echo date_i18n('l, j. F Y', $meta_angabe_zeit['_zeitstempel'][0]);
 		if(isset($meta_angabe_zeit['_bis']) AND $meta_angabe_zeit['_bis'][0]!='') { 
 			$echo .= ' bis '.$meta_angabe_zeit['_bis'][0];
 		}
@@ -220,7 +235,7 @@ function kal3000_the_termin(){
 	} else {
 		if(isset($meta_angabe_zeit['_bis']) AND $meta_angabe_zeit['_bis'][0]!='') {
 			$echo .= '<span class="termin_tag">';
-				$echo .= date_i18n('l, j.m.Y, H:i', $meta_angabe_zeit['_zeitstempel'][0]);
+				$echo .= date_i18n('l, j. F Y, H:i', $meta_angabe_zeit['_zeitstempel'][0]);
 				$echo .= ' Uhr';
 			$echo .= '</span>';
 			$echo .= '<span class="termin_zeit">';
@@ -230,7 +245,7 @@ function kal3000_the_termin(){
 			$echo .= "</span>\n";
 		}else {
 			$echo .= '<span class="termin_tag">';
-				$echo .= date_i18n('l, j.m.Y', $meta_angabe_zeit['_zeitstempel'][0]);
+				$echo .= date_i18n('l, j. F Y', $meta_angabe_zeit['_zeitstempel'][0]);
 			$echo .= '</span>';
 			$echo .= '<span class="termin_zeit">';
 				$echo .= date_i18n('H:i', $meta_angabe_zeit['_zeitstempel'][0]);
