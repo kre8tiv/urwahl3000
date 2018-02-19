@@ -721,11 +721,35 @@ h6 {font-size:1em;}
 
 }
 
+/*********************
+14. TERMINE STYLES
+*********************/
+.widget_termine_liste_widget {overflow: hidden; background: #ffee00; }
+	.widget_termine_liste_widget span{margin-right: 0;font-size: 0.8em;}
+	.widget_termine_liste_widget span:after{content: ", ";}
+	.widget_termine_liste_widget span:last-of-type:after{content: "";}
+	.widget_termine_liste_widget h4 {font-size: 1em;	}
+	.widget_termine_liste_widget p{display: none;}
+.widget_kal3000_termine_liste_widget {overflow: hidden; }
+	.widget_kal3000_termine_liste_widget span{margin-right: 0;font-size: 0.8em;}
+	.widget_kal3000_termine_liste_widget span:after{content: ", ";}
+	.widget_kal3000_termine_liste_widget span:last-of-type:after{content: "";}
+	.widget_kal3000_termine_liste_widget h4 {font-size: 1em;	}
+	.widget_kal3000_termine_liste_widget p{display: none;}
+
+/*Termine: Karte */
+.termine_widget {padding: 0;background: transparent;box-shadow: none;}
+	.termine_widget h3{color: #fff;}
+	.termine_widget #termin_karte{box-shadow: 5px 5px 10px rgba(0,0,0,0.2); }
+
+.kal3000_termine_widget {padding: 0;background: transparent;box-shadow: none;}
+	.kal3000_termine_widget h3{color: #fff;}
+	.kal3000_termine_widget #termin_karte{box-shadow: 5px 5px 10px rgba(0,0,0,0.2); }
+
 
 /**********************************************************************/
 /* 7. MOBILE STYLES                                                   */
 /**********************************************************************/
-
 
 /*SMALLER LAPTOPS */
 @media only screen and (min-width: 770px) {
@@ -1072,29 +1096,7 @@ h6 {font-size:1em;}
   /* recent-comments widget */
   /* search widget */
   /* text widget */
-  
-    /*Termine: Liste */
-    .widget_termine_liste_widget {overflow: hidden; background: #ffee00; }
-    	.widget_termine_liste_widget span{margin-right: 0;font-size: 0.8em;}
-    	.widget_termine_liste_widget span:after{content: ", ";}
-    	.widget_termine_liste_widget span:last-of-type:after{content: "";}
-    	.widget_termine_liste_widget h4 {font-size: 1em;	}
-    	.widget_termine_liste_widget p{display: none;}
-    .widget_kal3000_termine_liste_widget {overflow: hidden; background: #ffee00; }
-    	.widget_kal3000_termine_liste_widget span{margin-right: 0;font-size: 0.8em;}
-    	.widget_kal3000_termine_liste_widget span:after{content: ", ";}
-    	.widget_kal3000_termine_liste_widget span:last-of-type:after{content: "";}
-    	.widget_kal3000_termine_liste_widget h4 {font-size: 1em;	}
-    	.widget_kal3000_termine_liste_widget p{display: none;}
-  
-  /*Termine: Karte */
-  .termine_widget {padding: 0;background: transparent;box-shadow: none;}
-  	.termine_widget h3{color: #fff;}
-  	.termine_widget #termin_karte{box-shadow: 5px 5px 10px rgba(0,0,0,0.2); }
-  
-  .kal3000_termine_widget {padding: 0;background: transparent;box-shadow: none;}
-  	.kal3000_termine_widget h3{color: #fff;}
-  	.kal3000_termine_widget #termin_karte{box-shadow: 5px 5px 10px rgba(0,0,0,0.2); }
+  .widget_kal3000_termine_liste_widget { background: #ffee00; }
   
   /*********************
   FOOTER STYLES
@@ -1237,6 +1239,9 @@ body {}
 
 }
 
+@media (max-width: 768px) {
+	
+}
 
 /*Tablets */
 @media (min-width: 500px) and (max-width: 768px) {
@@ -1333,4 +1338,3 @@ body {}
     display: none;
   }
 }
-
