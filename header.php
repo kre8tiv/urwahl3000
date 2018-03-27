@@ -22,7 +22,7 @@
 		
 		<!-- open graph -->
 		<meta itemprop="og:site_name" content="<?php bloginfo('name'); ?>">
-		<meta itemprop="og:title" content="<?php the_title(); ?>">
+		<meta itemprop="og:title" content="<?php echo strip_tags(the_title('', '', FALSE)); ?>">
 		<meta itemprop="og:type" content="article">
 		<meta itemprop="og:url" content="<?php the_permalink() ?>">
 		<meta property="og:description" content="<?php if ( is_single() ) { wp_title('-', true, 'right'); echo  strip_tags( get_the_excerpt() ); } elseif ( is_page() ) { wp_title('-', true, 'right'); echo strip_tags( get_the_excerpt() ); } else { bloginfo('description'); } ?>"/>
