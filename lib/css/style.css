@@ -831,7 +831,7 @@ h6 {font-size:1em;}
 				#header.widthimg #logo{position: absolute;left: 1em;top: 30%;  }	  	
 	  	
 	  	
-	  	#portal .searchform {background: #fff; border: 0;padding: 0.2em;border-radius: 1em;font-size: 0.9em; }
+	  	#portal .searchform {background: #fff; border: 0;padding: 0 0.3em;border-radius: 1em;font-size: 0.9em; }
 	  				#portal .suche {display: inline-block;}
 	  				#portal .searchform label {	position: absolute;top: -9999999px;   				}
 	  				#portal .searchform:hover {box-shadow:0 0 6px #1e5b13,0 0 10px #aaa inset;color: #555;}
