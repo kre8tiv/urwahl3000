@@ -263,10 +263,10 @@ function kr8_nav_footer_fallback() {
 // this is the fallback for portal menu
 function kr8_nav_portal_fallback() { ?>
 	<ul id="menu-portalmenu" class="navigation">
-		<li><a href="http://gruene.de">Bundesverband</a></li>
-		<li><a href="http://gruene-fraktion.de">Bundestagsfraktion</a></li>
-		<li><a href="http://gruene-jugend.de">Grüne Jugend</a></li>
-		<li><a href="http://boell.de">Böll Stiftung</a></li>
+		<li><a href="https://gruene.de/">Bundesverband</a></li>
+		<li><a href="https://www.gruene-bundestag.de/">Bundestagsfraktion</a></li>
+		<li><a href="https://gruene-jugend.de/">Grüne Jugend</a></li>
+		<li><a href="https://www.boell.de/">Böll Stiftung</a></li>
 	</ul>
 <?php }
 
