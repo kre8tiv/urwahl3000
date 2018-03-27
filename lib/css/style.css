@@ -630,7 +630,7 @@ h6 {font-size:1em;}
 *********************/
 .sidebar li {list-style-type: none;}
 .sidebar {background:#0a321e;padding: 2em;color: #8d9e96;}
-  h3.widgettitle {margin-bottom: 0.5em;color: #fff;}
+  h3.widgettitle {margin-bottom: 0.5em;color: #fff;line-height: 1.25em;font-size: 1.3em;}
   .sidebar a, .sidebar a:visited {color: #afdca7; }
   .sidebar a:hover {color: #ffe000; }
 .widget {margin-bottom: 2em;border-bottom: 2px solid #17452e; padding-bottom: 2em;}
