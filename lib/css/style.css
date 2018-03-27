@@ -1075,7 +1075,7 @@ h6 {font-size:1em;}
   .sidebar {margin-top: 0;padding: 0;	background: transparent;color: #333;}
 	.sidebar.threecol  a:hover {color: #0a321e; }
 	.sidebar.threecol a {color: #46962b;}
-  .widget {margin: 0 0 2em 0;padding: 1.5em;border: 0;background: #e6e6e6;box-shadow: 5px 5px 10px rgba(0,0,0,0.2);}
+  .widget {margin: 0 0 2em 0;padding: 1.1em;border: 0;background: #e6e6e6;box-shadow: 5px 5px 10px rgba(0,0,0,0.2);}
   	.sidebar .widget:last-of-type {margin-bottom: 2em;}
   	.widget ul li {margin-bottom: 0.5em;/* deep nesting */}
   	.widget ul li ul {margin-top: 0.75em;padding-left: 1em;}
