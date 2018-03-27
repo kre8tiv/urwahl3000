@@ -896,8 +896,8 @@ h6 {font-size:1em;}
   
   
   .mobile-switch {display: none;}
-  
-  	#breadcrumb {display: block; z-index: 2;position: relative; background: #ffee00;color:#0a321e;padding: 0.3em 1em;font-size: 0.9em;font-family: 'PT Sans Bold', Trebuchet, Helvetica Neue, Helvetica, Arial, Verdana, sans-serif; }
+
+  	#breadcrumb {display: block; z-index: 2;position: relative; background: #ffee00;color:#0a321e;padding: 0.3em 2.3em;font-size: 0.9em;font-family: 'PT Sans Bold', Trebuchet, Helvetica Neue, Helvetica, Arial, Verdana, sans-serif; }
   		#breadcrumb a {color:#0a321e;}
   	
   	.navwrap {margin-bottom: 2em; }
