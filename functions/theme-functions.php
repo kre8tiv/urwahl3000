@@ -617,11 +617,11 @@ Breadcrumb
 if ( ! function_exists ( 'nav_breadcrumb' ) ) {
 function nav_breadcrumb() {
  
-  $delimiter = '&rang;';
   $home = 'Startseite'; 
   $before = '<span class="current">'; 
   $after = '</span>'; 
  
+  $delimiter = '<span class="delimiter">&rang;</span>';
   if ( !is_front_page() || is_paged() ) {
  
     echo '<div id="breadcrumb">';
