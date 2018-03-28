@@ -854,8 +854,8 @@ h6 {font-size:1em;}
   NAVIGATION STYLES
   *********************/
 	#nav-main {display:block;width:100%;text-align: left;font-size:1.3em;background:transparent;font-family: 'Arvo Regular', 'Arvo Gruen', Trebuchet, Helvetica Neue, Helvetica, Arial, Verdana, sans-serif;z-index: 3;position: relative; }
-		#nav-main .navigation {display:block;width:100%; background: #0a321e;}
 			
+		#nav-main .navigation {display:block;background: #0a321e;padding: 0 0.6em;}
 			#nav-main li {display: block;float: left;position: relative;padding:0;margin:0;}
 				#nav-main li a {padding:1em;display:block;background: transparent;color:#fff;border: 0;	}
 				#nav-main li a:hover {color: #96DC3C;text-decoration: underline;}
@@ -896,8 +896,8 @@ h6 {font-size:1em;}
   
   
   .mobile-switch {display: none;}
-  
-  	#breadcrumb {display: block; z-index: 2;position: relative; background: #ffee00;color:#0a321e;padding: 0.3em 1em;font-size: 0.9em;font-family: 'PT Sans Bold', Trebuchet, Helvetica Neue, Helvetica, Arial, Verdana, sans-serif; }
+
+  	#breadcrumb {display: block; z-index: 2;position: relative; background: #ffee00;color:#0a321e;padding: 0.3em 2.3em;font-size: 0.9em;font-family: 'PT Sans Bold', Trebuchet, Helvetica Neue, Helvetica, Arial, Verdana, sans-serif; }
   		#breadcrumb a {color:#0a321e;}
   	
   	.navwrap {margin-bottom: 2em; }
