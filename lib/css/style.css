@@ -688,7 +688,10 @@ h6 {font-size:1em;}
 	.widget_rss h3 img {display: none;}
 		#footer .widget_rss h3 a {color: #fff;}
 
-	
+  #footer .widget {margin-left: 1em;margin-right: 1em;}
+  #footer .widget:first-of-type {margin-left: 0em;}
+  #footer .widget:last-of-type {margin-right: 0em;}
+
 	/*Termine: Liste */
 	.widget_termine_liste_widget {}
 		.widget_termine_liste_widget li li {}
