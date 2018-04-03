@@ -102,7 +102,9 @@
 					
 					<div class="hgroup">
 						<h1 id="site-title"><span><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></span></h1>
+						<?php if (get_bloginfo('description') !== '') : ?>
 						<h2 id="site-description"><?php bloginfo( 'description' ); ?></h2>
+						<?php endif; ?>
 					</div>
 				<?php endif; ?>
 												
