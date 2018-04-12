@@ -1,6 +1,12 @@
 								<article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article">
 									<?php if ( has_post_thumbnail() ): ?>
-											<a href="<?php the_permalink(); ?>" class="postimglist"><?php the_post_thumbnail('medium');  ?></a>
+											<div class="postimglist maybeImgCopyright">
+												<a href="<?php the_permalink(); ?>" class="postimglist-a"><?php the_post_thumbnail('medium'); ?></a>
+												<?php 	$imgcopyright = get_post_meta(get_post_thumbnail_id(), '_copyright', true);
+														if ($imgcopyright) { ?>
+															<p class="caption imgCopyright"><?php echo make_clickable($imgcopyright);?></p>
+												<?php 	} ?>
+											</div>
 									<?php endif; ?>
 									
 									<?php do_action('kr8_content_vor_article_footer'); ?>
