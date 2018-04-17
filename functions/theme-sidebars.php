@@ -76,6 +76,7 @@ function kr8_wpsearch($form) {
 		$tumblr = $instance['tumblr'];
 		$rss = $instance['rss'];
 		$rsscomments = $instance['rsscomments'];
+		$emails = $instance['emails'];
 		
 		
 		echo $before_widget; ?>
@@ -156,6 +157,11 @@ function kr8_wpsearch($form) {
 			}
 			?>
 
+			<?php if($emails != '') {
+				echo '<li><a href="mailto:'.$emails.'" title="E-Mail schreiben an '.$emails.'"><span class="fa fa-fw fa-envelope"></span><span class="hidden">E-Mail schreiben an '.$emails.'</span></a></li>';
+			}
+			?>
+
 		</ul><!-- end .sociallinks -->
 
 	   <?php			
@@ -182,7 +188,7 @@ function kr8_wpsearch($form) {
 		$xing = esc_attr($instance['xing']);
 		$rss = esc_attr($instance['rss']);
 		$rsscomments = esc_attr($instance['rsscomments']);
-
+		$emails = esc_attr($instance['emails']);
 		
 		?>
 
@@ -263,7 +269,11 @@ function kr8_wpsearch($form) {
             <label for="<?php echo $this->get_field_id('rsscomments'); ?>"><?php _e('RSS for Comments URL:'); ?></label>
             <input type="text" name="<?php echo $this->get_field_name('rsscomments'); ?>" value="<?php echo $rsscomments; ?>" class="widefat" id="<?php echo $this->get_field_id('rsscomments'); ?>" />
         </p>
-
+		
+		<p>
+            <label for="<?php echo $this->get_field_id('emails'); ?>"><?php _e('E-Mail Adresse:'); ?></label>
+            <input type="text" name="<?php echo $this->get_field_name('emails'); ?>" value="<?php echo $emails; ?>" class="widefat" id="<?php echo $this->get_field_id('emails'); ?>" />
+        </p>
        
 		<?php
 	}
