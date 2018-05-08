@@ -40,7 +40,7 @@ The comments page
 			$comments_args = array(
 				'comment_notes_before' =>__( ''),
 				'title_reply'=>__( 'Artikel kommentieren', 'kr8theme'),
-				'comment_notes_after' =>__( '<p class="required-info"><span class="req">*</span> Pflichtfeld', 'kr8theme'),
+				'comment_notes_after' =>__( '<p class="required-info"><span class="req">*</span> Pflichtfeld</p><p>Mit der Nutzung dieses Formulars erklären Sie sich mit der Speicherung und Verarbeitung Ihrer Daten durch diese Website einverstanden. Weiteres entnehmen Sie bitte der <a href="' . site_url() . '/datenschutz/">Datenschutzerklärung</a>.</p>', 'kr8theme'),
 				'comment_field'  => '<p class="comment-form-comment"><label for="comment">' . _x( 'Dein Kommentar<span class="req">*</span>', 'kr8theme' ) . 			'</label><br/><textarea id="comment" name="comment" tabindex="4" rows="8" placeholder="Dein Kommentar hier..."></textarea></p>',
 				'label_submit'	=> __( 'Abschicken', 'kr8theme' )
 				
