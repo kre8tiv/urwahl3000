@@ -38,7 +38,7 @@ http://digwp.com/2010/10/customize-wordpress-dashboard/
 function kr8_rss_dashboard_widget() {
 	if(function_exists('fetch_feed')) {
 		include_once(ABSPATH . WPINC . '/feed.php');               // include the required file
-		$feed = fetch_feed('http://kre8tiv.de/rss/');        // specify the source feed
+		$feed = fetch_feed('https://github.com/kre8tiv/urwahl3000/commits/master.atom');        // specify the source feed
 		$limit = $feed->get_item_quantity(7);                      // specify number of items
 		$items = $feed->get_items(0, $limit);                      // create an array of items
 	}
@@ -60,12 +60,12 @@ function kr8_rss_dashboard_widget() {
 // Doku-Widget
 function kr8_doku_widget() { ?>
 
-	<p>Howdy,<br>Du nutzt <a href="http://kre8tiv.de/urwahl3000">Urwahl3000</a>, dass freie und GRÜNE Layout für Wordpress.</p>
+	<p>Howdy,<br>Du nutzt <a href="https://www.urwahl3000.de">Urwahl3000</a>, dass freie und GRÜNE Layout für Wordpress.</p>
 	<p>Urwahl3000 bietet eine Vielzahl an Funktionen und Möglichkeiten. <strong>Deshalb habe ich eine Dokumentation erstellt</strong>, die Antworten auf häufige Fragen gibt und Dir die ersten Schritte erleichtert. Wenn Du mehr aus deinem Urwahl3000 rausholen willst, wirf doch einen Blick hinein.</p>
-	<p><strong>Kleiner Tipp:</strong> Schau regelmäßig auf der <a href="http://kre8tiv.de/urwahl3000">Urwahl3000-Seite</a> vorbei, vielleicht gibt es ja ein Update. Nun aber viel Spaß mit deiner Website im Urwahl3000-Outfit.</p>
+	<p><strong>Kleiner Tipp:</strong> Schau regelmäßig auf der <a href="https://www.urwahl3000.de">Urwahl3000-Seite</a> vorbei, vielleicht gibt es ja ein Update. Nun aber viel Spaß mit deiner Website im Urwahl3000-Outfit.</p>
 	<p>Viele Grüße<br>Ben</p>
 	
-	<p><a href="http://kre8tiv.de/doku/urwahl3000/" class="button-primary" target="_blank">Dokumentation</a>  <a href="http://kre8tiv.de/urwahl3000/" class="button-primary" target="_blank">Updates & Support</a></p>
+	<p><a href="https://www.urwahl3000.de/dokumentation/" class="button-primary" target="_blank">Dokumentation</a>  <a href="https://www.urwahl3000.de" class="button-primary" target="_blank">Updates & Support</a></p>
 	
 	
 <?php }
