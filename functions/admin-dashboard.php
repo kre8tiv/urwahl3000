@@ -74,7 +74,7 @@ function kr8_doku_widget() { ?>
 
 // calling all custom dashboard widgets
 function kr8_custom_dashboard_widgets() {
-	wp_add_dashboard_widget('kr8_rss_dashboard_widget', __('Neues von kre8tiv - Benjamin Jopen', 'kr8theme'), 'kr8_rss_dashboard_widget');
+	wp_add_dashboard_widget('kr8_rss_dashboard_widget', __('Neues von Urwahl3000 - GitHub', 'kr8theme'), 'kr8_rss_dashboard_widget');
 	wp_add_dashboard_widget('kr8_doku_widget', __('Urwahl3000 Dokumentation', 'kr8theme'), 'kr8_doku_widget');
 	/*
 	Be sure to drop any other created Dashboard Widgets
