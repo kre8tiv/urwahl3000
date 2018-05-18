@@ -51,7 +51,7 @@ function kr8_rss_dashboard_widget() {
 		</a>
 	</h4>
 	<p style="margin-top: 0.5em;">
-		<?php echo substr($item->get_description(), 0, 200); ?>
+		<?php echo substr($item->get_description(), 24); ?>
 	</p>
 	<?php }
 }
