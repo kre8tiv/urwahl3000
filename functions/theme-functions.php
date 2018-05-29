@@ -759,7 +759,7 @@ REWRITE TEMPLATE PART
 *********************/
 
 function kr8_template_part( $slug, $name = null ) {
-	if($action = apply_filters( 'kr8_template_part_filter', $false, array('slug' => $slug, 'name' => $name))) {
+	if($action = apply_filters( 'kr8_template_part_filter', false, array('slug' => $slug, 'name' => $name))) {
 		do_action($action);
 		return;
 	}
