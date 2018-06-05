@@ -99,10 +99,10 @@
 
 				<?php if ( display_header_text() ) : ?>
 					<p id="logo"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="Zur Startseite"><img src="
-					<?php 
-						$logopath = "lib/images/logo.png";
-						$abslogopath = locate_template($logopath);
-						echo get_site_url() . substr($abslogopath, strlen(get_home_path())-1);
+					<?php 	$logo = 'lib/images/logo.png';
+							$logo = locate_template( $logo );
+							$logo = str_replace(get_theme_root(), get_theme_root_uri(), $logo);
+							echo $logo;
 					?>" width="185" height="100" alt="<?php bloginfo('name'); ?>"></a></p>
 					
 					<div class="hgroup">
