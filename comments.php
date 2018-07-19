@@ -62,7 +62,7 @@ The comments page
 	<h2><?php comments_number( '0', '1 Kommentar', '% Kommentare' ); ?></h2>
 	<div class="tab">
 	<ol class="commentlist">
-		<?php wp_list_comments('type=comment&callback=kr8_comments'); ?>
+		<?php wp_list_comments('callback=kr8_comments'); ?>
 	</ol>
 	
 	<nav id="comment-nav">

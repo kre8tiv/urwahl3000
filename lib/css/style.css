@@ -585,7 +585,7 @@ h6 {font-size:1em;}
 				.commentlist article .vcard a {color: #5dae59;}
 		.commentlist .comment-reply-link {font-size: 0.6em;padding: 0.2em 0.8em;border-radius: 1em;display: inline-block;text-align: right;color: #fff;background: #5dae59;float: right;}
 		.commentlist article:hover .comment-reply-link {visibility: visible;}
-	
+		.commentlist article .comment-author-pingback { padding-top: 10px; padding-left: 20px; }	
 	
 	#main ol.commentlist article {background: #fff;padding: 0.5em;margin: 0 0 1em 0;}
 	#main ol.commentlist article.bypostauthor {background: #46962b;color: #fff;}
