@@ -13,7 +13,9 @@ require_once('functions/theme-comments.php');
 require_once('functions/theme-shortcodes.php');
 require_once('functions/admin-dashboard.php');
 require_once('functions/attachment-copyright.php');
-require_once('functions/kal3000/kal3000.php');
+if(apply_filters('urwahl3000_kal3000', true)) {
+	require_once('functions/kal3000/kal3000.php');
+}
 
 require 'functions/theme-update.php';
 $MyThemeUpdateChecker = new ThemeUpdateChecker(
