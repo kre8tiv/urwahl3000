@@ -86,74 +86,74 @@ function kr8_wpsearch($form) {
         <ul class="sociallinks">
 			<?php 
 			if($twitter != '') {
-				echo '<li><a href="https://twitter.com/'.$twitter.'" title="Twitter"><span class="fa fa-fw fa-twitter"></span><span class="hidden">Twitter</span></a></li>';
+				echo '<li><a href="https://twitter.com/'.$twitter.'" title="Twitter" target="_blank"><span class="fa fa-fw fa-twitter"></span><span class="hidden">Twitter</span></a></li>';
 			}
 			?>
 
 			<?php 
 			if($facebook != '') {
-				echo '<li><a href="'.$facebook.'"title="Facebook"><span class="fa fa-fw fa-facebook"></span><span class="hidden">Facebook</span></a></li>';
+				echo '<li><a href="'.$facebook.'"title="Facebook" target="_blank"><span class="fa fa-fw fa-facebook"></span><span class="hidden">Facebook</span></a></li>';
 			}
 			?>
 
 			<?php 
 			if($googleplus != '') {
-				echo '<li><a href="'.$googleplus.'" title="Google+"><span class="fa fa-fw fa-google-plus"></span><span class="hidden">Google+</span></a></li>';
+				echo '<li><a href="'.$googleplus.'" title="Google+" target="_blank"><span class="fa fa-fw fa-google-plus"></span><span class="hidden">Google+</span></a></li>';
 			}
 			?>
 
 			<?php if($flickr != '') {
-				echo '<li><a href="'.$flickr.'" title="Flickr"><span class="fa fa-fw fa-flickr"></span><span class="hidden">Flickr</span></a></li>';
+				echo '<li><a href="'.$flickr.'" title="Flickr" target="_blank"><span class="fa fa-fw fa-flickr"></span><span class="hidden">Flickr</span></a></li>';
 			}
 			?>
 			
 			<?php if($instagram != '') {
-				echo '<li><a href="'.$instagram.'" title="Instagram"><span class="fa fa-fw fa-instagram"></span><span class="hidden">Instagram</span></a></li>';
+				echo '<li><a href="'.$instagram.'" title="Instagram" target="_blank"><span class="fa fa-fw fa-instagram"></span><span class="hidden">Instagram</span></a></li>';
 			}
 			?>
 
 			<?php if($youtube != '') {
-				echo '<li><a href="'.$youtube.'" title="YouTube"><span class="fa fa-fw fa-youtube"></span><span class="hidden">YouTube</span></a></li>';
+				echo '<li><a href="'.$youtube.'" title="YouTube" target="_blank"><span class="fa fa-fw fa-youtube"></span><span class="hidden">YouTube</span></a></li>';
 			}
 			?>
 
 			<?php if($vimeo != '') {
-				echo '<li><a href="'.$vimeo.'" title="Vimeo"><span class="fa fa-fw fa-vimeo-square"></span><span class="hidden">Vimeo</span></a></li>';
+				echo '<li><a href="'.$vimeo.'" title="Vimeo" target="_blank"><span class="fa fa-fw fa-vimeo-square"></span><span class="hidden">Vimeo</span></a></li>';
 			}
 			?>
 
 			<?php if($soundcloud != '') {
-				echo '<li><a href="'.$soundcloud.'" title="Soundcloud"><span class="fa fa-fw fa-soundcloud"></span><span class="hidden">Soundcloud</span></a></li>';
+				echo '<li><a href="'.$soundcloud.'" title="Soundcloud" target="_blank"><span class="fa fa-fw fa-soundcloud"></span><span class="hidden">Soundcloud</span></a></li>';
 			}
 			?>
 
 			<?php if($foursquare != '') {
-				echo '<li><a href="'.$foursquare.'" title="Foursquare"><span class="fa fa-fw fa-foursquare"></span><span class="hidden">Foursquare</span></a></li>';
+				echo '<li><a href="'.$foursquare.'" title="Foursquare" target="_blank"><span class="fa fa-fw fa-foursquare"></span><span class="hidden">Foursquare</span></a></li>';
 			}
 			?>
 			
 			<?php if($pinterest != '') {
-				echo '<li><a href="'.$pinterest.'" title="Pinterst"><span class="fa fa-fw fa-pinterest"></span><span class="hidden">Pinterest</span></a></li>';
+				echo '<li><a href="'.$pinterest.'" title="Pinterst" target="_blank"><span class="fa fa-fw fa-pinterest"></span><span class="hidden">Pinterest</span></a></li>';
 			}
 			?>
 
 			<?php if($xing != '') {
-				echo '<li><a href="'.$xing.'" title="Xing"><span class="fa fa-fw fa-xing"></span><span class="hidden">Xing</span></a></li>';
+				echo '<li><a href="'.$xing.'" title="Xing" target="_blank"><span class="fa fa-fw fa-xing"></span><span class="hidden">Xing</span></a></li>';
 			}
 			?>
 			
 			<?php if($tumblr != '') {
-				echo '<li><a href="'.$tumblr.'" title="Tumblr"><span class="fa fa-fw fa-tumblr"></span><span class="hidden">Tumblr</span></a></li>';
+				echo '<li><a href="'.$tumblr.'" title="Tumblr" target="_blank"><span class="fa fa-fw fa-tumblr"></span><span class="hidden">Tumblr</span></a></li>';
 			}
 			?>
     
 			<?php if($rss != '') {
-				echo '<li><a href="'.$rss.'" title="RSS Feed"><span class="fa fa-fw fa-rss"></span><span class="hidden">RSS Feed</span></a></li>';
+				echo '<li><a href="'.$rss.'" title="RSS Feed" target="_blank"><span class="fa fa-fw fa-rss"></span><span class="hidden">RSS Feed</span></a></li>';
 			}
 			?>
 
 			<?php if($rsscomments != '') {
-				echo '<li><a href="'.$rsscomments.'" title="RSS Comments"><span class="fa fa-fw fa-comments-o"></span><span class="hidden">RSS Comments</span></a></li>';
+				echo '<li><a href="'.$rsscomments.'" title="RSS Comments" target="_blank"><span class="fa fa-fw fa-comments-o"></span><span class="hidden">RSS Comments</span></a></li>';
 			}
 			?>
 
