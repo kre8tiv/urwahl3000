@@ -683,7 +683,7 @@ h6 {font-size:1em;}
 	
 	/*Tag Cloud */
 	.widget_tag_cloud {}
-		.widget_tag_cloud a, #footer .widget_tag_cloud a {font-size: 0.9em!important;display: inline-block;padding: 0.5em 0.6em; margin: 0 0.2em 0.5em 0; background: #46962b; line-height: 1; color: #fff; border-radius: 0.3em;}
+		.widget_tag_cloud a, #footer .widget_tag_cloud a {display: inline-block;padding: 0.5em 0.6em; margin: 0 0.2em 0.5em 0; background: #46962b; line-height: 1; color: #fff; border-radius: 0.3em;}
 		.widget_tag_cloud a:hover, #footer .widget_tag_cloud a:hover {background: #ffee00;color: #0a321e;text-decoration: none;}	
 	
 	
