@@ -39,14 +39,14 @@ if (!function_exists('kr8_register_sidebars')) {
 /************* SEARCH FORM LAYOUT *****************/
 
 function kr8_wpsearch($form) {
-    $form = '<section class="suche"><h6 class="unsichtbar">Suchformular</h6><form role="search" method="get" class="searchform" action="' . home_url( '/' ) . '" >
-    <label for="search">Der Suchbegriff nach dem die Website durchsucht werden soll.</label>
-    <input type="text" name="s" id="search" value="' . get_search_query() . '" placeholder="Suchbegriff eingeben ..." />
-    <button type="submit" class="button-submit">
-                <span class="fa fa-search"></span> <span class="text">Suchen</span>
-            </button>
-    </form></section>';
-    return $form;
+	$form = '<section class="suche"><h6 class="unsichtbar">Suchformular</h6><form role="search" method="get" class="searchform" action="' . home_url( '/' ) . '" >
+	<label for="search">Der Suchbegriff nach dem die Website durchsucht werden soll.</label>
+	<input type="text" name="s" id="search" value="' . get_search_query() . '" placeholder="Suchbegriff eingeben ..." />
+	<button type="submit" class="button-submit">
+				<span class="fa fa-search"></span> <span class="text">Suchen</span>
+			</button>
+	</form></section>';
+	return $form;
 } 
 
 
@@ -65,7 +65,6 @@ function kr8_wpsearch($form) {
 		$title = $instance['title'];
 		$twitter = $instance['twitter'];
 		$facebook = $instance['facebook'];
-		$googleplus = $instance['googleplus'];
 		$flickr = $instance['flickr'];
 		$instagram = $instance['instagram'];
 		$youtube = $instance['youtube'];
@@ -84,7 +83,7 @@ function kr8_wpsearch($form) {
 		<?php if($title != '')
 			echo '<h3 class="widgettitle">'.$title.'</h3>'; ?>
 
-        <ul class="sociallinks">
+		<ul class="sociallinks">
 			<?php 
 			if($twitter != '') {
 				echo '<li><a href="https://twitter.com/'.$twitter.'" title="Twitter" target="<?php echo $tab; ?>"><span class="fa fa-fw fa-twitter"></span><span class="hidden">Twitter</span></a></li>';
@@ -94,12 +93,6 @@ function kr8_wpsearch($form) {
 			<?php 
 			if($facebook != '') {
 				echo '<li><a href="'.$facebook.'"title="Facebook" target="<?php echo $tab; ?>"><span class="fa fa-fw fa-facebook"></span><span class="hidden">Facebook</span></a></li>';
-			}
-			?>
-
-			<?php 
-			if($googleplus != '') {
-				echo '<li><a href="'.$googleplus.'" title="Google+" target="<?php echo $tab; ?>"><span class="fa fa-fw fa-google-plus"></span><span class="hidden">Google+</span></a></li>';
 			}
 			?>
 
@@ -147,7 +140,7 @@ function kr8_wpsearch($form) {
 				echo '<li><a href="'.$tumblr.'" title="Tumblr" target="<?php echo $tab; ?>"><span class="fa fa-fw fa-tumblr"></span><span class="hidden">Tumblr</span></a></li>';
 			}
 			?>
-    
+	
 			<?php if($rss != '') {
 				echo '<li><a href="'.$rss.'" title="RSS Feed" target="<?php echo $tab; ?>"><span class="fa fa-fw fa-rss"></span><span class="hidden">RSS Feed</span></a></li>';
 			}
@@ -169,8 +162,8 @@ function kr8_wpsearch($form) {
 	   echo $after_widget;
    }
 
-   function update($new_instance, $old_instance) {                
-       return $new_instance;
+   function update($new_instance, $old_instance) {				
+	   return $new_instance;
    }
 
    function form($instance) { 
@@ -178,7 +171,6 @@ function kr8_wpsearch($form) {
 		$title = esc_attr($instance['title']);
 		$twitter = esc_attr($instance['twitter']);
 		$facebook = esc_attr($instance['facebook']);
-		$googleplus = esc_attr($instance['googleplus']);
 		$flickr = esc_attr($instance['flickr']);
 		$instagram = esc_attr($instance['instagram']);
 		$youtube = esc_attr($instance['youtube']);
@@ -195,96 +187,88 @@ function kr8_wpsearch($form) {
 		?>
 
  		<p>
-            <label for="<?php echo $this->get_field_id('tab'); ?>"><?php _e('In welchem Fenster Social-Media links &ouml;ffnen:'); ?></label>
-            <select name="<?php echo $this->get_field_name('tab'); ?>" id="<?php echo $this->get_field_id('tab'); ?>">
-		    <option value="_self"<?php echo $tab!="_blank"?" selected":""; ?>>Im selben Fenster</option>
-		    <option value="_blank"<?php echo $tab=="_blank"?" selected":""; ?>>In einem neuen Fenster</option>
-	    </select>
-        </p>
+			<label for="<?php echo $this->get_field_id('tab'); ?>"><?php _e('In welchem Fenster Social-Media links &ouml;ffnen:'); ?></label>
+			<select name="<?php echo $this->get_field_name('tab'); ?>" id="<?php echo $this->get_field_id('tab'); ?>">
+			<option value="_self"<?php echo $tab!="_blank"?" selected":""; ?>>Im selben Fenster</option>
+			<option value="_blank"<?php echo $tab=="_blank"?" selected":""; ?>>In einem neuen Fenster</option>
+		</select>
+		</p>
 
 		 <p>
-            <label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:'); ?></label>
-            <input type="text" name="<?php echo $this->get_field_name('title'); ?>" value="<?php echo $title; ?>" class="widefat" id="<?php echo $this->get_field_id('title'); ?>" />
-        </p>
+			<label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:'); ?></label>
+			<input type="text" name="<?php echo $this->get_field_name('title'); ?>" value="<?php echo $title; ?>" class="widefat" id="<?php echo $this->get_field_id('title'); ?>" />
+		</p>
 
 		<p>
-            <label for="<?php echo $this->get_field_id('twitter'); ?>"><?php _e('Twitter-Benutzername:'); ?></label>
-            <input type="text" name="<?php echo $this->get_field_name('twitter'); ?>" value="<?php echo $twitter; ?>" class="widefat" id="<?php echo $this->get_field_id('twitter'); ?>" />
-        </p>
+			<label for="<?php echo $this->get_field_id('twitter'); ?>"><?php _e('Twitter-Benutzername:'); ?></label>
+			<input type="text" name="<?php echo $this->get_field_name('twitter'); ?>" value="<?php echo $twitter; ?>" class="widefat" id="<?php echo $this->get_field_id('twitter'); ?>" />
+		</p>
 
 		<p>
-            <label for="<?php echo $this->get_field_id('facebook'); ?>"><?php _e('Facebook URL:'); ?></label>
-            <input type="text" name="<?php echo $this->get_field_name('facebook'); ?>" value="<?php echo $facebook; ?>" class="widefat" id="<?php echo $this->get_field_id('facebook'); ?>" />
-        </p>
+			<label for="<?php echo $this->get_field_id('facebook'); ?>"><?php _e('Facebook URL:'); ?></label>
+			<input type="text" name="<?php echo $this->get_field_name('facebook'); ?>" value="<?php echo $facebook; ?>" class="widefat" id="<?php echo $this->get_field_id('facebook'); ?>" />
+		</p>
 		
 		<p>
-            <label for="<?php echo $this->get_field_id('googleplus'); ?>"><?php _e('Google+ URL:'); ?></label>
-            <input type="text" name="<?php echo $this->get_field_name('googleplus'); ?>" value="<?php echo $googleplus; ?>" class="widefat" id="<?php echo $this->get_field_id('googleplus'); ?>" />
-        </p>
-		
-		<p>
-            <label for="<?php echo $this->get_field_id('flickr'); ?>"><?php _e('Flickr URL:'); ?></label>
-            <input type="text" name="<?php echo $this->get_field_name('flickr'); ?>" value="<?php echo $flickr; ?>" class="widefat" id="<?php echo $this->get_field_id('flickr'); ?>" />
-        </p>
+			<label for="<?php echo $this->get_field_id('flickr'); ?>"><?php _e('Flickr URL:'); ?></label>
+			<input type="text" name="<?php echo $this->get_field_name('flickr'); ?>" value="<?php echo $flickr; ?>" class="widefat" id="<?php echo $this->get_field_id('flickr'); ?>" />
+		</p>
 		  
 		 <p>
-            <label for="<?php echo $this->get_field_id('instagram'); ?>"><?php _e('Instagram URL:'); ?></label>
-            <input type="text" name="<?php echo $this->get_field_name('instagram'); ?>" value="<?php echo $instagram; ?>" class="widefat" id="<?php echo $this->get_field_id('instagram'); ?>" />
-        </p>
+			<label for="<?php echo $this->get_field_id('instagram'); ?>"><?php _e('Instagram URL:'); ?></label>
+			<input type="text" name="<?php echo $this->get_field_name('instagram'); ?>" value="<?php echo $instagram; ?>" class="widefat" id="<?php echo $this->get_field_id('instagram'); ?>" />
+		</p>
 
 		<p>
-            <label for="<?php echo $this->get_field_id('youtube'); ?>"><?php _e('YouTube URL:'); ?></label>
-            <input type="text" name="<?php echo $this->get_field_name('youtube'); ?>" value="<?php echo $youtube; ?>" class="widefat" id="<?php echo $this->get_field_id('youtube'); ?>" />
-        </p>
+			<label for="<?php echo $this->get_field_id('youtube'); ?>"><?php _e('YouTube URL:'); ?></label>
+			<input type="text" name="<?php echo $this->get_field_name('youtube'); ?>" value="<?php echo $youtube; ?>" class="widefat" id="<?php echo $this->get_field_id('youtube'); ?>" />
+		</p>
 		
 		<p>
-            <label for="<?php echo $this->get_field_id('vimeo'); ?>"><?php _e('Vimeo URL:'); ?></label>
-            <input type="text" name="<?php echo $this->get_field_name('vimeo'); ?>" value="<?php echo $vimeo; ?>" class="widefat" id="<?php echo $this->get_field_id('vimeo'); ?>" />
-        </p>
+			<label for="<?php echo $this->get_field_id('vimeo'); ?>"><?php _e('Vimeo URL:'); ?></label>
+			<input type="text" name="<?php echo $this->get_field_name('vimeo'); ?>" value="<?php echo $vimeo; ?>" class="widefat" id="<?php echo $this->get_field_id('vimeo'); ?>" />
+		</p>
 		
 		<p>
-            <label for="<?php echo $this->get_field_id('pinterest'); ?>"><?php _e('Pinterest URL:'); ?></label>
-            <input type="text" name="<?php echo $this->get_field_name('pinterest'); ?>" value="<?php echo $pinterest; ?>" class="widefat" id="<?php echo $this->get_field_id('pinterest'); ?>" />
-        </p>
+			<label for="<?php echo $this->get_field_id('pinterest'); ?>"><?php _e('Pinterest URL:'); ?></label>
+			<input type="text" name="<?php echo $this->get_field_name('pinterest'); ?>" value="<?php echo $pinterest; ?>" class="widefat" id="<?php echo $this->get_field_id('pinterest'); ?>" />
+		</p>
 
 		<p>
-            <label for="<?php echo $this->get_field_id('soundcloud'); ?>"><?php _e('Soundcloud URL:'); ?></label>
-            <input type="text" name="<?php echo $this->get_field_name('soundcloud'); ?>" value="<?php echo $soundcloud; ?>" class="widefat" id="<?php echo $this->get_field_id('soundcloud'); ?>" />
-        </p>
+			<label for="<?php echo $this->get_field_id('soundcloud'); ?>"><?php _e('Soundcloud URL:'); ?></label>
+			<input type="text" name="<?php echo $this->get_field_name('soundcloud'); ?>" value="<?php echo $soundcloud; ?>" class="widefat" id="<?php echo $this->get_field_id('soundcloud'); ?>" />
+		</p>
 
 		<p>
-            <label for="<?php echo $this->get_field_id('foursquare'); ?>"><?php _e('Foursquare URL:'); ?></label>
-            <input type="text" name="<?php echo $this->get_field_name('foursquare'); ?>" value="<?php echo $foursquare; ?>" class="widefat" id="<?php echo $this->get_field_id('foursquare'); ?>" />
-        </p>
-
-
-		<p>
-            <label for="<?php echo $this->get_field_id('xing'); ?>"><?php _e('Xing URL:'); ?></label>
-            <input type="text" name="<?php echo $this->get_field_name('xing'); ?>" value="<?php echo $xing; ?>" class="widefat" id="<?php echo $this->get_field_id('xing'); ?>" />
-        </p>
+			<label for="<?php echo $this->get_field_id('foursquare'); ?>"><?php _e('Foursquare URL:'); ?></label>
+			<input type="text" name="<?php echo $this->get_field_name('foursquare'); ?>" value="<?php echo $foursquare; ?>" class="widefat" id="<?php echo $this->get_field_id('foursquare'); ?>" />
+		</p>
 
 		<p>
-            <label for="<?php echo $this->get_field_id('tumblr'); ?>"><?php _e('Tumblr URL:'); ?></label>
-            <input type="text" name="<?php echo $this->get_field_name('tumblr'); ?>" value="<?php echo $xing; ?>" class="widefat" id="<?php echo $this->get_field_id('tumblr'); ?>" />
-        </p>
-		
-				
+			<label for="<?php echo $this->get_field_id('xing'); ?>"><?php _e('Xing URL:'); ?></label>
+			<input type="text" name="<?php echo $this->get_field_name('xing'); ?>" value="<?php echo $xing; ?>" class="widefat" id="<?php echo $this->get_field_id('xing'); ?>" />
+		</p>
+
+		<p>
+			<label for="<?php echo $this->get_field_id('tumblr'); ?>"><?php _e('Tumblr URL:'); ?></label>
+			<input type="text" name="<?php echo $this->get_field_name('tumblr'); ?>" value="<?php echo $xing; ?>" class="widefat" id="<?php echo $this->get_field_id('tumblr'); ?>" />
+		</p>
 		
 		<p>
-            <label for="<?php echo $this->get_field_id('rss'); ?>"><?php _e('RSS-Feed URL:'); ?></label>
-            <input type="text" name="<?php echo $this->get_field_name('rss'); ?>" value="<?php echo $rss; ?>" class="widefat" id="<?php echo $this->get_field_id('rss'); ?>" />
-        </p>
+			<label for="<?php echo $this->get_field_id('rss'); ?>"><?php _e('RSS-Feed URL:'); ?></label>
+			<input type="text" name="<?php echo $this->get_field_name('rss'); ?>" value="<?php echo $rss; ?>" class="widefat" id="<?php echo $this->get_field_id('rss'); ?>" />
+		</p>
 		
 		<p>
-            <label for="<?php echo $this->get_field_id('rsscomments'); ?>"><?php _e('RSS for Comments URL:'); ?></label>
-            <input type="text" name="<?php echo $this->get_field_name('rsscomments'); ?>" value="<?php echo $rsscomments; ?>" class="widefat" id="<?php echo $this->get_field_id('rsscomments'); ?>" />
-        </p>
+			<label for="<?php echo $this->get_field_id('rsscomments'); ?>"><?php _e('RSS for Comments URL:'); ?></label>
+			<input type="text" name="<?php echo $this->get_field_name('rsscomments'); ?>" value="<?php echo $rsscomments; ?>" class="widefat" id="<?php echo $this->get_field_id('rsscomments'); ?>" />
+		</p>
 		
 		<p>
-            <label for="<?php echo $this->get_field_id('emails'); ?>"><?php _e('E-Mail Adresse:'); ?></label>
-            <input type="text" name="<?php echo $this->get_field_name('emails'); ?>" value="<?php echo $emails; ?>" class="widefat" id="<?php echo $this->get_field_id('emails'); ?>" />
-        </p>
-       
+			<label for="<?php echo $this->get_field_id('emails'); ?>"><?php _e('E-Mail Adresse:'); ?></label>
+			<input type="text" name="<?php echo $this->get_field_name('emails'); ?>" value="<?php echo $emails; ?>" class="widefat" id="<?php echo $this->get_field_id('emails'); ?>" />
+		</p>
+	   
 		<?php
 	}
 } 
