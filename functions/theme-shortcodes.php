@@ -10,9 +10,11 @@ function kr8_sitemap() {
 	'title_li'     => '',
 	'parent'       => $the_id,
 	'sort_order'	=> 'ASC',
+	'personen'		=> 'nein',
 	'sort_column'	=> 'menu_order'
 	);
 	$smitem = get_pages( $smargs );
+	$personenclass = ($personen === 'nein') ? '' : 'sitemap-persons';
 	
 	$children = '';	
 	foreach($smitem as $value){
@@ -24,7 +26,7 @@ function kr8_sitemap() {
 		$children .= "</li>";
 	} 
 	
-	return '<nav><ul class="sitemap sitemap-thumb">' . $children . '</ul></nav>';
+	return '<nav><ul class="sitemap sitemap-thumb ' . $personenclass . '">' . $children . '</ul></nav>';
 }
 add_shortcode('unterseiten', 'kr8_sitemap');
 

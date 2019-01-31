@@ -377,6 +377,13 @@ h6 {font-size:1em;}
 		ul.sitemap li img {float: left;margin: 0 0.5em 2em 0;}
 		ul.sitemap li a {font-size: 1.1em;font-family: 'Arvo Regular', 'Arvo Gruen', Trebuchet, Helvetica Neue, Helvetica, Arial, Verdana, sans-serif;font-weight: normal;}
 		ul.sitemap li span {display: block;font-size: 0.9em;font-family: 'Arvo Regular', 'Arvo Gruen', Trebuchet, Helvetica Neue, Helvetica, Arial, Verdana, sans-serif;}
+	ul.sitemap-persons { margin: 40px 0; }
+		ul.sitemap-persons li { display: flex; margin-bottom: 40px; }
+		ul.sitemap-persons li:before { display: none; }
+		ul.sitemap-persons li > a { flex-grow: 0; flex-shrink: 0; margin-right: 40px; width: 120px; height: 120px; background: #f8f8f8; -webkit-border-radius: 100%; -moz-border-radius: 100%; border-radius: 100%; overflow: hidden; }
+			ul.sitemap-persons li > a img { float: none; margin:0; width: auto; }
+		ul.sitemap-persons li > p {  }
+
 
 
 	article .searchform {background: #e6e6e6; padding:  2em; width: 100%;margin: 0 -2em -4em -2em;}
