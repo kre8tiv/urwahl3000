@@ -1,7 +1,11 @@
 <?php
 
 //SHORTCODES
-function kr8_sitemap() {
+function kr8_sitemap($atts) {
+	extract(shortcode_atts(array(
+		'personen'		=> 'nein',
+	), $atts));
+
 	//get current page ID
 	$the_id = get_the_ID();
 	
@@ -10,7 +14,6 @@ function kr8_sitemap() {
 	'title_li'     => '',
 	'parent'       => $the_id,
 	'sort_order'	=> 'ASC',
-	'personen'		=> 'nein',
 	'sort_column'	=> 'menu_order'
 	);
 	$smitem = get_pages( $smargs );
