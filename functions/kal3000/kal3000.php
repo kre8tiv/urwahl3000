@@ -603,6 +603,7 @@ class kal3000_termine_widget extends WP_Widget {
 	function kal3000_shortcode_overview( $atts ) {
 	extract(shortcode_atts(array(
 		'archiv' => 'false',
+		'thumbnail' => 'ja',
 		'kat' => '',
 		'anzahl' => '50',
 	), $atts));
@@ -643,7 +644,7 @@ class kal3000_termine_widget extends WP_Widget {
 	ob_start(); ?>			
 		<?php while ($wp_query->have_posts()) : $wp_query->the_post(); ?>
 			<article <?php post_class('clearfix'); ?>>
-				 <?php if ( has_post_thumbnail() ): ?>
+				 <?php if ( has_post_thumbnail() && $thumbnail === 'ja'): ?>
 					<div class="postimg">
 						<?php the_post_thumbnail('titelbild');  ?>
 					</div>
