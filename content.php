@@ -14,19 +14,17 @@
 									<footer class="article-footer">
 										
 										<?php do_action('kr8_content_im_article_footer1'); ?>
-												
-										<?php 	$posttags = get_the_tags();
-											 	if ($posttags) {
-											 		?><p class="byline"><?php
-											 		foreach($posttags as $tag) {
-											 		echo '' .$tag->name. ' '; 
-										  			}
-										  		?></p><?php	
-												} else {
-													
-													?> <p class="byline"><?php the_category(', '); ?></p><?php
-												} ?>	
 										
+										<p class="byline">
+											
+											<?php if(apply_filters('kr8_content_im_article_byline_tags', true)) { echo get_the_term_list( get_the_ID(), 'post_tag', '<i class="fa fa-tags"></i> ', ',', '<span style="width:10px;display:inline-block;"></span>' ); } ?>
+													
+											<?php if(apply_filters('kr8_content_im_article_byline_categories', true)) { echo get_the_term_list( get_the_ID(), 'category', '<i class="fa fa-folder-open"></i> ', ',', '<span style="width:10px;display:inline-block;"></span>' ); } ?>
+											
+											<?php if(apply_filters('kr8_content_im_article_byline_date', true)) { the_date('j. F Y'); } ?>
+											
+										</p>
+
 										<?php do_action('kr8_content_im_article_footer2'); ?>
 											
 									</footer> 										 

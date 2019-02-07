@@ -891,7 +891,7 @@ h6 {font-size:1em;}
 					padding-right: 10px;
 				}
 				/*Aktives Element */
-				#nav-main li.current-menu-item a, #nav-main li.current-menu-parent a {color: #ffe000;font-family: 'Arvo Regular', 'Arvo Gruen', Trebuchet, Helvetica Neue, Helvetica, Arial, Verdana, sans-serif;}
+				#nav-main > .navigation > li.current-menu-item > a, #nav-main > .navigation > li.current-menu-parent > a {color: #ffe000;font-family: 'Arvo Regular', 'Arvo Gruen', Trebuchet, Helvetica Neue, Helvetica, Arial, Verdana, sans-serif;}
 					#nav-main li.current-menu-item li a, #nav-main li.current-menu-parent li a {background: #fff;color:#0a321e;	}
 					
   
