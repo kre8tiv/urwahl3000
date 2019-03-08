@@ -214,7 +214,7 @@ function kal3000_termine_inner_custom_box( $post ) {
 		jQuery('#termine_new_field11').val( city );
 	}
 </script>
-	<?php 	echo ' <a href="' . get_template_directory_uri() . '/functions/kal3000/map/?lat='.$wert6.'&lng='.$wert9.'&zoom='.$wert10.'" target="_blank" onclick="return popup(this.href);">Landkarte anzeigen</a>'; ?>
+	<?php 	echo ' <a href="' . get_template_directory_uri() . '/functions/kal3000/map/?lat='.$wert6.'&lng='.$wert9.'&zoom='.$wert10.'" target="_blank" onclick="return popup(this.href);">Landkarte anzeigen</a> <br/><div style="opacity:0.6; font-size:11px; margin-top: 10px; line-height: 150%;">Damit die Landkarte angezeigt wird, bitte einmal hier klicken und den Punkt im sich öffnenden Karten-Fenster an die gewünschte Stelle bewegen. Danach kann das Fenster wieder geschlossen und der Termin aktualisiert werden.</div>'; ?>
 <?php
 }
 
@@ -292,7 +292,7 @@ function kal3000_the_termin_short(){
 
 function kal3000_the_termin_geo(){
 	$custom=get_post_custom( get_the_ID());
-	if(isset($custom['_geoshow']) AND $custom['_geoshow'][0]!=''){
+	if(isset($custom['_geoshow']) AND $custom['_geoshow'][0]!='' AND isset($custom['_lat']) AND !empty(array_filter($custom['_lat']))){
 		ob_start(); ?>
 		<div id="termin_map_wrapper">
 			<div id="termin_map" style="width:100%; height:300px"></div>
