@@ -1268,9 +1268,11 @@ body {}
 	.wp-caption img.size-medium {width: 100%;height: auto;}
 }
 
-
-
-
+@media (max-width: 600px), all {
+	bdoy .wp-block-media-text.is-stacked-on-mobile.has-media-on-the-right {
+		grid-template-areas: "media-text-media" "media-text-content";
+	}
+}
 
 /*RETINA (2x RESOLUTION DEVICES)*/
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
