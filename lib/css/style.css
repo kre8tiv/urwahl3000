@@ -1269,7 +1269,7 @@ body {}
 }
 
 @media (max-width: 600px), all {
-	bdoy .wp-block-media-text.is-stacked-on-mobile.has-media-on-the-right {
+	body .wp-block-media-text.is-stacked-on-mobile.has-media-on-the-right {
 		grid-template-areas: "media-text-media" "media-text-content";
 	}
 }
