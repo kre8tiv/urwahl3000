@@ -19,9 +19,9 @@
 
 								<p class="byline">
 											
-									<?php if(apply_filters('kr8_contentsingle_im_article_byline_categories', true)) { echo get_the_term_list( get_the_ID(), 'category', '<i class="fa fa-folder-open"></i> ', ',', '<span style="width:10px;display:inline-block;"></span>' ); } ?>
+									<?php if(apply_filters('kr8_contentsingle_im_article_byline_categories', true)) { echo get_the_term_list( get_the_ID(), 'category', '<i class="fa fa-folder-open"></i> ', ', ', '<span style="width:10px;display:inline-block;"></span>' ); } ?>
 									
-									<?php if(apply_filters('kr8_contentsingle_im_article_byline_tags', true)) { echo get_the_term_list( get_the_ID(), 'post_tag', '<i class="fa fa-tags"></i> ', ',', '<span style="width:10px;display:inline-block;"></span>' ); } ?>
+									<?php if(apply_filters('kr8_contentsingle_im_article_byline_tags', true)) { echo get_the_term_list( get_the_ID(), 'post_tag', '<i class="fa fa-tags"></i> ', ', ', '<span style="width:10px;display:inline-block;"></span>' ); } ?>
 									
 									<?php if(apply_filters('kr8_contentsingle_im_article_byline_date', true)) { the_time('j. F Y'); } ?>
 									
