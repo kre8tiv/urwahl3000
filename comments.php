@@ -40,10 +40,11 @@ The comments page
 		<h2>Kommentar verfassen</h2>
 		<div class="tab">
 			<section id="respondbox" class="respond-form">
-				<?php	$comments_args = array(
+				<?php	$datenschutz_link = (get_privacy_policy_url()) ? get_privacy_policy_url() : site_url() . '/datenschutz/';
+						$comments_args = array(
 							'comment_notes_before' =>__( ''),
 							'title_reply'=>__( 'Artikel kommentieren', 'kr8theme'),
-							'comment_notes_after' =>__( '<p class="required-info"><span class="req">*</span> Pflichtfeld</p><p>Mit der Nutzung dieses Formulars erklären Sie sich mit der Speicherung und Verarbeitung Ihrer Daten durch diese Website einverstanden. Weiteres entnehmen Sie bitte der <a href="' . site_url() . '/datenschutz/">Datenschutzerklärung</a>.</p>', 'kr8theme'),
+							'comment_notes_after' =>__( '<p class="required-info"><span class="req">*</span> Pflichtfeld</p><p>Mit der Nutzung dieses Formulars erklären Sie sich mit der Speicherung und Verarbeitung Ihrer Daten durch diese Website einverstanden. Weiteres entnehmen Sie bitte der <a href="' . $datenschutz_link . '">Datenschutzerklärung</a>.</p>', 'kr8theme'),
 							'comment_field'  => '<p class="comment-form-comment"><label for="comment">' . _x( 'Dein Kommentar<span class="req">*</span>', 'kr8theme' ) . 			'</label><br/><textarea id="comment" name="comment" tabindex="4" rows="8" placeholder="Dein Kommentar hier..."></textarea></p>',
 							'label_submit'	=> __( 'Abschicken', 'kr8theme' )
 							
