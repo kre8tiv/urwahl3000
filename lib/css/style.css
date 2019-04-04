@@ -107,6 +107,7 @@ a img.aligncenter {display: block; margin-left: auto; margin-right: auto}
 
 @font-face {
   font-family: 'Arvo Regular';
+  font-display: swap;
   src: local('Arvo Regular'), local('ArvoRegular'), url('../fonts/arvo_regular.woff') format('woff');
   font-weight: normal;
   font-style: normal;
@@ -114,6 +115,7 @@ a img.aligncenter {display: block; margin-left: auto; margin-right: auto}
 
 @font-face {
   font-family: 'Arvo Gruen';
+  font-display: swap;
   src: local('Arvo Gruen'), local('ArvoGruen'), url('../fonts/arvo_gruen.woff') format('woff');
   font-weight: normal;
   font-style: normal;
@@ -122,6 +124,7 @@ a img.aligncenter {display: block; margin-left: auto; margin-right: auto}
 
 @font-face {
   font-family: 'PT Sans';
+  font-display: fallback;
   src: local('PT Sans'), local('PTSans-Regular'), url('../fonts/ptsans-regular.woff') format('woff');
   font-weight: normal;
   font-style: normal;
@@ -131,6 +134,7 @@ a img.aligncenter {display: block; margin-left: auto; margin-right: auto}
 
 @font-face {
   font-family: 'PT Sans Bold';
+  font-display: fallback;
   src: local('PT Sans Bold'), local('PTSans-Bold'), url('../fonts/ptsans-bold.woff') format('woff');
   font-weight: bold;
   font-style: normal;
