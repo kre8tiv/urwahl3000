@@ -15,7 +15,7 @@
 				</div> <!-- end #inner-footer -->
 				
 			</footer> 
-			<p class="copyright">Diese Seite nutzt das freie Wordpress-Theme <a href="http://kre8tiv.de/urwahl3000/">Urwahl3000</a>. Erstellt mit ❤ von <a href="https://www.modulbuero.de">Design & Kommunikation im modulbüro</a>.</p>
+			<p class="copyright">Diese Seite nutzt das freie Wordpress-Theme <a href="https://www.urwahl3000.de/">Urwahl3000</a>. Erstellt mit ❤ von <a href="https://www.modulbuero.de">Design & Kommunikation im modulbüro</a>.</p>
 			
 		</div> 
 		<p id="back-top"><a href="#header" title="Zum Seitenanfang springen"><span>↑</span></a></p>
