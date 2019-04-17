@@ -173,7 +173,7 @@ function kal3000_termine_inner_custom_box( $post ) {
 	echo '<br><br>Veranstalter (optional):<br><input type="text" id="termine_new_field12" name="wpc_veranstalter" placeholder="Veranstalter" value="'.$wert12.'" style="width:90%" />';
 	
 	$wert13=get_post_meta(get_the_ID(), '_veranstalterlnk',true);
-	echo '<input type="text" id="termine_new_field13" name="wpc_veranstalterlnk" placeholder="Link zum Veranstalter http://" value="'.$wert13.'" style="width:90%" />';
+	echo '<input type="text" id="termine_new_field13" name="wpc_veranstalterlnk" placeholder="Link zum Veranstalter https://" value="'.$wert13.'" style="width:90%" />';
 	
 	$wert14=get_post_meta(get_the_ID(), '_secretevent', true);
 
@@ -296,12 +296,12 @@ function kal3000_the_termin_geo(){
 		ob_start(); ?>
 		<div id="termin_map_wrapper">
 			<div id="termin_map" style="width:100%; height:300px"></div>
-			<a href="http://www.openstreetmap.org/?mlat=<?=$custom['_lat'][0]?>&mlon=<?=$custom['_lon'][0]?>#map=<?=$custom['_zoom'][0]?>/<?=$custom['_lat'][0]?>/<?=$custom['_lon'][0]?>" target="_blank">Kartenausschnitt auf OpenStreetMap anzeigen</a>
+			<a href="https://www.openstreetmap.org/?mlat=<?=$custom['_lat'][0]?>&mlon=<?=$custom['_lon'][0]?>#map=<?=$custom['_zoom'][0]?>/<?=$custom['_lat'][0]?>/<?=$custom['_lon'][0]?>" target="_blank">Kartenausschnitt auf OpenStreetMap anzeigen</a>
 			<script>
 			var map = L.map('termin_map').setView([<?=$custom['_lat'][0]?>, <?=$custom['_lon'][0]?>], <?=$custom['_zoom'][0]?>);
-			mapLink = '<a href="http://openstreetmap.org">OpenStreetMap</a>';
+			mapLink = '<a href="https://openstreetmap.org">OpenStreetMap</a>';
 			L.tileLayer(
-			'http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+			'https://{s}.tile.osm.org/{z}/{x}/{y}.png', {
 			attribution: 'Map data © ' + mapLink,
 			maxZoom: 18,
 			}).addTo(map);
@@ -316,7 +316,7 @@ function kal3000_the_termin_geo(){
 			    shadowAnchor: [10, 34],  // the same for the shadow
 			    popupAnchor:  [0, -30] // point from which the popup should open relative to the iconAnchor
 			});
-			var marker = L.marker([<?=$custom['_lat'][0]?>, <?=$custom['_lon'][0]?>],{icon:greenIcon}).addTo(map).bindPopup("<a href=<?="http://www.openstreetmap.org/?mlat={$custom['_lat'][0]}&mlon={$custom['_lon'][0]}#map={$custom['_zoom'][0]}/{$custom['_lat'][0]}/{$custom['_lon'][0]}"?> class=\"noicon\">&rarr; <?=$custom['_geoshow'][0]?></a>").openPopup();
+			var marker = L.marker([<?=$custom['_lat'][0]?>, <?=$custom['_lon'][0]?>],{icon:greenIcon}).addTo(map).bindPopup("<a href=<?="https://www.openstreetmap.org/?mlat={$custom['_lat'][0]}&mlon={$custom['_lon'][0]}#map={$custom['_zoom'][0]}/{$custom['_lat'][0]}/{$custom['_lon'][0]}"?> class=\"noicon\">&rarr; <?=$custom['_geoshow'][0]?></a>").openPopup();
 			</script>
 		</div>
 <?php	$return = ob_get_contents();
@@ -504,9 +504,9 @@ class kal3000_termine_widget extends WP_Widget {
 			<div id="termin_karte_map" style="width:100%; height:350px;"></div>
 			<script>
 				var map = L.map('termin_karte_map',{ zoomControl:false }).setView([<?=$lat?>, <?=$lon?>], <?=$zoom?>);
-				mapLink = '<a href="http://openstreetmap.org">OpenStreetMap</a>';
+				mapLink = '<a href="https://openstreetmap.org">OpenStreetMap</a>';
 				L.tileLayer(
-				'http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+				'https://{s}.tile.osm.org/{z}/{x}/{y}.png', {
 				attribution: 'Map data © ' + mapLink,
 				maxZoom: 18,
 				}).addTo(map);
