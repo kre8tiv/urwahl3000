@@ -4,12 +4,13 @@
 START FUNCTIONS
 *********************/
 
-add_action('after_setup_theme','kr8_startup', 15);
-// Hook into the 'after_setup_theme' action
+add_action( 'after_setup_theme', 'kr8_startup', 15 );
 add_action( 'after_setup_theme', 'kr8_theme_support',16 );
 add_action( 'after_setup_theme', 'custom_theme_features',17 );
 
 function kr8_startup() {
+	remove_action('wp_head', 'print_emoji_detection_script', 7);
+	remove_action('wp_print_styles', 'print_emoji_styles');
 
     // launching operation cleanup
     add_action('init', 'kr8_head_cleanup');

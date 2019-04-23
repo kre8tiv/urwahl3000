@@ -725,6 +725,7 @@ h6 {font-size:1em;}
 	#footer .widgettitle {color: #fff;}
 	p.copyright {text-align: center; font-size: 0.8em;background: #0a1a12;color: #56685f;padding: 1em;}
 		p.copyright a:hover{color: #ffee00;}
+		p.copyright .heart {color: #ff242f;}
 	
 	#footer .widget_nav_menu {font-size: 1.2em;}
 	    #footer .widget_nav_menu li {font-family:  'Arvo Regular', 'Arvo Gruen', Trebuchet, Helvetica Neue, Helvetica, Arial, Verdana, sans-serif;margin-bottom: 2em;}
