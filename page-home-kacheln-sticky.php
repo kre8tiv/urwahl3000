@@ -7,7 +7,7 @@ Template Name: Startseite mit drei Kacheln (Sticky Posts)
 			<?php get_header(); ?>	
 			
 			<?php if (!is_paged()) { ?>
-				<div id="teaser" class="clearfix kacheln">
+				<div id="teaser" class="clearfix kacheln kacheln-neu">
 				
 					<div class="eightcol first clearfix">
 						<?php $args = array(
