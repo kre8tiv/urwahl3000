@@ -286,7 +286,7 @@ h6 {font-size:1em;}
 		#teaser.welcome {background: #e6e6e6; padding: 2em;box-sizing: border-box;margin: 1em 1em 0;}
 		/*Kacheln */
 		#teaser.kacheln {position: relative;}
-			#teaser.kacheln article {margin: 1em;position: relative;overflow: hidden;}
+			#teaser.kacheln article {margin: 1em;position: relative;overflow: hidden; }
 			#teaser.kacheln .first article {margin-bottom: 0;}
 			#teaser.kacheln .last {margin: 1em 1em 0 1em;}
 			#teaser.kacheln .last article {width: 49%; margin: 0 2% 0 0;float: left;box-sizing: border-box;font-size: 0.6em;}
@@ -297,9 +297,17 @@ h6 {font-size:1em;}
 				top: 50%;-ms-transform: translateY(-50%);-webkit-transform: translateY(-50%);transform: translateY(-50%);text-shadow: 1px 1px 5px rgba(0,0,0,0.3);}
 				#teaser.kacheln h1 a {color: #fff;}
 			#teaser.kacheln article:hover img {opacity: 0.4;}
-
-
-	
+			/*Kacheln neu*/
+			#teaser.kacheln-neu { display: flex; justify-content: space-between; flex-direction: column; }
+				#teaser.kacheln-neu:before { display: none !important; }
+				#teaser.kacheln-neu:after { display: none !important; }
+				#teaser.kacheln-neu .eightcol { flex-basis: 100%; float: none; }
+				#teaser.kacheln-neu .fourcol { flex-basis: 100%; float: none; }
+				#teaser.kacheln-neu .last { display: flex; flex-direction: column; }
+					#teaser.kacheln-neu .last article { width: 100%; float: none; margin: 0 0 1em 0; font-size: 1em; }
+				#teaser.kacheln-neu article { height: 0 !important; padding-bottom: 56.25%; }
+				#teaser.kacheln-neu a.postimglist { position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-size: cover; background-position: center center; background-repeat: no-repeat; }
+					#teaser.kacheln-neu a.postimglist img { display: none; }
 
 	div.archive-title {background: #e6e6e6;padding: 2em; margin: 1em;}
 	h1.archive-title {background: #e6e6e6;padding: 1em 0.7em; }
@@ -953,11 +961,9 @@ h6 {font-size:1em;}
 			#teaser.kacheln h1 {position: absolute;text-align: left;-ms-transform: translateY(0%);-webkit-transform: translateY(0%);transform: translateY(0%);z-index: 2;bottom: 0;top: auto; background: #000;background: rgba(10,50,30,0.6);width: 100%;padding: 0.5em 1em;}
 				#teaser.kacheln h1 a {color: #fff;}
 				#teaser.kacheln article:hover img {opacity: 1;}
-			/*Kacheln neu*/
-			#teaser.kacheln-neu {}
-				#teaser.kacheln-neu a.postimglist { display: block; width: 100%; height: 100%; background-size: cover; background-position: center center; background-repeat: no-repeat; }
-					#teaser.kacheln-neu a.postimglist img { display: none; }
-	
+			#teaser.kacheln-neu { flex-direction: row; }
+				#teaser.kacheln-neu .eightcol { flex-basis: 66.745856%; float: none; }
+				#teaser.kacheln-neu .fourcol { flex-basis: 31.091713%; float: none; }
 	
 		h1 {font-size:2.4em;}
 		
