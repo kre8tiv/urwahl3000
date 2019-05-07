@@ -6,41 +6,47 @@ Template Name: Startseite mit drei Kacheln (Sticky Posts)
 
 			<?php get_header(); ?>	
 			
-			<?php if (!is_paged()) { ?>
-				<div id="teaser" class="clearfix kacheln kacheln-neu">
+			<?php 	if (!is_paged()) { 
 				
-					<div class="eightcol first clearfix">
-						<?php $args = array(
-								'posts_per_page' => 1,
-								'post__in'  => get_option( 'sticky_posts' ),
-								'ignore_sticky_posts' => 1
-							);
-							query_posts($args);
-						?>
-						<?php while ( have_posts() ) : the_post(); ?>
-					    	<?php kr8_template_part( 'content-kachel', get_post_format() ); ?>
-					    <?php endwhile; ?>	
-					 
-					</div>
-					
-					<div class="fourcol last clearfix">
-						<?php $args2 = array(
-								'posts_per_page' => 2,
-								'post__in'  => get_option( 'sticky_posts' ),
-								'offset' => 1,
-								'ignore_sticky_posts' => 1
-							);
-							query_posts($args2);
-						?>
-						<?php while ( have_posts() ) : the_post(); ?>
-					    	<?php kr8_template_part( 'content-kachel', get_post_format() ); ?>
-					    <?php endwhile; ?>	
-					 
-					</div>					
-					
-
-			</div>
-			<?php } ?>
+						$stickyposts = get_posts(array(
+							'posts_per_page'	=> 3,
+							'post__in'			=> get_option( 'sticky_posts' ),
+						));
+						if(count($stickyposts) < 3) {
+							$nonstickyposts = get_posts(array(
+								'posts_per_page'	=> 3 - count($stickyposts),
+							));
+							$stickyposts = array_merge($stickyposts, $nonstickyposts);
+						}
+						
+						if($stickyposts) : ?>
+	
+							<div id="teaser" class="clearfix kacheln kacheln-neu">
+								
+			<?php 				global $post;
+								$post = $stickyposts[0];
+								setup_postdata( $post ); ?>
+									<div class="eightcol first clearfix">
+										<?php kr8_template_part( 'content-kachel', get_post_format() ); ?>
+					 				</div>
+			<?php 				unset($stickyposts[0]);
+								wp_reset_postdata(); ?>
+								
+			<?php 				if($stickyposts) : ?>
+									<div class="fourcol last clearfix">
+			<?php 						foreach($stickyposts as $stickypost) :
+											global $post;
+											$post = $stickypost;
+											setup_postdata( $post ); ?>
+											<?php kr8_template_part( 'content-kachel', get_post_format() ); ?>
+			<?php 						endforeach;
+										wp_reset_postdata(); ?>
+									</div>
+			<?php				endif; ?>
+							</div>
+			<?php	 	endif; 
+					} ?>
+				  
 						<div id="main" class="ninecol first clearfix" role="main">
 						
 						<?php wp_reset_query(); ?>
