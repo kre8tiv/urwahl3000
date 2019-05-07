@@ -15,6 +15,7 @@ Template Name: Startseite mit drei Kacheln (Sticky Posts)
 						if(count($stickyposts) < 3) {
 							$nonstickyposts = get_posts(array(
 								'posts_per_page'	=> 3 - count($stickyposts),
+								'post__not_in'  => get_option( 'sticky_posts' ),
 							));
 							$stickyposts = array_merge($stickyposts, $nonstickyposts);
 						}
