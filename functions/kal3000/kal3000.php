@@ -598,7 +598,7 @@ class kal3000_termine_widget extends WP_Widget {
 	<?php	echo $after_widget;
 		}
 	}
-	add_action( 'widgets_init', create_function('', 'return register_widget("kal3000_termine_widget");') );
+	add_action( 'widgets_init', function() { return register_widget('kal3000_termine_widget'); });
 	
 	function kal3000_shortcode_overview( $atts ) {
 	extract(shortcode_atts(array(
