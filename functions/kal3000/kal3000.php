@@ -155,6 +155,9 @@ add_action( 'add_meta_boxes', 'kal3000_termine_add_custom_box' );
 
 function kal3000_termine_inner_custom_box( $post ) {
 	wp_nonce_field( 'my_wpcalendar_noncename', 'wpcalendar_noncename' );
+	global $pagenow;
+	$isnew = ($pagenow === 'post-new.php') ? true : false;
+	$kal3000_options = get_option( 'kal3000_settings' );
 
 	$from=get_post_meta(get_the_ID(), '_wpcal_from',true);
 	echo '<input type="text" id="wpcal-from" placeholder="Beginn" name="wpc_from" value="'.$from.'">';
@@ -164,15 +167,19 @@ function kal3000_termine_inner_custom_box( $post ) {
 	echo '<input type="text" id="termine_new_field7" name="wpc_until" placeholder="Bis (bel. Text)" value="'.$wert7.'" />';
 	
 	$wert8=get_post_meta(get_the_ID(), '_geoshow',true);
+	if(!$wert8 && $isnew) $wert8 = @$kal3000_options['kal3000_text_field_0'];
 	echo '<div class="spacer"></div><input type="text" id="termine_new_field8" name="wpc_geoshow" placeholder="Angezeigte Adresse (ohne Stadt)" value="'.$wert8.'" style="width:90%" />';
 	
 	$wert11=get_post_meta(get_the_ID(), '_geostadt',true);
+	if(!$wert11 && $isnew) $wert11 = @$kal3000_options['kal3000_text_field_1'];
 	echo '<input type="text" id="termine_new_field11" name="wpc_geocity" placeholder="Stadt" value="'.$wert11.'" style="width:90%" />';
 	
 	$wert12=get_post_meta(get_the_ID(), '_veranstalter',true);
+	if(!$wert12 && $isnew) $wert12 = @$kal3000_options['kal3000_text_field_2'];
 	echo '<br><br>Veranstalter (optional):<br><input type="text" id="termine_new_field12" name="wpc_veranstalter" placeholder="Veranstalter" value="'.$wert12.'" style="width:90%" />';
 	
 	$wert13=get_post_meta(get_the_ID(), '_veranstalterlnk',true);
+	if(!$wert13 && $isnew) $wert13 = @$kal3000_options['kal3000_text_field_3'];
 	echo '<input type="text" id="termine_new_field13" name="wpc_veranstalterlnk" placeholder="Link zum Veranstalter https://" value="'.$wert13.'" style="width:90%" />';
 	
 	$wert14=get_post_meta(get_the_ID(), '_secretevent', true);
@@ -188,12 +195,15 @@ function kal3000_termine_inner_custom_box( $post ) {
 	echo '<div style="display:none">';
 
 		$wert6=get_post_meta(get_the_ID(), '_lat',true);
+		if(!$wert6 && $isnew) $wert6 = @$kal3000_options['kal3000_text_field_4'];
 		echo '<input  id="termine_new_field6" name="wpc_lat" placeholder="Lat (ca. 48.5)" value="'.$wert6.'" style="width:15%" />';
 	
 		$wert9=get_post_meta(get_the_ID(), '_lon',true);
+		if(!$wert9 && $isnew) $wert9 = @$kal3000_options['kal3000_text_field_5'];
 		echo '<input  id="termine_new_field9" name="wpc_lon" placeholder="Lon (ca. 11.4)" value="'.$wert9.'" style="width:15%" />';
 	
 		$wert10=get_post_meta(get_the_ID(), '_zoom',true);
+		if(!$wert10 && $isnew) $wert10 = @$kal3000_options['kal3000_text_field_6'];
 		echo '<input  id="termine_new_field10" name="wpc_zoom" placeholder="Zoom (11-13)" value="'.$wert10.'" style="width:15%" />';
 
 	echo '</div>';
@@ -605,7 +615,8 @@ class kal3000_termine_widget extends WP_Widget {
 		'archiv' => 'false',
 		'thumbnail' => 'ja',
 		'kat' => '',
-		'anzahl' => '50',
+		'maxmonths' => false,
+		'anzahl' => 50,
 	), $atts));
 	
 	global $wp_query,$paged,$post;
@@ -614,9 +625,15 @@ class kal3000_termine_widget extends WP_Widget {
 	$wp_query = new WP_Query();
 	
 	if( $archiv === 'true'){
-		$order='DESC'; $compare='<=';
+		$order='DESC';
+		$compare='<=';
+		$maxmonths = strtotime('-' . $maxmonths . ' months');
+		$maxmonths_compare = '>=';
 	}else{
-		$order='ASC'; $compare='>=';
+		$order='ASC';
+		$compare='>=';
+		$maxmonths = strtotime('+' . $maxmonths . ' months');
+		$maxmonths_compare = '<=';
 	}
 	
 	$args = array(
@@ -639,6 +656,16 @@ class kal3000_termine_widget extends WP_Widget {
 			)
 		)
 	);
+	
+	if($maxmonths) {
+		$args['meta_query'][] = array(
+			'key' => '_zeitstempel',
+			'value' => $maxmonths,
+			'compare' => $maxmonths_compare
+		);
+		
+		
+	}
 	
 	$wp_query->query($args);
 	ob_start(); ?>			
@@ -665,3 +692,134 @@ class kal3000_termine_widget extends WP_Widget {
 	return $content;
 }
 add_shortcode( 'wpcalendar', 'kal3000_shortcode_overview' );
+
+/*
+Additional Fallback Definitions
+Sponsored by Grüne Ratsfraktion Freiburg
+*/
+function kal3000_add_admin_menu(  ) { 
+	add_submenu_page( 'edit.php?post_type=termine', 'kal3000', 'Einstellungen', 'manage_options', 'kal3000', 'kal3000_options_page' );
+}
+add_action( 'admin_menu', 'kal3000_add_admin_menu' );
+
+function kal3000_settings_init(  ) { 
+	register_setting( 'pluginPage', 'kal3000_settings' );
+
+	add_settings_section(
+		'kal3000_pluginPage_section', 
+		'', 
+		'kal3000_settings_section_callback', 
+		'pluginPage'
+	);
+
+	add_settings_field( 
+		'kal3000_text_field_0', 
+		__( 'Standard für „Angezeigte Adresse“', 'kal3000_' ), 
+		'kal3000_text_field_0_render', 
+		'pluginPage', 
+		'kal3000_pluginPage_section' 
+	);
+
+	add_settings_field( 
+		'kal3000_text_field_1', 
+		__( 'Standard für „Stadt“', 'kal3000_' ), 
+		'kal3000_text_field_1_render', 
+		'pluginPage', 
+		'kal3000_pluginPage_section' 
+	);
+
+	add_settings_field( 
+		'kal3000_text_field_2', 
+		__( 'Standard für „Veranstalter“', 'kal3000_' ), 
+		'kal3000_text_field_2_render', 
+		'pluginPage', 
+		'kal3000_pluginPage_section' 
+	);
+
+	add_settings_field( 
+		'kal3000_text_field_3', 
+		__( 'Standard für „Link zum Veranstalter“', 'kal3000_' ), 
+		'kal3000_text_field_3_render', 
+		'pluginPage', 
+		'kal3000_pluginPage_section' 
+	);
+
+	add_settings_field( 
+		'kal3000_text_field_4', 
+		__( 'Standard für „Breitengrad“', 'kal3000_' ), 
+		'kal3000_text_field_4_render', 
+		'pluginPage', 
+		'kal3000_pluginPage_section' 
+	);
+
+	add_settings_field( 
+		'kal3000_text_field_5', 
+		__( 'Standard für „Längengrad“', 'kal3000_' ), 
+		'kal3000_text_field_5_render', 
+		'pluginPage', 
+		'kal3000_pluginPage_section' 
+	);
+
+	add_settings_field( 
+		'kal3000_text_field_6', 
+		__( 'Standard für „Zoomstufe', 'kal3000_' ), 
+		'kal3000_text_field_6_render', 
+		'pluginPage', 
+		'kal3000_pluginPage_section' 
+	);
+}
+add_action( 'admin_init', 'kal3000_settings_init' );
+
+function kal3000_text_field_0_render(  ) { 
+	$options = get_option( 'kal3000_settings' ); ?>
+	<input type='text' name='kal3000_settings[kal3000_text_field_0]' value='<?php echo $options['kal3000_text_field_0']; ?>'>
+<?php }
+
+
+function kal3000_text_field_1_render(  ) { 
+	$options = get_option( 'kal3000_settings' ); ?>
+	<input type='text' name='kal3000_settings[kal3000_text_field_1]' value='<?php echo $options['kal3000_text_field_1']; ?>'>
+<?php }
+
+
+function kal3000_text_field_2_render(  ) { 
+	$options = get_option( 'kal3000_settings' ); ?>
+	<input type='text' name='kal3000_settings[kal3000_text_field_2]' value='<?php echo $options['kal3000_text_field_2']; ?>'>
+<?php }
+
+function kal3000_text_field_3_render(  ) { 
+	$options = get_option( 'kal3000_settings' ); ?>
+	<input type='text' name='kal3000_settings[kal3000_text_field_3]' value='<?php echo $options['kal3000_text_field_3']; ?>'>
+<?php }
+
+function kal3000_text_field_4_render(  ) { 
+	$options = get_option( 'kal3000_settings' ); ?>
+	<input type='text' name='kal3000_settings[kal3000_text_field_4]' value='<?php echo $options['kal3000_text_field_4']; ?>'>
+<?php }
+
+function kal3000_text_field_5_render(  ) { 
+	$options = get_option( 'kal3000_settings' ); ?>
+	<input type='text' name='kal3000_settings[kal3000_text_field_5]' value='<?php echo $options['kal3000_text_field_5']; ?>'>
+<?php }
+
+function kal3000_text_field_6_render(  ) { 
+	$options = get_option( 'kal3000_settings' ); ?>
+	<input type='text' name='kal3000_settings[kal3000_text_field_6]' value='<?php echo $options['kal3000_text_field_6']; ?>'>
+<?php }
+
+function kal3000_settings_section_callback(  ) { 
+	echo __( '<p>Hier könnt ihr Standardwerte für die Einstellungen pro Termin vergeben. Wenn also ein neuer Termin erstellt wird, werden diese Felder entsprechen vorausgefüllt werden.</p><p>Die Werte für Breitengrad und Längengrad erwarten Zahlen im Format xx.xxxxxxx, die Zoomstufe eine Zahl zwischen 0 und 19. Die Werte bekommt ihr am einfachsten über eine GoogleMaps-Suche nach eurem Standort, dort stehen sie in der Adresszeile.</p>', 'kal3000_' );
+}
+
+function kal3000_options_page(  ) { ?>
+	<form action='options.php' method='post'>
+		<h2>Einstellungen für Kal3000</h2>
+
+		<?php
+		settings_fields( 'pluginPage' );
+		do_settings_sections( 'pluginPage' );
+		submit_button();
+		?>
+
+	</form>
+<?php }
