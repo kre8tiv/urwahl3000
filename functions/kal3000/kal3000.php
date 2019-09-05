@@ -341,7 +341,10 @@ function kal3000_add_content( $content ) {
 
 	$custom_content = kal3000_the_termin();
 	$custom_content .= $content;
-	$custom_content .= kal3000_the_termin_geo(); 
+	if(apply_filters( 'kal3000_ical', true )) {
+		$custom_content .= '<p style="font-size:13px;"><i class="fa fa-download" style="margin-right: 5px;"></i> <a href="' . get_permalink() . '/?ical=true">Diesen Termin als iCal-Datei herunterladen</a></p>';
+	}
+	$custom_content .= kal3000_the_termin_geo();
 	return $custom_content;
 }
 add_filter( 'the_content', 'kal3000_add_content' );
@@ -823,3 +826,15 @@ function kal3000_options_page(  ) { ?>
 
 	</form>
 <?php }
+	
+/*
+Add iCal-file generation
+*/
+function ical3000_render( $original_template ) {
+	if(is_singular('termine') && @$_GET['ical'] == true) {
+		return get_template_directory() . '/functions/kal3000/ical3000.php';
+	}
+	
+	return $original_template;
+}
+add_action('template_include', 'ical3000_render');
