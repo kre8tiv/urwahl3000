@@ -160,7 +160,7 @@ body {font-family: 'PT Sans', Trebuchet, Helvetica Neue, Helvetica, Arial, Verda
 img {max-width:100%;height:auto;}
 
 
-blockquote {padding: 2em 2em 0.5em 2em;text-indent: 0em;width: 100%; background: #e6e6e6;margin-left:-2em;color: #333;margin-bottom: 1em;font-family: 'Arvo Regular', 'Arvo Gruen', Trebuchet, Helvetica Neue, Helvetica, Arial, Verdana, sans-serif;font-weight: 500;}
+blockquote {padding: 2em 2em 0.5em 2em;text-indent: 0em;width: auto; background: #e6e6e6;margin-left:-1em;margin-right:-1em;color: #333;margin-bottom: 1em;font-family: 'Arvo Regular', 'Arvo Gruen', Trebuchet, Helvetica Neue, Helvetica, Arial, Verdana, sans-serif;font-weight: 500;}
 
 table, tr, td {vertical-align: top;}
 
@@ -825,6 +825,7 @@ h6 {font-size:1em;}
   *********************/
   
   a {text-decoration: none;}
+  blockquote { margin-left: -2em; margin-right: -2em; }
   
   /*********************
   LAYOUT & GRID STYLES
