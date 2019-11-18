@@ -84,7 +84,7 @@ function kr8_remove_recent_comments_style() {
 
 // remove injected CSS from gallery
 function kr8_gallery_style($css) {
-	return preg_replace("!<style type='text/css'>(.*?)</style>!s", '', $css);
+	return preg_replace("!<style type=(?:\'|\")text\/css(?:\'|\")>(.*?)</style>!s", '', $css);
 }
 
 /*********************
