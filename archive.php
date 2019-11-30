@@ -8,8 +8,8 @@
 						    </div>
 					    <?php } elseif (is_tag()) { ?> 
 						    <div class="archive-title">
-								<h1 class="h2"><?php single_tag_title(); ?></h1>
-							    <?php echo tag_description(); ?>
+						    <h1 class="h2"><?php single_tag_title(); ?></h1>
+						    <?php echo tag_description(); ?>
 						    </div>
 				
 					    
