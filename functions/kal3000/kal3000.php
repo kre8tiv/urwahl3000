@@ -230,12 +230,12 @@ function kal3000_termine_inner_custom_box( $post ) {
 
 function kal3000_the_termin(){
 	$meta_angabe_zeit=get_post_custom( get_the_ID());
-
+	
 	$echo = "\n\n<div class='termin_meta'>\n";
 	if(date('G',$meta_angabe_zeit['_zeitstempel'][0])==0){
 		// Ohne Stundenangabe
 		$echo .= '<span class="termin_tag">';
-			echo date_i18n('l, j. F Y', $meta_angabe_zeit['_zeitstempel'][0]);
+			echo date('l, j. F Y', $meta_angabe_zeit['_zeitstempel'][0]);
 		if(isset($meta_angabe_zeit['_bis']) AND $meta_angabe_zeit['_bis'][0]!='') { 
 			$echo .= ' bis '.$meta_angabe_zeit['_bis'][0];
 		}
@@ -245,7 +245,7 @@ function kal3000_the_termin(){
 	} else {
 		if(isset($meta_angabe_zeit['_bis']) AND $meta_angabe_zeit['_bis'][0]!='') {
 			$echo .= '<span class="termin_tag">';
-				$echo .= date_i18n('l, j. F Y, H:i', $meta_angabe_zeit['_zeitstempel'][0]);
+				$echo .= date('l, j. F Y, H:i', $meta_angabe_zeit['_zeitstempel'][0]);
 				$echo .= ' Uhr';
 			$echo .= '</span>';
 			$echo .= '<span class="termin_zeit">';
@@ -255,10 +255,10 @@ function kal3000_the_termin(){
 			$echo .= "</span>\n";
 		}else {
 			$echo .= '<span class="termin_tag">';
-				$echo .= date_i18n('l, j. F Y', $meta_angabe_zeit['_zeitstempel'][0]);
+				$echo .= date('l, j. F Y', $meta_angabe_zeit['_zeitstempel'][0]);
 			$echo .= '</span>';
 			$echo .= '<span class="termin_zeit">';
-				$echo .= date_i18n('H:i', $meta_angabe_zeit['_zeitstempel'][0]);
+				$echo .= date('H:i', $meta_angabe_zeit['_zeitstempel'][0]);
 				$echo .= ' Uhr';
 			$echo .= "</span>\n";
 		}
