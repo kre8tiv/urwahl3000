@@ -40,6 +40,9 @@ function kr8_startup() {
     // cleaning up excerpt
     add_filter('excerpt_more', 'kr8_excerpt_more');
     add_filter( 'excerpt_length', 'kr8_excerpt_length', 999 );
+	
+	// customizing tag cloud
+	add_filter( 'widget_tag_cloud_args', 'kr8_customize_tag_cloud_args');
 } /* end */
 
 
@@ -768,6 +771,19 @@ function kr8_template_part( $slug, $name = null ) {
 	}
 	
 	get_template_part($slug, $name);
+}
+
+/*********************
+CUSTOMIZE TAG CLOUD
+*********************/
+
+function kr8_customize_tag_cloud_args( array $args ) {
+	// Default smallest (8) is a bit too small for the theme
+    $args['smallest'] = '9';
+	// Default largest (22) is way too big for the theme
+    $args['largest'] = '16';
+	
+    return $args;
 }
 
 ?>
