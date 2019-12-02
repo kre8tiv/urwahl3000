@@ -42,7 +42,7 @@ function kr8_startup() {
     add_filter( 'excerpt_length', 'kr8_excerpt_length', 999 );
 	
 	// customizing tag cloud
-	add_filter( 'widget_tag_cloud_args', 'customize_tag_cloud_args');
+	add_filter( 'widget_tag_cloud_args', 'kr8_customize_tag_cloud_args');
 } /* end */
 
 
@@ -777,7 +777,7 @@ function kr8_template_part( $slug, $name = null ) {
 CUSTOMIZE TAG CLOUD
 *********************/
 
-function customize_tag_cloud_args( array $args ) {
+function kr8_customize_tag_cloud_args( array $args ) {
 	// Default smallest (8) is a bit too small for the theme
     $args['smallest'] = '9';
 	// Default largest (22) is way too big for the theme
