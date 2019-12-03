@@ -1220,13 +1220,13 @@ body {}
   .entry-content .alignleft,
   .entry-content img.alignleft {
     margin-right: 1.5em;
-    display: inline;
+    display: table;
     float: left;
   }
   .entry-content .alignright,
   .entry-content img.alignright {
     margin-left: 1.5em;
-    display: inline;
+    display: table;
     float: right;
   }
   .entry-content .aligncenter,
