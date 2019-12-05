@@ -714,7 +714,7 @@ function nav_breadcrumb() {
     }
  
     if ( get_query_var('paged') ) {
-      echo '(' . __('Seite') . ' ' . get_query_var('paged') . ')';
+      echo ' (' . __('Seite') . ' ' . get_query_var('paged') . ')';
     }
  
     echo '</div>';
