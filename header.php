@@ -99,8 +99,14 @@
 
 				<?php if ( display_header_text() ) : ?>
 					<p id="logo"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="Zur Startseite"><img src="
-					<?php 	$logo = 'lib/images/logo.png';
-							$logo = locate_template( $logo );
+					<?php 	$vectorlogo = 'lib/images/logo.svg';
+							$vectorlogo = locate_template( $vectorlogo );
+							if($vectorlogo) {
+								$logo = $vectorlogo;
+							} else {
+								$logo = 'lib/images/logo.png';
+								$logo = locate_template( $logo );
+							}
 							$logo = str_replace(get_theme_root(), get_theme_root_uri(), $logo);
 							echo $logo;
 					?>" width="185" height="100" alt="<?php bloginfo('name'); ?>"></a></p>
