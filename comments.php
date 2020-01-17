@@ -55,7 +55,7 @@ The comments page
 		</div>
 	<?php endif; ?>	
 	
-	<?php if ( is_singular( 'post' ) ) : ?>
+	<?php if ( is_singular( 'post' ) && apply_filters( 'urwahl3000_related_articles', true ) ) : ?>
 		<h2>Verwandte Artikel</h2>
 		<div class="tab">
 			 <?php  kr8_related_posts(); ?>
