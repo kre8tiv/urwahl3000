@@ -77,7 +77,7 @@ function kr8_wpsearch($form) {
 		$rss = $instance['rss'];
 		$rsscomments = $instance['rsscomments'];
 		$emails = $instance['emails'];
-		
+		$mastodon = $instance['mastodon'];
 		
 		echo $before_widget; ?>
 		<?php if($title != '')
@@ -93,6 +93,11 @@ function kr8_wpsearch($form) {
 			<?php 
 			if($facebook != '') {
 				echo '<li><a href="'.$facebook.'"title="Facebook" target="'.$tab.'"><span class="fa fa-fw fa-facebook"></span><span class="hidden">Facebook</span></a></li>';
+			}
+			?>
+
+			<?php if($mastodon != '') {
+				echo '<li><a href="'.$mastodon.'"title="Mastodon" target="'.$tab.'"><span class="fa-fw fab fa-mastodon"></span><span class="hidden">Mastodon</span></a></li>';
 			}
 			?>
 
@@ -167,22 +172,23 @@ function kr8_wpsearch($form) {
    }
 
    function form($instance) { 
-	   	$tab = esc_attr($instance['tab']);
-		$title = esc_attr($instance['title']);
-		$twitter = esc_attr($instance['twitter']);
-		$facebook = esc_attr($instance['facebook']);
-		$flickr = esc_attr($instance['flickr']);
-		$instagram = esc_attr($instance['instagram']);
-		$youtube = esc_attr($instance['youtube']);
-		$vimeo = esc_attr($instance['vimeo']);
-		$pinterest = esc_attr($instance['pinterest']);
-		$soundcloud = esc_attr($instance['soundcloud']);
-		$foursquare = esc_attr($instance['foursquare']);
-		$tumblr = esc_attr($instance['tumblr']);
-		$xing = esc_attr($instance['xing']);
-		$rss = esc_attr($instance['rss']);
-		$rsscomments = esc_attr($instance['rsscomments']);
-		$emails = esc_attr($instance['emails']);
+	   	@$tab = esc_attr($instance['tab']);
+		@$title = esc_attr($instance['title']);
+		@$twitter = esc_attr($instance['twitter']);
+		@$facebook = esc_attr($instance['facebook']);
+		@$flickr = esc_attr($instance['flickr']);
+		@$instagram = esc_attr($instance['instagram']);
+		@$youtube = esc_attr($instance['youtube']);
+		@$vimeo = esc_attr($instance['vimeo']);
+		@$pinterest = esc_attr($instance['pinterest']);
+		@$soundcloud = esc_attr($instance['soundcloud']);
+		@$foursquare = esc_attr($instance['foursquare']);
+		@$tumblr = esc_attr($instance['tumblr']);
+		@$xing = esc_attr($instance['xing']);
+		@$rss = esc_attr($instance['rss']);
+		@$rsscomments = esc_attr($instance['rsscomments']);
+		@$emails = esc_attr($instance['emails']);
+		@$mastodon = esc_attr($instance['mastodon']);
 		
 		?>
 
@@ -267,6 +273,11 @@ function kr8_wpsearch($form) {
 		<p>
 			<label for="<?php echo $this->get_field_id('emails'); ?>"><?php _e('E-Mail Adresse:'); ?></label>
 			<input type="text" name="<?php echo $this->get_field_name('emails'); ?>" value="<?php echo $emails; ?>" class="widefat" id="<?php echo $this->get_field_id('emails'); ?>" />
+		</p>
+		
+		<p>
+			<label for="<?php echo $this->get_field_id('mastodon'); ?>"><?php _e('Mastodon URL:'); ?></label>
+			<input type="text" name="<?php echo $this->get_field_name('mastodon'); ?>" value="<?php echo $mastodon; ?>" class="widefat" id="<?php echo $this->get_field_id('mastodon'); ?>" />
 		</p>
 	   
 		<?php

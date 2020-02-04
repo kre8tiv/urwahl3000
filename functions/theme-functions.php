@@ -114,7 +114,7 @@ function kr8_scripts_and_styles() {
 		
 		    // register main stylesheet
 		wp_register_style( 'kr8-stylesheet', get_template_directory_uri() . '/lib/css/style.css', array(), '', 'all' );
-		wp_register_style( 'kr8-fontawesome', get_template_directory_uri() . '/lib/css/font-awesome.min.css', array(), '', 'all' );
+		wp_register_style( 'kr8-fontawesome', get_template_directory_uri() . '/lib/fonts/fontawesome.css', array(), '5.12.0', 'all' );
 		wp_register_style( 'kr8-fancycss', get_template_directory_uri() . '/lib/js/libs/fancybox/jquery.fancybox.css', array(), '', 'all' );
 		wp_register_style( 'kr8-fancybuttoncss', get_template_directory_uri() . '/lib/js/libs/fancybox/jquery.fancybox-buttons.css', array(), '', 'all' );
 		
