@@ -126,7 +126,7 @@
 
 			<?php do_action('kr8_nach_header'); ?>
 				
-			<nav class="mobile-switch"><ul><li class="first"><a id="switch-menu" href="#menu"><span class="fa fa-bars"></span><span class="hidden">Menü</span></a></li><li class="last"><a id="switch-search" href="#search"><span class="fa fa-search"></span><span class="hidden">Suche</span></a></li></ul></nav>
+			<nav class="mobile-switch"><ul><li class="first"><a id="switch-menu" href="#menu"><span class="fas fa-bars"></span><span class="hidden">Menü</span></a></li><li class="last"><a id="switch-search" href="#search"><span class="fas fa-search"></span><span class="hidden">Suche</span></a></li></ul></nav>
 
 			<?php do_action('kr8_vor_navwrap'); ?>
 

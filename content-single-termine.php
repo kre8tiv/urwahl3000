@@ -17,7 +17,7 @@
 								<?php 
 									$imgexc = get_post(get_post_thumbnail_id())->post_excerpt;
 									if ($imgexc != "") {
-										?><p class="wp-caption-text"><a href="<?php echo $url ?>" class="fancybox" title="<?php echo $imgexc;?>"><i class="fa fa-picture-o"></i> <?php echo $imgexc;?></a></p><?php 
+										?><p class="wp-caption-text"><a href="<?php echo $url ?>" class="fancybox" title="<?php echo $imgexc;?>"><i class="fas fa-image"></i> <?php echo $imgexc;?></a></p><?php 
 									} ?>
 									
 							</div>
@@ -47,17 +47,17 @@
 											
 												
 											<?php $www =  get_post_meta( $post->ID, 'kr8mb_pers_contact_www', true );   
-												if (! empty ($www )){ ?><a href="<?php echo $www; ?>"><span class="fa fa-globe"></span></a><?php } ?>	
+												if (! empty ($www )){ ?><a href="<?php echo $www; ?>"><span class="fas fa-globe-americas"></span></a><?php } ?>	
 												
 											<?php $email =  get_post_meta( $post->ID, 'kr8mb_pers_contact_email', true );   
-												if (! empty ($email )){ ?><a href="mailto:<?php echo $email; ?>"><span class="fa fa-envelope"></span></a><?php } ?>
+												if (! empty ($email )){ ?><a href="mailto:<?php echo $email; ?>"><span class="fas fa-envelope"></span></a><?php } ?>
 													
 											
 											<?php $facebook =  get_post_meta( $post->ID, 'kr8mb_pers_contact_facebook', true );   
-												if (! empty ($facebook )){ ?><a href="<?php echo $facebook; ?>"><span class="fa fa-facebook"></span></a><?php } ?>
+												if (! empty ($facebook )){ ?><a href="<?php echo $facebook; ?>"><span class="fab fa-facebook"></span></a><?php } ?>
 											
 											<?php $twitter =  get_post_meta( $post->ID, 'kr8mb_pers_contact_twitter', true );   
-												if (! empty ($twitter )){ ?><a href="https://twitter.com/<?php echo $twitter; ?>"><span class="fa fa-twitter"></span></a><?php } ?>
+												if (! empty ($twitter )){ ?><a href="https://twitter.com/<?php echo $twitter; ?>"><span class="fab fa-twitter"></span></a><?php } ?>
 											
 																						
 											</div>

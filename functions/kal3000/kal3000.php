@@ -344,7 +344,7 @@ function kal3000_add_content( $content ) {
 	$custom_content = kal3000_the_termin();
 	$custom_content .= $content;
 	if(apply_filters( 'kal3000_ical', true )) {
-		$custom_content .= '<p style="font-size:13px;"><i class="fa fa-download" style="margin-right: 5px;"></i> <a href="' . get_permalink() . '/?ical=true">Diesen Termin als iCal-Datei herunterladen</a></p>';
+		$custom_content .= '<p style="font-size:13px;"><i class="fas fa-download" style="margin-right: 5px;"></i> <a href="' . get_permalink() . '/?ical=true">Diesen Termin als iCal-Datei herunterladen</a></p>';
 	}
 	$custom_content .= kal3000_the_termin_geo();
 	return $custom_content;

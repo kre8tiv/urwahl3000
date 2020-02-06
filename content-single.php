@@ -5,7 +5,7 @@
 									<a href="<?php echo $url ?>" class="postimg fancybox"><?php the_post_thumbnail('titelbild');  ?></a>
 									<?php 	$imgexc = get_post(get_post_thumbnail_id())->post_excerpt;
 											if ($imgexc != "") { ?>
-												<p class="caption"><span><i class="fa fa-picture-o"></i> <?php echo $imgexc;?></span></p>
+												<p class="caption"><span><i class="fas fa-image"></i> <?php echo $imgexc;?></span></p>
 									<?php 	} ?>
 						<?php endif; ?>
 
@@ -19,9 +19,9 @@
 
 								<p class="byline">
 											
-									<?php if(apply_filters('kr8_contentsingle_im_article_byline_categories', true)) { echo get_the_term_list( get_the_ID(), 'category', '<i class="fa fa-folder-open"></i> ', ', ', '<span style="width:10px;display:inline-block;"></span>' ); } ?>
+									<?php if(apply_filters('kr8_contentsingle_im_article_byline_categories', true)) { echo get_the_term_list( get_the_ID(), 'category', '<i class="fas fa-folder-open"></i> ', ', ', '<span style="width:10px;display:inline-block;"></span>' ); } ?>
 									
-									<?php if(apply_filters('kr8_contentsingle_im_article_byline_tags', true)) { echo get_the_term_list( get_the_ID(), 'post_tag', '<i class="fa fa-tags"></i> ', ', ', '<span style="width:10px;display:inline-block;"></span>' ); } ?>
+									<?php if(apply_filters('kr8_contentsingle_im_article_byline_tags', true)) { echo get_the_term_list( get_the_ID(), 'post_tag', '<i class="fas fa-tags"></i> ', ', ', '<span style="width:10px;display:inline-block;"></span>' ); } ?>
 									
 									<?php if(apply_filters('kr8_contentsingle_im_article_byline_date', true)) { the_time('j. F Y'); } ?>
 									

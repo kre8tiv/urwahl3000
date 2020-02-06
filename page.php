@@ -10,7 +10,7 @@
 								<?php 
 									$imgexc = get_post(get_post_thumbnail_id())->post_excerpt;
 									if ($imgexc != "") {
-										?><p class="caption"><span><i class="fa fa-picture-o"></i> <?php echo $imgexc;?></span></p><?php 
+										?><p class="caption"><span><i class="fas fa-image"></i> <?php echo $imgexc;?></span></p><?php 
 									}
 									 ?>
 							<?php endif; ?> 

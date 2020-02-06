@@ -11,7 +11,7 @@ function kr8_comments($comment, $args, $depth) {
 			<?php if($comment->comment_type === 'pingback') : ?>
 
 				<header class="comment-author vcard comment-author-pingback">
-					<i class="fa fa-globe"></i> Pingback: <?php printf(__('<cite class="fn">%s</cite>', 'kr8theme'), get_comment_author_link()) ?> 
+					<i class="fas fa-globe-americas"></i> Pingback: <?php printf(__('<cite class="fn">%s</cite>', 'kr8theme'), get_comment_author_link()) ?> 
 				</header>
 			
 			<?php else : ?>
