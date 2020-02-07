@@ -524,7 +524,7 @@ h6 {font-size:1em;}
 						.single article.termine {background: #fff; margin: 1em;padding: 1em;}
 							.single article.termine .termin_meta {margin: 1em 0 1em 0;color: #0a321e;font-family: 'Arvo Regular', 'Arvo Gruen', Trebuchet, Helvetica Neue, Helvetica, Arial, Verdana, sans-serif;font-size: 0.9em;							}
 								.single article.termine .termin_meta span {display: block;margin-bottom: 0.5em;}
-								.single article.termine .termin_meta span:before {padding-right: 0.5em;font-family: "FontAwesome";color: #46962b;font-size: 1.3em;display: inline-block;width: 1em;text-align: center;}
+								.single article.termine .termin_meta span:before {padding-right: 0.5em;font-family: "Font Awesome 5 Free"; font-weight: 900; color: #46962b;font-size: 1.3em;display: inline-block;width: 1em;text-align: center;}
 								.single article.termine .termin_meta .termin_tag:before {content: "\f073";}
 								.single article.termine .termin_meta .termin_zeit:before {content: "\f017";}
 								.single article.termine .termin_meta .termin_ort:before  {content: "\f041";}
@@ -577,7 +577,7 @@ h6 {font-size:1em;}
 				.comment-tabs .responsive-tabs__panel--closed-accordion-only { display: block;}
 				.comment-tabs .responsive-tabs__panel {padding: 0em;border: 0;margin-bottom: 0;padding-bottom: 0;}
 					.comment-tabs .responsive-tabs__list__item {position: relative;}
-					.comment-tabs .responsive-tabs__list__item::before {margin-right: 0.5em;font-family: FontAwesome;font-size: 1em; color: #5dae59;}
+					.comment-tabs .responsive-tabs__list__item::before {margin-right: 0.5em;font-family: "Font Awesome 5 Free"; font-weight: 900; font-size: 1em; color: #5dae59;}
 					body.page .comment-tabs .responsive-tabs__list__item:nth-of-type(2)::before {content: "\f0e6";}
 					body.page .comment-tabs .responsive-tabs__list__item:nth-of-type(1)::before {content: "\f040";}
 					
@@ -685,9 +685,9 @@ h6 {font-size:1em;}
 					.widget_kr8_socialmedia li span.fa-xing:hover {background-color: #074f4f;}
 					.widget_kr8_socialmedia li span.fa-tumblr:hover {background-color: #2a455b;}
 					.widget_kr8_socialmedia li span.fa-rss:hover {background-color: #fb9a61;}
-					.widget_kr8_socialmedia li span.fa-comments-o:hover {background-color: #fb6c55;}
+					.widget_kr8_socialmedia li span.fa-comments:hover {background-color: #fb6c55;}
 					.widget_kr8_socialmedia li span.fa-envelope:hover {background-color: #ffe000;}
-					
+					.widget_kr8_socialmedia li span.fa-mastodon:hover {background-color: #3291d6;}
 	
 	/*Bilder Widget*/				
 	.widget_sp_image img {width:100%!important;height:auto!important;box-shadow:5px 5px 10px rgba(0,0,0,0.2);}

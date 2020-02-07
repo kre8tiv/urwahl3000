@@ -147,17 +147,17 @@ function kr8_wpsearch($form) {
 			?>
 	
 			<?php if($rss != '') {
-				echo '<li><a href="'.$rss.'" title="RSS Feed" target="'.$tab.'"><span class="fab fa-fw fa-rss"></span><span class="hidden">RSS Feed</span></a></li>';
+				echo '<li><a href="'.$rss.'" title="RSS Feed" target="'.$tab.'"><span class="fas fa-fw fa-rss"></span><span class="hidden">RSS Feed</span></a></li>';
 			}
 			?>
 
 			<?php if($rsscomments != '') {
-				echo '<li><a href="'.$rsscomments.'" title="RSS Comments" target="'.$tab.'"><span class="fab fa-fw fa-comments-o"></span><span class="hidden">RSS Comments</span></a></li>';
+				echo '<li><a href="'.$rsscomments.'" title="RSS Comments" target="'.$tab.'"><span class="fas fa-fw fa-comments"></span><span class="hidden">RSS Comments</span></a></li>';
 			}
 			?>
 
 			<?php if($emails != '') {
-				echo '<li><a href="mailto:'.$emails.'" title="E-Mail schreiben an '.$emails.'"><span class="fab fa-fw fa-envelope"></span><span class="hidden">E-Mail schreiben an '.$emails.'</span></a></li>';
+				echo '<li><a href="mailto:'.$emails.'" title="E-Mail schreiben an '.$emails.'"><span class="fas fa-fw fa-envelope"></span><span class="hidden">E-Mail schreiben an '.$emails.'</span></a></li>';
 			}
 			?>
 
