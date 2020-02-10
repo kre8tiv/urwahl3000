@@ -313,7 +313,7 @@ function kal3000_the_termin_geo(){
 			var map = L.map('termin_map').setView([<?=$custom['_lat'][0]?>, <?=$custom['_lon'][0]?>], <?=$custom['_zoom'][0]?>);
 			mapLink = '<a href="https://openstreetmap.org">OpenStreetMap</a>';
 			L.tileLayer(
-			'https://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+			'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 			attribution: 'Map data © ' + mapLink,
 			maxZoom: 18,
 			}).addTo(map);
