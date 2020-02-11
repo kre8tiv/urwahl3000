@@ -344,7 +344,7 @@ function kal3000_add_content( $content ) {
 	$custom_content = kal3000_the_termin();
 	$custom_content .= $content;
 	if(apply_filters( 'kal3000_ical', true )) {
-		$custom_content .= '<p style="font-size:13px;"><i class="fas fa-download" style="margin-right: 5px;"></i> <a href="' . get_permalink() . '/?ical=true">Diesen Termin als iCal-Datei herunterladen</a></p>';
+		$custom_content .= '<p style="font-size:13px;"><i class="fas fa-download" style="margin-right: 5px;"></i> <a href="' . get_permalink() . '/?ical=singular">Diesen Termin als iCal-Datei herunterladen</a></p>';
 	}
 	$custom_content .= kal3000_the_termin_geo();
 	return $custom_content;
@@ -611,18 +611,30 @@ class kal3000_termine_widget extends WP_Widget {
 				</script>
 			</div>
 	<?php	echo $after_widget;
-		}
 	}
-	add_action( 'widgets_init', function() { return register_widget('kal3000_termine_widget'); });
+}
+add_action( 'widgets_init', function() { return register_widget('kal3000_termine_widget'); });
 	
-	function kal3000_shortcode_overview( $atts ) {
+function kal3000_shortcode_overview( $atts ) {
 	extract(shortcode_atts(array(
-		'archiv' => 'false',
-		'thumbnail' => 'ja',
-		'kat' => '',
-		'maxmonths' => false,
-		'anzahl' => 50,
+		'archiv'		=> 'false',
+		'thumbnail'		=> 'ja',
+		'kat'			=> '',
+		'maxmonths'		=> false,
+		'ical'			=> false,
+		'text'			=> 'Alle Termine als iCal downloaden',
+		'anzahl' 		=> 50,
 	), $atts));
+	
+	if($ical) {
+		$icallink = get_site_url();
+		$icallink = add_query_arg( 'ical', 'calendar', $icallink );
+		if($archiv) 	$icallink = add_query_arg( 'archiv', $archiv, $icallink );
+		if($kat) 		$icallink = add_query_arg( 'kat', $kat, $icallink );
+		if($maxmonths) 	$icallink = add_query_arg( 'maxmonths', $maxmonths, $icallink );
+		if($anzahl) 	$icallink = add_query_arg( 'anzahl', $anzahl, $icallink );
+		return '<div class="wpcalendar_ical-download"><span class="button"><a href="' . $icallink . '">' . $text . '</a></span></div>';
+	}
 	
 	global $wp_query,$paged,$post;
 	$temp = $wp_query;
@@ -668,8 +680,6 @@ class kal3000_termine_widget extends WP_Widget {
 			'value' => $maxmonths,
 			'compare' => $maxmonths_compare
 		);
-		
-		
 	}
 	
 	$wp_query->query($args);
@@ -833,8 +843,12 @@ function kal3000_options_page(  ) { ?>
 Add iCal-file generation
 */
 function ical3000_render( $original_template ) {
-	if(is_singular('termine') && @$_GET['ical'] == true) {
+	if(is_singular('termine') && @$_GET['ical'] === 'singular') {
 		return get_template_directory() . '/functions/kal3000/ical3000.php';
+	}
+	
+	if( @$_GET['ical'] && $_GET['ical'] === 'calendar' ) {
+		return get_template_directory() . '/functions/kal3000/icals3000.php';
 	}
 	
 	return $original_template;
