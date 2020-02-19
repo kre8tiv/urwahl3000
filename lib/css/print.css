@@ -1,0 +1,142 @@
+@font-face {
+	font-family: 'Arvo Regular';
+	font-display: swap;
+	src: local('Arvo Regular'), local('ArvoRegular'), url('../fonts/arvo_regular.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Arvo Gruen';
+	font-display: swap;
+	src: local('Arvo Gruen'), local('ArvoGruen'), url('../fonts/arvo_gruen.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+
+@font-face {
+	font-family: 'PT Sans';
+	font-display: fallback;
+	src: local('PT Sans'), local('PTSans-Regular'), url('../fonts/ptsans-regular.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+
+
+@font-face {
+	font-family: 'PT Sans Bold';
+	font-display: fallback;
+	src: local('PT Sans Bold'), local('PTSans-Bold'), url('../fonts/ptsans-bold.woff') format('woff');
+	font-weight: bold;
+	font-style: normal;
+}
+
+
+body {
+	padding: 4em;
+	font-family: 'PT Sans', Trebuchet, Helvetica Neue, Helvetica, Arial, Verdana, sans-serif;
+	font-size: 100%;
+	line-height: 1.5em;
+	color: #333;
+}
+
+#portal { display: none; }
+
+header#header {
+	}
+	header#header #logo {
+		}
+		header#header #logo a {
+			}
+			header#header #logo a:after { display: none; }
+	header#header .suche { display: none; }
+	
+.navwrap {
+	}
+	.navwrap #nav-main { display: none; }
+	.navwrap #breadcrumb {
+		display: block;
+		padding: 1em;
+		font-size: 80%;
+		border-top: 1px solid #333;
+		border-bottom: 1px solid #333;
+		margin: 2em 0;
+	}
+	
+h1,h2,h3,h4,h5,h6 {line-height: 1.4em;margin-bottom:0.3em;font-family: 'Arvo Regular', 'Arvo Gruen', Trebuchet, Helvetica Neue, Helvetica, Arial, Verdana, sans-serif;font-weight: normal;color: #0a350a;text-align: left;}
+h1 {font-size:1.8em;margin-bottom:0em;}
+h1.page-title {margin-bottom: 0.7em;}
+h2 {font-size:1.6em;}
+h3 {font-size:1.5em;color: #5dae59;}
+h4 {font-size:1.3em;}
+h5 {font-size:1.1em;}
+h6 {font-size:1em;}
+
+hr {
+	border: 0;
+	border-top: 3px solid #e6e6e6;
+	background: none;
+	height: 0;
+	width: 95%;
+	margin: 2.5em auto;
+}
+
+blockquote,
+pre {
+	padding: 2em 2em 0.5em 2em;
+	text-indent: 0em;
+	width: auto;
+	background: #e6e6e6;
+	margin-left: -1em;
+	margin-right: -1em;
+	color: #333;
+	margin-bottom: 1em;
+	font-family: 'Arvo Regular', 'Arvo Gruen', Trebuchet, Helvetica Neue, Helvetica, Arial, Verdana, sans-serif;
+	font-weight: 500;
+}
+
+article table {margin-bottom: 1.5em;	}
+	article table th {font-family: 'Arvo Regular', 'Arvo Gruen', Trebuchet, Helvetica Neue, Helvetica, Arial, Verdana, sans-serif; padding: 1em 1em 1em 0;border-bottom: 2px solid #0a321e;color: #0a321e;	}
+	article table td{ padding: 1em 1em 1em 0;border-bottom: 1px solid #e6e6e6;	}
+
+#content {padding: 0;}
+#content p {line-height: 1.5em;margin: 0 0 1.2em 0;}
+.single #main article footer.article-footer p {color: #8c8c8c;}
+#main article footer p, p.byline {font-size: 0.8em; color: #e6007e;margin: 0.5em 0 0em;}
+.single #main article header p.byline {color: #e6007e;margin: 0;}
+	p.byline {display: inline-block; padding: 0.2em 0 0;}
+	footer .categories span, footer .tags span {font-family: 'Arvo Regular', 'Arvo Gruen', Trebuchet, Helvetica Neue, Helvetica, Arial, Verdana, sans-serif;color: #333;}
+	footer .categories {margin-top: 0;}
+	article footer p a, p.byline a, article footer p a:visited, p.byline a:visited {color: #e6007e;}
+article.post {text-align:justify;margin-bottom: 2em;}
+a.readmore {background: #e6007e; padding: 0.3em 1.3em;border-radius: 0.3em;color: #fff;float: right;font-family: 'Arvo Regular', 'Arvo Gruen', Trebuchet, Helvetica Neue, Helvetica, Arial, Verdana, sans-serif; font-size: 0.75em;margin-top: 1em;margin-bottom: 0.5em;}
+a.readmore:hover {text-decoration: none;background-color: #cb006e;}
+.hentry ul, .hentry ol {margin: 0 2em;}
+.wp-caption-text, .gallery-caption {font-size: 0.8em;font-family: 'PT Sans bold', Trebuchet, Helvetica Neue, Helvetica, Arial, Verdana, sans-serif;color: #0a321e;}
+	.headerlist article {margin: 0;border-bottom: 1px solid #035b26;padding: 1em 0;}
+		.headerlist article h2, .headerlist article p {display: inline-block;}
+		.headerlist article h2 {font-size: 1em;}
+			.headerlist article h2 a span {color: #ed228d;}
+		.headerlist article p {font-size: 0.8em;color: #888;margin: 0!important;float: right;}
+		.headerlist article {}
+#main article {margin: 4em 0;}
+	#main article header.article-header { margin: 0 0 4em 0; }
+		 article img.wp-post-image {width: 100%;height: auto;}
+		.article-header h1 a {color:#0a321e;}
+.single a.postimg {margin: 1em 1em -1.5em;display: block;}
+.single p.caption {background: #fff;margin: 1em 1em -1.5em!important;
+	padding: 0.5em 1em;font-size: 1em;text-align: right;color: #8c8c8c;clear: both;}
+	.single p.caption span {font-size:0.8em;}
+a.postimglist {margin: -1em -1em 0 -1em;display: block;}
+	.single a.postimg img.attachment-titelbild.wp-post-image, a.postimglist img.attachment-titelbild.wp-post-image {width: 100%;height: auto;}
+	img.size-large, img.size-full  {width: 100%;height: auto;}
+	img.size-medium  {width: 100%;height: auto;}
+	
+.sharewrap { display: none; }
+.responsive-tabs-wrapper { display: none; }
+
+footer#footer { display: none; }
+p.copyright { display: none; }
+p#back-top { display: none !important; }

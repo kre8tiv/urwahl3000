@@ -114,6 +114,7 @@ function kr8_scripts_and_styles() {
 		
 		    // register main stylesheet
 		wp_register_style( 'kr8-stylesheet', get_template_directory_uri() . '/lib/css/style.css', array(), '', 'all' );
+		wp_register_style( 'kr8-print', get_template_directory_uri() . '/lib/css/print.css', array(), '', 'print' );
 		wp_register_style( 'kr8-fontawesome', get_template_directory_uri() . '/lib/fonts/fontawesome.css', array(), '5.12.0', 'all' );
 		wp_register_style( 'kr8-fancycss', get_template_directory_uri() . '/lib/js/libs/fancybox/jquery.fancybox.css', array(), '', 'all' );
 		wp_register_style( 'kr8-fancybuttoncss', get_template_directory_uri() . '/lib/js/libs/fancybox/jquery.fancybox-buttons.css', array(), '', 'all' );
@@ -125,6 +126,7 @@ function kr8_scripts_and_styles() {
 		wp_enqueue_script( 'kr8-modernizr' );
 		wp_enqueue_style( 'kr8-fontawesome' );
 		wp_enqueue_style( 'kr8-stylesheet' );
+		wp_enqueue_style( 'kr8-print' );
 		wp_enqueue_style( 'kr8-fancycss' );
 		wp_enqueue_style( 'kr8-fancybuttoncss' );
 		wp_enqueue_style( 'kr8-ie-only');
