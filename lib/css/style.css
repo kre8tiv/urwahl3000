@@ -978,9 +978,9 @@ h6 {font-size:1em;}
 			.home #main article.sticky {margin: 0;padding: 2em;background: #e4f8df;border: 0;border-bottom: 3px solid #fff;}
   		
   		
-  	#main article { border-bottom: 2px solid #e6e6e6;padding: 0 0 2em;margin: 2em; display: flex; flex-wrap: wrap; }
+  	#main article { border-bottom: 2px solid #e6e6e6;padding: 0 0 2em;margin: 2em; }
   		#main article:last-of-type {border-bottom: 0;}
-  		article img.wp-post-image, .search-results article img.wp-post-image, article .maybeImgCopyright {margin: 10px 0.7em 0 0;width: 33%; flex: 0 0 33%; height: auto; }
+  		article img.wp-post-image, .search-results article img.wp-post-image, article .maybeImgCopyright {margin: 10px 0.7em 0 0;width: 33%; float:left; height: auto; }
   		article .article-header-and-footer { flex: 0 0 66%; flex: 0 0 calc(66% - 0.7em); display: flex; flex-direction: column; justify-content: flex-end; padding-bottom: 10px; }
   		article .maybeImgCopyright img.wp-post-image { float: none; margin: 0 0 0 0; width: 100%; }
   		article .maybeImgCopyright .imgCopyright { font-size: 0.6em; line-height: 125%; text-align: left; color: #8d9e96; }
