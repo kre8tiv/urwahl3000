@@ -9,41 +9,49 @@
 											</div>
 									<?php endif; ?>
 									
-									<?php do_action('kr8_content_vor_article_footer'); ?>
+									<?php do_action('kr8_content_vor_article_header_and_footer'); ?>
 									
-									<footer class="article-footer">
+									<div class="article-header-and-footer">
+									
+										<?php do_action('kr8_content_vor_article_footer'); ?>
 										
-										<?php do_action('kr8_content_im_article_footer1'); ?>
-										
-										<p class="byline">
+										<footer class="article-footer">
 											
-											<?php if(apply_filters('kr8_content_im_article_byline_tags', true)) { echo get_the_term_list( get_the_ID(), 'post_tag', '<i class="fas fa-tags"></i> ', ', ', '<span style="width:10px;display:inline-block;"></span>' ); } ?>
-													
-											<?php if(apply_filters('kr8_content_im_article_byline_categories', true)) { echo get_the_term_list( get_the_ID(), 'category', '<i class="fas fa-folder-open"></i> ', ', ', '<span style="width:10px;display:inline-block;"></span>' ); } ?>
+											<?php do_action('kr8_content_im_article_footer1'); ?>
 											
-											<?php if(apply_filters('kr8_content_im_article_byline_date', true)) { the_time('j. F Y'); } ?>
-											
-										</p>
-
-										<?php do_action('kr8_content_im_article_footer2'); ?>
-											
-									</footer> 										 
-
-									<?php do_action('kr8_content_nach_article_footer'); ?>
-								 
-									<?php do_action('kr8_content_vor_article_header'); ?>
-
-									<header class="article-header">							
-
-										<?php do_action('kr8_content_im_article_header1'); ?>
-
-										<h1 class="h2"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h1> 
-
-										<?php do_action('kr8_content_im_article_header2'); ?>
-
-									</header>
-
-									<?php do_action('kr8_content_nach_article_header'); ?>
+											<p class="byline">
+												
+												<?php if(apply_filters('kr8_content_im_article_byline_tags', true)) { echo get_the_term_list( get_the_ID(), 'post_tag', '<i class="fas fa-tags"></i> ', ', ', '<span style="width:10px;display:inline-block;"></span>' ); } ?>
+														
+												<?php if(apply_filters('kr8_content_im_article_byline_categories', true)) { echo get_the_term_list( get_the_ID(), 'category', '<i class="fas fa-folder-open"></i> ', ', ', '<span style="width:10px;display:inline-block;"></span>' ); } ?>
+												
+												<?php if(apply_filters('kr8_content_im_article_byline_date', true)) { the_time('j. F Y'); } ?>
+												
+											</p>
+	
+											<?php do_action('kr8_content_im_article_footer2'); ?>
+												
+										</footer> 										 
+	
+										<?php do_action('kr8_content_nach_article_footer'); ?>
+									 
+										<?php do_action('kr8_content_vor_article_header'); ?>
+	
+										<header class="article-header">							
+	
+											<?php do_action('kr8_content_im_article_header1'); ?>
+	
+											<h1 class="h2"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h1> 
+	
+											<?php do_action('kr8_content_im_article_header2'); ?>
+	
+										</header>
+	
+										<?php do_action('kr8_content_nach_article_header'); ?>
+									
+									</div>
+									
+									<?php do_action('kr8_content_nach_article_header_and_footer'); ?>
 									
 									<?php do_action('kr8_content_vor_article_content'); ?>
 								

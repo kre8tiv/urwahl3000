@@ -2,16 +2,20 @@
 			</section>
 			<footer id="footer" role="contentinfo">
 				<div class="inner wrap clearfix">
-	                		
+							
 					<section class="sidebar cleafix">
 						<ul>
 							<?php dynamic_sidebar('fussleiste'); ?>
 						</ul>	
 					</section>
 					<nav role="navigation">
-    					<?php kr8_nav_footer(); ?>
-	                </nav>
-				
+						<?php kr8_nav_footer(); ?>
+					</nav>
+
+					<nav class="kopfzeile-mobile nav-footer" role="navigation">
+						<?php kr8_nav_portal(); ?>
+					</nav>
+
 				</div> <!-- end #inner-footer -->
 				
 			</footer> 
