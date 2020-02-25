@@ -25,7 +25,7 @@
 														
 												<?php if(apply_filters('kr8_content_im_article_byline_categories', true)) { echo get_the_term_list( get_the_ID(), 'category', '<i class="fas fa-folder-open"></i> ', ', ', '<span style="width:10px;display:inline-block;"></span>' ); } ?>
 												
-												<?php if(apply_filters('kr8_content_im_article_byline_date', true)) { the_time('j. F Y'); } ?>
+												<?php if(apply_filters('kr8_content_im_article_byline_date', true)) { echo apply_filters('kr8_content_im_article_byline_date_content', get_the_time('j. F Y')); } ?>
 												
 											</p>
 	

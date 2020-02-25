@@ -786,4 +786,10 @@ function kr8_customize_tag_cloud_args( array $args ) {
     return $args;
 }
 
+function kr8_content_im_article_byline_date_content_nbsp($content) {
+	$content = str_replace(' ', '&nbsp;', $content);
+	return $content;
+}
+add_filter('kr8_content_im_article_byline_date_content', 'kr8_content_im_article_byline_date_content_nbsp', 11);
+
 ?>
