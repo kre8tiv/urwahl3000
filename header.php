@@ -100,13 +100,15 @@
 				<?php if ( display_header_text() ) : ?>
 					<p id="logo"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="Zur Startseite"><img src="
 					<?php 	$vectorlogo = 'lib/images/logo.svg';
-							$vectorlogo = locate_template( $vectorlogo );
-							if($vectorlogo) {
-								$logo = $vectorlogo;
+							$pixellogo = 'lib/images/logo.png';
+							if( file_exists( trailingslashit( get_stylesheet_directory() ) . $vectorlogo ) ) {
+								$logo = trailingslashit( get_stylesheet_directory() ) . $vectorlogo;
+							} elseif( file_exists( trailingslashit( get_stylesheet_directory() ) . $pixellogo ) ) {
+								$logo = trailingslashit( get_stylesheet_directory() ) . $pixellogo;
 							} else {
-								$logo = 'lib/images/logo.png';
-								$logo = locate_template( $logo );
+								$logo = trailingslashit( get_template_directory() ) . $vectorlogo;
 							}
+							
 							$logo = str_replace(get_theme_root(), get_theme_root_uri(), $logo);
 							echo $logo;
 					?>" width="185" height="100" alt="<?php bloginfo('name'); ?>"></a></p>
