@@ -482,7 +482,7 @@ function kr8_related_posts() {
 		    $args=array(
 			'post__not_in' => array($post->ID),
 			'posts_per_page'=> 3, // Number of related posts that will be shown.
-			'caller_get_posts'=>1
+			'ignore_sticky_posts'=>1
 			);
 			
 			$all_posts = get_posts($args);
