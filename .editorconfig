@@ -3,11 +3,7 @@
 # top-most EditorConfig file
 root = true
 
-[*.css]
-indent_style = space
-indent_size = 2
-
-[*.js]
+[*.{css,js}]
 indent_style = tab
 
 [*.php]
