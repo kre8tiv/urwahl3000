@@ -628,9 +628,20 @@ h6 {font-size:1em;}
 		#commentform ul {margin: 0;}
 		#commentform li {list-style-type: none;}
 		#commentform  li:before{content: "";}
-		#main form input, #main form textarea, #main form select {border: 1px solid #cecece;background: #f8f8f8;padding: 0.5em;display: block;margin-bottom: 1em;width: 92%;}
+		#main form input, #main form textarea, #main form select {
+			background: #f8f8f8;
+			border: 1px solid #cecece;
+			box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			-webkit-box-sizing: border-box;
+			display: block;
+			margin-bottom: 1em;
+			padding: 0.5em;
+			width: 100%;
+		}
 		#main form textarea {
-			width: 97.3%;height: 6em;}
+			height: 6em;
+		}
 		#main form input:hover, #main form textarea:hover {border: 1px solid #999;background: #fff;box-shadow: 0 0 5px #eee inset;}
 		#main form input:focus, #main form textarea:focus {border: 1px solid #5dae59;background: #fff;box-shadow: 0 0 5px #eee inset;}
 		#main form label {font-size: 0.8em;font-family: 'Arvo Regular', 'Arvo Gruen', Trebuchet, Helvetica Neue, Helvetica, Arial, Verdana, sans-serif;color: #888;}
