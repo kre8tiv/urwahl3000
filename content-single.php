@@ -48,7 +48,7 @@
 
 									<?php do_action('kr8_contentsingle_im_article_content2'); ?>
 
-									<p><a href="<?php the_permalink() ?>" title="<?php the_title(); ?>" class="readmore">Weiterlesen »</a></p>
+									<p><a href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>" class="readmore">Weiterlesen »</a></p>
 
 									<?php do_action('kr8_contentsingle_im_article_content3'); ?>
 								</section> 

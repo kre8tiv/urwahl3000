@@ -10,7 +10,7 @@
 									</header>
 									
 									<footer class="article-footer">
-												<p class="byline"><a href="<?php the_permalink(); ?>" title="Permanenter Verweis zu <?php the_title(); ?>"><time class="updated" datetime="<?php echo the_time('c'); ?>"><?php the_time('j. F Y')?></time></a> • <?php the_category(', '); ?></p>
+												<p class="byline"><a href="<?php the_permalink(); ?>" title="Permanenter Verweis zu <?php the_title_attribute(); ?>"><time class="updated" datetime="<?php echo the_time('c'); ?>"><?php the_time('j. F Y')?></time></a> • <?php the_category(', '); ?></p>
 									</footer> 									
 								
 									<section class="entry-content"><?php the_excerpt(); ?></section>
