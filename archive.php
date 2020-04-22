@@ -48,14 +48,12 @@
 					
     					    <article id="post-not-found" class="hentry clearfix">
     						    <header class="article-header">
-    							    <h1><?php _e("Oops, Post Not Found!", "kr8theme"); ?></h1>
+    							    <h1><?php _e("Ups, keine Beiträge gefunden.", "kr8theme"); ?></h1>
     					    	</header>
     						    <section class="entry-content">
-    							    <p><?php _e("Uh Oh. Something is missing. Try double checking things.", "kr8theme"); ?></p>
+    							    <p><?php _e("Tut mir leid, aber hier gibt es keine Beiträge. Vielleicht hilft die Suche weiter.", "kr8theme"); ?></p>
+									<?php get_search_form(); ?>
         						</section>
-    	    					<footer class="article-footer">
-    		    				    <p><?php _e("This is the error message in the archive.php template.", "kr8theme"); ?></p>
-    			    			</footer>
     				    	</article>
 					
 					    <?php endif; ?>
