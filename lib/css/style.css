@@ -357,6 +357,9 @@ h6 {font-size:1em;}
 	.single p.caption {background: #fff;margin: 1em 1em -1.5em!important;
 		padding: 0.5em 1em;font-size: 1em;text-align: right;color: #8c8c8c;clear: both;}
 		.single p.caption span {font-size:0.8em;}
+	body.page p.caption {background: #fff;margin: 1em 1em -1.5em!important;
+		padding: 0.5em 1em;font-size: 1em;text-align: right;color: #8c8c8c;clear: both;}
+		body.page p.caption span {font-size:0.8em;}
 
 	a.postimglist {margin: -1em -1em 0 -1em;display: block;}
 		.single a.postimg img.attachment-titelbild.wp-post-image, a.postimglist img.attachment-titelbild.wp-post-image {width: 100%;height: auto;}
@@ -1008,6 +1011,7 @@ h6 {font-size:1em;}
 		img.size-medium {width: 49%;height: auto;}
 			.wp-caption img.size-medium {width: 100%;height: auto;}
 		.single p.caption {padding: 0 2em;margin-bottom: 0!important;text-align: right;color: #8c8c8c;}
+		body.page p.caption {padding: 0 2em;margin-bottom: 0!important;text-align: right;color: #8c8c8c;}
 
 
 		.gallery {text-align: center; background: #e6e6e6;margin: 0 -2em 1em; padding: 2em;border: 0;}
