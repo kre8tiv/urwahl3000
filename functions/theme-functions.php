@@ -163,6 +163,7 @@ function kr8_theme_support() {
 		add_image_size( 'medium', 400, 600,false );
 		add_image_size( 'large', 800, 1200, false );
 		add_image_size( 'titelbild', 850, 450, true );
+		add_image_size( 'square', 400, 400, true );
 		
 		update_option('thumbnail_size_w', 150);
 		update_option('thumbnail_size_h', 150);

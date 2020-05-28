@@ -21,7 +21,7 @@ function kr8_sitemap($atts) {
 	
 	$children = '';	
 	foreach($smitem as $value){
-		$thumb = get_the_post_thumbnail( $value->ID, array(100,100), $attr = '' );
+		$thumb = get_the_post_thumbnail( $value->ID, 'square', $attr = '' );
 		$children .= "<li>";
 			$children .= "<a href='" . $value->post_name . "' >" . $thumb . "</a>";
 			$children .= "<p><a href='" . $value->post_name . "' >" .  $value->post_title . "</a>";
