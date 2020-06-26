@@ -29,13 +29,12 @@
 						<article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
 						
 							<header class="article-header">
-								<h2 class="h2"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
+								 <h1 class="page-title" itemprop="headline"><?php the_title(); ?></h1>
 							</header>
 
 							<section class="entry-content clearfix" itemprop="articleBody">
-								<?php the_excerpt(); ?>
+								<?php the_content(); ?>
 
-								<p><a href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>" class="readmore">Weiterlesen »</a></p>
 							</section>
 					
 						</article>
