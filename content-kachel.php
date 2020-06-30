@@ -5,8 +5,11 @@
 											<a href="	<?php the_permalink(); ?>" class="postimglist" <?php echo $background; ?>><?php the_post_thumbnail('large');  ?></a>
 									<?php endif; ?>								 
 								 
+								 
 									 <header class="article-header">							
-										 <h1 class="h2"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h1> 
+										<?php if ( get_the_title() ): ?>
+											 <h1 class="h2"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h1> 
+										<?php endif; ?>
 									</header>
 									
 									<footer class="article-footer">
