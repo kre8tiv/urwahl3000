@@ -649,7 +649,7 @@ function nav_breadcrumb() {
       echo $before . single_cat_title('', false) . $after;
 
     } elseif ( is_tag() ) {
-      echo $before . 'Beiträge mit dem Schlagwort "' . single_tag_title('', false) . '"' . $after;
+      echo $before . 'Beiträge mit dem Schlagwort „' . single_tag_title('', false) . '“' . $after;
  
     } elseif ( is_day() ) {
       echo '<a href="' . get_year_link(get_the_time('Y')) . '">' . get_the_time('Y') . '</a> ' . $delimiter . ' ';
@@ -676,7 +676,7 @@ function nav_breadcrumb() {
       }
  
     } elseif ( is_search() ) {
-      echo $before . 'Ergebnisse für die Suche nach "' . get_search_query() . '"' . $after;
+      echo $before . 'Ergebnisse für die Suche nach „' . get_search_query() . '“' . $after;
  
     } elseif ( !is_single() && !is_page() && get_post_type() != 'post' && !is_404() ) {
       $post_type = get_post_type_object(get_post_type());
