@@ -647,6 +647,9 @@ function nav_breadcrumb() {
       $parentCat = get_category($thisCat->parent);
       if ($thisCat->parent != 0) echo(get_category_parents($parentCat, TRUE, ' ' . $delimiter . ' '));
       echo $before . single_cat_title('', false) . $after;
+
+    } elseif ( is_tag() ) {
+      echo $before . 'Beiträge mit dem Schlagwort "' . single_tag_title('', false) . '"' . $after;
  
     } elseif ( is_day() ) {
       echo '<a href="' . get_year_link(get_the_time('Y')) . '">' . get_the_time('Y') . '</a> ' . $delimiter . ' ';
@@ -701,9 +704,6 @@ function nav_breadcrumb() {
       $breadcrumbs = array_reverse($breadcrumbs);
       foreach ($breadcrumbs as $crumb) echo $crumb . ' ' . $delimiter . ' ';
       echo $before . get_the_title() . $after;
- 
-    } elseif ( is_tag() ) {
-      echo $before . 'Beiträge mit dem Schlagwort "' . single_tag_title('', false) . '"' . $after;
  
     } elseif ( is_author() ) {
        global $author;
