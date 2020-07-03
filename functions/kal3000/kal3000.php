@@ -438,7 +438,6 @@ class kal3000_termine_liste_widget extends WP_Widget {
 				<li <?php post_class('clearfix'); ?>>
 					<?php  if(function_exists('kal3000_the_termin_short')) kal3000_the_termin_short(); ?>
 					<h4><a href="<?php the_permalink();?>"><?php the_title(); ?></a></h4>
-					<?php the_excerpt();?>
 				</li>
 			<?php endwhile; 
 			wp_reset_query();
