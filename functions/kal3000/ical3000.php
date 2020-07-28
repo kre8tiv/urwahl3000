@@ -21,6 +21,11 @@ if($ical3000_meta['_lon'][0]) {
 $ical3000_start 		= date_i18n($ical3000_dateformat, @$ical3000_meta['_zeitstempel'][0]);
 $ical3000_end 			= date_i18n($ical3000_dateformat, @$ical3000_meta['_zeitstempel'][0]);
 $ical3000_current_time 	= date_i18n($ical3000_dateformat, @$ical3000_meta['_zeitstempel'][0]);
+if(@$ical3000_meta['_bis'] && @$ical3000_meta['_bis'][0]) {
+	$newbis 				= $ical3000_meta['_bis'][0];
+	$newbis 				= strtotime($newbis);
+	$ical3000_end 			= date_i18n($ical3000_dateformat, $newbis);
+}
 $ical3000_title 		= html_entity_decode( get_the_title() , ENT_COMPAT, 'UTF-8');
 $ical3000_location 		= preg_replace('/([\,;])/','\\\$1', implode(' ', array( @$ical3000_meta['_geoshow'][0], @$ical3000_meta['_geostadt'][0] ) )); 
 $ical3000_geo 			= @$ical3000_meta['_lat'][0] . ';' . @$ical3000_meta['_lon'][0];
