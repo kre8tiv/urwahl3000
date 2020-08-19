@@ -409,6 +409,7 @@ h6 {font-size:1em;}
 		.sharewrap a {display: block; text-align: center; padding: 0.5em; margin-bottom: 0.5em;	font-family: 'Arvo Regular', 'Arvo Gruen', Trebuchet, Helvetica Neue, Helvetica, Arial, Verdana, sans-serif;color: #fff;font-size: 0.8em;}
 		.sharewrap a.twitter {background: #59adeb;}
 		.sharewrap a.facebook {background: #3b5998;}
+		.sharewrap a.telegram {background: #0088cc;}
 		.sharewrap a.whatsapp {background: #4dc247;}
 		.sharewrap a.email {background: #ff9900;margin: 0;}
 		
@@ -1107,8 +1108,7 @@ h6 {font-size:1em;}
 			  	.sharewrap {margin: 2em 2em 4em; padding: 0; clear: both;background: transparent;}
 			  		.sharewrap a {display: inline-block; padding: 0.5em 1em; margin-bottom: 0;}
 			  		.sharewrap a.whatsapp {display:none;}
-			  		
-			  		
+			  		.sharewrap a.telegram {display:none;}
 			  		
 			  /*Related */
 			  	#related-posts {padding: 2em 0 1.5em;}
