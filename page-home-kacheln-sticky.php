@@ -8,6 +8,7 @@ Template Name: Startseite mit drei Kacheln (Sticky Posts)
 			
 			<?php 	if (!is_paged()) { 
 				
+						$stickyshown = array();
 						$stickyposts = get_posts(array(
 							'posts_per_page'	=> 3,
 							'post__in'			=> get_option( 'sticky_posts' ),
@@ -26,6 +27,7 @@ Template Name: Startseite mit drei Kacheln (Sticky Posts)
 								
 			<?php 				global $post;
 								$post = $stickyposts[0];
+								$stickyshown[] = $post->ID;
 								setup_postdata( $post ); ?>
 									<div class="eightcol first clearfix">
 										<?php kr8_template_part( 'content-kachel', get_post_format() ); ?>
@@ -38,6 +40,7 @@ Template Name: Startseite mit drei Kacheln (Sticky Posts)
 			<?php 						foreach($stickyposts as $stickypost) :
 											global $post;
 											$post = $stickypost;
+											$stickyshown[] = $post->ID;
 											setup_postdata( $post ); ?>
 											<?php kr8_template_part( 'content-kachel', get_post_format() ); ?>
 			<?php 						endforeach;
@@ -67,12 +70,10 @@ Template Name: Startseite mit drei Kacheln (Sticky Posts)
 							
 							?>
 							
-							
-							
 						<?php $args3 = array(
 								'posts_per_page' => $postsperpage,
 								'paged' => $paged,
-								'post__not_in'  => get_option( 'sticky_posts' ),
+								'post__not_in'  => array_slice($stickyshown, -3, 3),
 								'ignore_sticky_posts' => 1
 							);
 							query_posts($args3);
