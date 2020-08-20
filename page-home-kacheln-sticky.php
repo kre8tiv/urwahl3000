@@ -74,7 +74,7 @@ Template Name: Startseite mit drei Kacheln (Sticky Posts)
 								'posts_per_page' => $postsperpage,
 								'paged' => $paged,
 								'post__not_in'  => array_slice($stickyshown, -3, 3),
-								'ignore_sticky_posts' => 1
+								'ignore_sticky_posts' => 0
 							);
 							query_posts($args3);
 						?>
