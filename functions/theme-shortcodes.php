@@ -49,7 +49,7 @@ function tab_shortcode( $atts, $content = null ) {
 	extract(shortcode_atts(array(
 	  'title' => 'Titel anpassen',
    ), $atts));
-	return '<h2>' .$title .'</h2><div>' . $content . '</div>';
+	return '<h2>' .$title .'</h2><div>' . do_shortcode($content) . '</div>';
 }
 add_shortcode( 'tab', 'tab_shortcode' ); 
 
@@ -183,5 +183,47 @@ add_filter('nav_menu_item_title', function($title, $item, $args, $depth) {
 	return do_shortcode($title);
 }, 10, 4);
 add_filter('widget_text', 'do_shortcode');
+
+/**
+ * Beitragsliste Shortcode
+ */
+function urwahl3000_shortcode_beitragsliste( $atts ) {
+	$atts = shortcode_atts( array(
+		'anzahl' 		=> '10',
+		'kategorien'	=> false
+	), $atts, 'beitragsliste' );
+	
+	if((int)$atts['anzahl']) {
+		$content = "";
+		$queryargs = array(
+			'numberposts' => (int)$atts['anzahl'],
+		);
+		if($atts['kategorien']) {
+			$queryargs['tax_query'] = array(
+				array(
+					'taxonomy'	=> 'category',
+					'field'		=> 'term_id',
+					'terms'		=> $atts['kategorien'],
+				),
+			);
+		}
+		$beitraege = get_posts($queryargs);
+		
+		if($beitraege) {
+			$content .= '<ul>';
+			foreach($beitraege as $beitrag) {
+				$content .= '<li>';
+					$content .= '<a href="' . apply_filters('urwahl3000_shortcode_beitragsliste_link', get_permalink( $beitrag->ID ), $beitrag, $atts) . '">';
+						$content .= apply_filters('urwahl3000_shortcode_beitragsliste_text', $beitrag->post_title, $beitrag, $atts);
+					$content .= '</a>';
+				$content .= '</li>';
+			}
+			$content .= '</ul>';
+		}
+
+		return $content;
+	}
+}
+add_shortcode( 'beitragsliste', 'urwahl3000_shortcode_beitragsliste' );
 
 ?>
