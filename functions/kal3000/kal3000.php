@@ -159,26 +159,26 @@ function kal3000_termine_inner_custom_box( $post ) {
 	$isnew = ($pagenow === 'post-new.php') ? true : false;
 	$kal3000_options = get_option( 'kal3000_settings' );
 
-	$from=get_post_meta(get_the_ID(), '_wpcal_from',true);
-	echo '<input type="text" id="wpcal-from" placeholder="Beginn" name="wpc_from" value="'.$from.'">';
+	$from=get_post_meta(get_the_ID(), '_wpcal_from', true);
+	echo '<input type="text" id="wpcal-from" placeholder="Beginn" name="wpc_from" value="'.$from.'" autocomplete="off">';
 
 	echo '<br/>';
-	$wert7=get_post_meta(get_the_ID(), '_bis',true);
-	echo '<input type="text" id="termine_new_field7" name="wpc_until" placeholder="Bis (bel. Text)" value="'.$wert7.'" />';
+	$wert7=get_post_meta(get_the_ID(), '_bis', true);
+	echo '<input type="text" id="termine_new_field7" name="wpc_until" placeholder="Bis (bel. Text)" value="'.$wert7.'" autocomplete="off">';
 	
-	$wert8=get_post_meta(get_the_ID(), '_geoshow',true);
+	$wert8=get_post_meta(get_the_ID(), '_geoshow', true);
 	if(!$wert8 && $isnew) $wert8 = @$kal3000_options['kal3000_text_field_0'];
 	echo '<div class="spacer"></div><input type="text" id="termine_new_field8" name="wpc_geoshow" placeholder="Angezeigte Adresse (ohne Stadt)" value="'.$wert8.'" style="width:90%" />';
 	
-	$wert11=get_post_meta(get_the_ID(), '_geostadt',true);
+	$wert11=get_post_meta(get_the_ID(), '_geostadt', true);
 	if(!$wert11 && $isnew) $wert11 = @$kal3000_options['kal3000_text_field_1'];
 	echo '<input type="text" id="termine_new_field11" name="wpc_geocity" placeholder="Stadt" value="'.$wert11.'" style="width:90%" />';
 	
-	$wert12=get_post_meta(get_the_ID(), '_veranstalter',true);
+	$wert12=get_post_meta(get_the_ID(), '_veranstalter', true);
 	if(!$wert12 && $isnew) $wert12 = @$kal3000_options['kal3000_text_field_2'];
 	echo '<br><br>Veranstalter (optional):<br><input type="text" id="termine_new_field12" name="wpc_veranstalter" placeholder="Veranstalter" value="'.$wert12.'" style="width:90%" />';
 	
-	$wert13=get_post_meta(get_the_ID(), '_veranstalterlnk',true);
+	$wert13=get_post_meta(get_the_ID(), '_veranstalterlnk', true);
 	if(!$wert13 && $isnew) $wert13 = @$kal3000_options['kal3000_text_field_3'];
 	echo '<input type="text" id="termine_new_field13" name="wpc_veranstalterlnk" placeholder="Link zum Veranstalter https://" value="'.$wert13.'" style="width:90%" />';
 	
