@@ -3,11 +3,13 @@ jQuery( document ).ready( function(){
 	jQuery('#wpcal-from').datetimepicker({
 		format:'d.m.Y H:i',
 		step:30,
-		lang:'de'
+		lang:'de',
+		dayOfWeekStart:1
 	});
 	jQuery('#termine_new_field7').datetimepicker({
 		format:'d.m.Y H:i',
 		step:30,
-		lang:'de'
+		lang:'de',
+		dayOfWeekStart:1
 	});
 });
