@@ -101,7 +101,11 @@
 					<p id="logo"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="Zur Startseite"><img src="
 					<?php 	$vectorlogo = 'lib/images/logo.svg';
 							$pixellogo = 'lib/images/logo.png';
-							if( file_exists( trailingslashit( get_stylesheet_directory() ) . $vectorlogo ) ) {
+							if ( has_custom_logo() ) {
+								$custom_logo_id = get_theme_mod( 'custom_logo' );
+								$custom_logo = wp_get_attachment_image_src( $custom_logo_id , 'full' );
+								$logo = esc_url( $custom_logo[0] );		
+							} else if( file_exists( trailingslashit( get_stylesheet_directory() ) . $vectorlogo ) ) {
 								$logo = trailingslashit( get_stylesheet_directory() ) . $vectorlogo;
 							} elseif( file_exists( trailingslashit( get_stylesheet_directory() ) . $pixellogo ) ) {
 								$logo = trailingslashit( get_stylesheet_directory() ) . $pixellogo;

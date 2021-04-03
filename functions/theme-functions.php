@@ -316,6 +316,15 @@ function custom_theme_features()  {
 
 	);
 	add_theme_support( 'custom-header', $header_args );
+	
+	// Add theme support for Custom Logo
+	$logo_args = array(
+		'width'                  => 185,
+		'height'                 => 100,
+		'flex-height'            => true,
+		'flex-width'             => true
+	);
+	add_theme_support( 'custom-logo', $logo_args );
 
 }
 
